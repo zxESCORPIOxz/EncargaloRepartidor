@@ -33,15 +33,11 @@
         <item name="android:padding">10dp</item>
         <item name="android:textAlignment">textStart</item>
     </style>
-    <style name="pe_mpebtnhistorialdeordenes">
-        <item name="android:background">@color/green_600</item>
-        <item name="android:layout_margin">@dimen/activity_margin</item>
-        <item name="android:padding">10dp</item>
-        <item name="android:textAlignment">textStart</item>
+    <style name="pe_mpebtnhistorialdeordenes" parent="pe_mpebtngeneral">
         <item name="android:drawableLeft">@drawable/pe_icontruck</item>
         <item name="android:drawableRight">@drawable/icon_chevronright</item>
     </style>
-    <style name="pe_mpebtncobrosrealizados">
+    <style name="pe_mpebtncobrosrealizados" parent="pe_mpebtngeneral">
         <item name="android:background">@color/green_600</item>
         <item name="android:layout_margin">@dimen/activity_margin</item>
         <item name="android:padding">10dp</item>
