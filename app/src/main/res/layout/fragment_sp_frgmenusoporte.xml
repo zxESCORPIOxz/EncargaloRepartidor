@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgmenusoporte">
+
+    <Button
+        android:id="@+id/sp_mspbtncentrodeayuda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/sp_mspbtncentrodeayuda"
+        android:text="Centro de ayuda" />
+
+    <Button
+        android:id="@+id/sp_mspbtnteminosycondiciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/sp_mspbtnteminosycondiciones"
+        android:text="Teminos y condiciones" />
+
+    <Button
+        android:id="@+id/sp_mspbtncompartirencargalo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/sp_mspbtncompartirencargalo"
+        android:text="Compartir encargalo" />
+
+    <Button
+        android:id="@+id/sp_mspbtnacercade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/sp_mspbtnacercade"
+        android:text="Acerca de" />
+
+    <Button
+        android:id="@+id/sp_mspbtncerrarsesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/sp_mspbtncentrodeayuda"
+        android:text="Cerrar sesion" />
+</LinearLayout>

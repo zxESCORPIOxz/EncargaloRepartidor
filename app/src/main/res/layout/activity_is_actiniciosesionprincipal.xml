@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.is_actiniciosesionprincipal">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Envia tus productos a mas personas" />
+
+    <Button
+        android:id="@+id/is_ispbtnfacebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continuar con Facebook" />
+
+    <Button
+        android:id="@+id/is_ispbtngmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continuar con Google" />
+
+    <Button
+        android:id="@+id/is_ispbtncrearcuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aun no tienes cuenta?" />
+</LinearLayout>

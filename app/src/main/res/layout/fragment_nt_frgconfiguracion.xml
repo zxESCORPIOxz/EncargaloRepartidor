@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Notificaciones.nt_frgconfiguracion">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <Switch
+        android:id="@+id/nt_ntstchmensajes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mensajes" />
+
+    <Switch
+        android:id="@+id/nt_ntstchactividad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actividad de cuenta" />
+
+    <Switch
+        android:id="@+id/nt_ntstchnueva"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nueva orden" />
+
+    <Switch
+        android:id="@+id/nt_ntstchseguimiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seguimiento de ordenes" />
+
+    <Switch
+        android:id="@+id/nt_ntstchcompletada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Orden completada" />
+</LinearLayout>

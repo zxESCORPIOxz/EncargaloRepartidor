@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_miperfil"
+            android:icon="@drawable/ic_prueba"
+            android:title="@string/menu_miperfil" />
+        <item
+            android:id="@+id/nav_pedidos"
+            android:icon="@drawable/ic_prueba"
+            android:title="@string/menu_mispedidos" />
+        <item
+            android:id="@+id/nav_notificacion"
+            android:icon="@drawable/ic_prueba"
+            android:title="@string/menu_misnotificaciones" />
+        <item
+            android:id="@+id/nav_soporte"
+            android:icon="@drawable/ic_prueba"
+            android:title="@string/menu_soporte" />
+    </group>
+</menu>

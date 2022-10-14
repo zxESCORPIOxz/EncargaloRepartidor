@@ -1,0 +1,129 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/green_600</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="pe_mpebtnordenencurso">
+    <item name="android:background">@color/green_600</item>
+    <item name="android:layout_margin">@dimen/activity_margin</item>
+    <item name="android:padding">10dp</item>
+    <item name="android:textAlignment">textStart</item>
+    <item name="android:drawableLeft">@drawable/pe_iconqrcode</item>
+    <item name="android:drawableRight">@drawable/icon_chevronright</item>
+</style>
+    <!-- Modulo pedidos. -->
+    <style name="pe_mpebtngeneral">
+        <item name="android:background">@color/green_600</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+    <style name="pe_mpebtnhistorialdeordenes">
+        <item name="android:background">@color/green_600</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:drawableLeft">@drawable/pe_icontruck</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+    <style name="pe_mpebtncobrosrealizados">
+        <item name="android:background">@color/green_600</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:drawableLeft">@drawable/ic_prueba</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+
+    <!-- Modulo Soporte. -->
+    <style name="sp_mspbtngeneral">
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="sp_mspbtncentrodeayuda" parent="sp_mspbtngeneral">
+        <item name="android:drawableLeft">@drawable/sp_iconquestioncircle</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+
+    <style name="sp_mspbtnteminosycondiciones" parent="sp_mspbtngeneral">
+        <item name="android:drawableLeft">@drawable/sp_iconnewspaper</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+
+    <style name="sp_mspbtncompartirencargalo" parent="sp_mspbtngeneral">
+        <item name="android:drawableLeft">@drawable/sp_iconshare</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+
+    <style name="sp_mspbtnacercade" parent="sp_mspbtngeneral">
+        <item name="android:drawableLeft">@drawable/sp_iconinfosquare</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+
+    <style name="sp_mspbtncerrarsesion" parent="sp_mspbtngeneral">
+        <item name="android:drawableLeft">@drawable/sp_iconboxarrowright</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+    <!-- Modulo Soporte - centro de ayuda. -->
+    <style name="sp_mcabtnpreguntas">
+        <item name="android:background">@color/green_600</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:drawableLeft">@drawable/sp_iconquestionlg</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+
+    <style name="sp_mcabtnvideos">
+        <item name="android:background">@color/green_600</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:drawableLeft">@drawable/sp_iconplaybtnfill</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+
+    <style name="sp_mcabtnconsulta">
+        <item name="android:background">@color/green_600</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:drawableLeft">@drawable/sp_iconpluscirclefill</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+    <!-- Modulo Soporte - preguntas. -->
+    <style name="sp_pfbtnprg">
+        <item name="android:background">@color/green_600</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+    <!-- Modulo Soporte - terminos y condiciones. -->
+
+    <style name="tc_mtcbtnordenencurso">
+        <item name="android:background">@color/green_600</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:drawableLeft">@drawable/ic_prueba</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+</resources>

@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgmenupedidos" >
+
+    <Button
+        android:id="@+id/pe_mpebtnordenencurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/pe_mpebtnordenencurso"
+        android:text="Orden en curso"/>
+
+    <Button
+        android:id="@+id/pe_mpebtnhistorialdeordenes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/pe_mpebtnhistorialdeordenes"
+        android:text="Historial de ordenes"/>
+
+    <Button
+        android:id="@+id/pe_mpebtncobrosrealizados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/pe_mpebtncobrosrealizados"
+        android:text="Cobros realizados"/>
+</LinearLayout>

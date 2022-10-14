@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_miperfil">
+
+    <fragment
+        android:id="@+id/nav_miperfil"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil.pf_frgperfil"
+        android:label="@string/menu_miperfil"
+        tools:layout="@layout/fragment_pf_frgperfil" />
+    <fragment
+        android:id="@+id/nav_pedidos"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgmenupedidos"
+        android:label="@string/menu_mispedidos"
+        tools:layout="@layout/fragment_pe_frgmenupedidos" />
+    <fragment
+        android:id="@+id/nav_notificacion"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Notificaciones.nt_frgconfiguracion"
+        android:label="@string/menu_misnotificaciones"
+        tools:layout="@layout/fragment_nt_frgconfiguracion" />
+    <fragment
+        android:id="@+id/nav_soporte"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgmenusoporte"
+        android:label="@string/menu_soporte"
+        tools:layout="@layout/fragment_sp_frgmenusoporte" >
+        <action
+            android:id="@+id/action_nav_soporte_to_nav_centrodeayuda"
+            app:destination="@id/nav_centrodeayuda" />
+    </fragment>
+
+    <!-- OPCIONES DE SOPORTE -->
+
+    <fragment
+        android:id="@+id/nav_centrodeayuda"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgmenucentrodeayuda"
+        android:label="Centro de ayuda"
+        tools:layout="@layout/fragment_sp_frgmenucentrodeayuda" >
+        <action
+            android:id="@+id/action_nav_centrodeayuda_to_nav_preguntas"
+            app:destination="@id/nav_preguntas" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_preguntas"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgpreguntas"
+        android:label="Preguntas"
+        tools:layout="@layout/fragment_sp_frgpreguntas">
+        <action
+            android:id="@+id/action_nav_preguntas_to_nav_detallepregunta"
+            app:destination="@id/nav_detallepregunta" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_detallepregunta"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgdetallepregunta"
+        android:label="Detalle"
+        tools:layout="@layout/fragment_sp_frgdetallepregunta"/>
+
+</navigation>
