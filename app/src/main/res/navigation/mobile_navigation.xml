@@ -14,7 +14,11 @@
         android:id="@+id/nav_pedidos"
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgmenupedidos"
         android:label="@string/menu_mispedidos"
-        tools:layout="@layout/fragment_pe_frgmenupedidos" />
+        tools:layout="@layout/fragment_pe_frgmenupedidos" >
+        <action
+            android:id="@+id/action_nav_pedidos_to_nav_recogerorden"
+            app:destination="@id/nav_recogerorden" />
+    </fragment>
     <fragment
         android:id="@+id/nav_notificacion"
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Notificaciones.nt_frgconfiguracion"
@@ -57,5 +61,13 @@
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgdetallepregunta"
         android:label="Detalle"
         tools:layout="@layout/fragment_sp_frgdetallepregunta"/>
+
+    <!-- OPCIONES DE PEDIDOS -->
+
+    <fragment
+        android:id="@+id/nav_recogerorden"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgrecogerorden"
+        android:label="Orden en curso : Recogiendo"
+        tools:layout="@layout/fragment_pe_frgrecogerorden"/>
 
 </navigation>
