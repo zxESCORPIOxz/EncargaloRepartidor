@@ -16,9 +16,10 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/blackPrimary</item>
+    </style>
     <!-- Modulo pedidos. -->
     <style name="pe_mpebtngeneral">
         <item name="android:layout_margin">@dimen/activity_margin</item>
