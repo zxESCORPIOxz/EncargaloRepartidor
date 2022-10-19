@@ -21,14 +21,14 @@ public class is_actiniciosesionprincipal extends AppCompatActivity {
         is_ispbtnfacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( is_actiniciosesionprincipal.this, mx.com.repartidor.Inicio_sesion.MainActivity.class);
+                Intent i = new Intent( is_actiniciosesionprincipal.this, MainActivity.class);
                 startActivity(i);
             }
         });
         is_ispbtngmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( is_actiniciosesionprincipal.this, mx.com.repartidor.Inicio_sesion.MainActivity.class);
+                Intent i = new Intent( is_actiniciosesionprincipal.this, MainActivity.class);
                 startActivity(i);
             }
         });

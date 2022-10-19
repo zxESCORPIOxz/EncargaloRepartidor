@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1D1D1D</color>
+    <color name="colorPrimary">@color/blue_400</color>
     <color name="colorPrimaryDark">#1D1D1D</color>
     <color name="colorAccent">#F4C74A</color>
 
@@ -24,4 +24,6 @@
     <color name="orangePrimary">#F4C74A</color>
     <color name="redPrimary">#E44848</color>
     <color name="purplePrimary">#B6A6D6</color>
+    <color name="melonPrimary">#F9CA9C</color>
+    <color name="transparentPrimary">#00000000</color>
 </resources>

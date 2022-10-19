@@ -1,0 +1,127 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_400"
+    android:orientation="vertical"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgconfirmarproductos">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_margin"
+            android:background="@drawable/redondeado_blanco"
+            android:orientation="vertical"
+            android:padding="@dimen/inner_frame_layout_padding">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ID ORDEN"
+                    style="@style/pe_rgotxtidorden"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FECHA"
+                    style="@style/pe_rgotxtidorden"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet"
+                style="@style/pe_rgotxtdireccion"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet"
+                style="@style/pe_rgotxtdireccion"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_margin"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/redondeado_negro"
+                />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_margin"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_margin"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/redondeado_negro"
+                />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_margin"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet"
+                style="@style/pe_rgotxtdireccion"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet"
+                style="@style/pe_rgotxtdireccion"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet"
+                style="@style/pe_rgotxtdireccion"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet"
+                style="@style/pe_rgotxtdireccion"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/pe_cfpbtnDetalle"
+                    android:text="Detalle"
+                    style="@style/pe_rgobtnfunciones"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/pe_cfpbtnChat"
+                    android:text="Chat"
+                    style="@style/pe_rgobtnfunciones"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/pe_rgobtnrecoger"
+            android:layout_width="@dimen/btn_type01_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/redondeado_melon"
+            android:text="Ir a recoger al pedido" />
+
+
+    </LinearLayout>
+
+</ScrollView>

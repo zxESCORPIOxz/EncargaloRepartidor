@@ -3,11 +3,13 @@ package mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -19,7 +21,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import mx.com.repartidor.R;
 
 public class pe_frgrecogerorden extends Fragment {
-
+    Button pe_rgobtnrecoger;
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
@@ -44,7 +46,18 @@ public class pe_frgrecogerorden extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_pe_frgrecogerorden, container, false);
+        View view = inflater.inflate(R.layout.fragment_pe_frgrecogerorden, container, false);
+
+        pe_rgobtnrecoger = view.findViewById(R.id.pe_rgobtnrecoger);
+
+        pe_rgobtnrecoger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_nav_recogerorden_to_nav_confirmarproductos);
+            }
+        });
+
+        return view;
     }
 
     @Override

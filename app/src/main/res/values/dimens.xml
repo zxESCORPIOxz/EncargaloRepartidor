@@ -14,6 +14,8 @@
 
     <dimen name="btn_type_padding">10dp</dimen>
 
+    <dimen name="btn_type_border">1px</dimen>
+
     <dimen name="btn_type05_paddingLeft">10dp</dimen>
     <dimen name="btn_type05_paddingRight">10dp</dimen>
     <dimen name="btn_type05_paddingTop">15dp</dimen>
@@ -28,4 +30,8 @@
     <dimen name="mdl_width">343dp</dimen>
     <dimen name="input_padding">10dp</dimen>
     <dimen name="input_marginRight">10dp</dimen>
+
+    <dimen name="txt_size_title">18sp</dimen>
+    <dimen name="txt_size_paragraph">14sp</dimen>
+    <dimen name="txt_size_word">12sp</dimen>
 </resources>

@@ -1,0 +1,20 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="@color/melonPrimary"
+        android:centerColor="@color/melonPrimary"
+        android:endColor="@color/melonPrimary"
+    />
+    <padding
+        android:left="@dimen/btn_type_padding"
+        android:top="@dimen/btn_type_padding"
+        android:right="@dimen/btn_type_padding"
+        android:bottom="@dimen/btn_type_padding"
+        />
+    <stroke
+        android:width="@dimen/btn_type_border"
+        android:color="@color/blackPrimary"
+        />
+    <corners
+        android:radius="10px"
+        />
+</shape>

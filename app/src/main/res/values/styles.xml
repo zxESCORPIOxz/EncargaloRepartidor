@@ -18,32 +18,45 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="pe_mpebtnordenencurso">
-    <item name="android:background">@color/green_600</item>
-    <item name="android:layout_margin">@dimen/activity_margin</item>
-    <item name="android:padding">10dp</item>
-    <item name="android:textAlignment">textStart</item>
-    <item name="android:drawableLeft">@drawable/pe_iconqrcode</item>
-    <item name="android:drawableRight">@drawable/icon_chevronright</item>
-</style>
+
     <!-- Modulo pedidos. -->
     <style name="pe_mpebtngeneral">
-        <item name="android:background">@color/green_600</item>
         <item name="android:layout_margin">@dimen/activity_margin</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:drawableRight">@drawable/icon_chevronright</item>
         <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">@dimen/txt_size_paragraph</item>
     </style>
+
     <style name="pe_mpebtnhistorialdeordenes" parent="pe_mpebtngeneral">
         <item name="android:drawableLeft">@drawable/pe_icontruck</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
     </style>
     <style name="pe_mpebtncobrosrealizados" parent="pe_mpebtngeneral">
-        <item name="android:background">@color/green_600</item>
-        <item name="android:layout_margin">@dimen/activity_margin</item>
-        <item name="android:padding">10dp</item>
-        <item name="android:textAlignment">textStart</item>
         <item name="android:drawableLeft">@drawable/ic_prueba</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+    </style>
+    <style name="pe_mpebtnordenencurso" parent="pe_mpebtngeneral">
+        <item name="android:drawableLeft">@drawable/pe_iconqrcode</item>
+    </style>
+    <style name="pe_rgobtngeneral">
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/txt_size_paragraph</item>
+        <item name="android:gravity">center|bottom</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="pe_rgotxtidorden">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/txt_size_paragraph</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+    </style>
+    <style name="pe_rgotxtdireccion">
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">@dimen/txt_size_paragraph</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+    </style>
+    <style name="pe_rgobtnfunciones">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/green_800</item>
+        <item name="android:background">@color/transparentPrimary</item>
     </style>
 
     <!-- Modulo Soporte. -->
