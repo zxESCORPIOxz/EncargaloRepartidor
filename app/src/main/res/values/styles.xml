@@ -20,6 +20,62 @@
     <style name="ToolbarColoredBackArrow" parent="AppTheme">
         <item name="android:textColorSecondary">@color/blackPrimary</item>
     </style>
+    <!-- Modulo Notificaciones. -->
+    <style name="nt_notificaciones">
+        <item name="android:padding">@dimen/activity_margin</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">@dimen/txt_size_paragraph</item>
+        <item name="android:background">@color/whitePrimary</item>
+    </style>
+
+    <!-- Modulo perfil. -->
+    <style name="pf_perfil">
+        <item name="android:background">@color/grey_600</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+    </style>
+
+    <style name="pf_general">
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="pf_iconperson" parent="pf_general">
+        <item name="android:drawableLeft">@drawable/pf_iconpersona</item>
+    </style>
+
+    <style name="pf_iconphone" parent="pf_general">
+        <item name="android:drawableLeft">@drawable/pf_icontelefono</item>
+    </style>
+
+    <style name="pf_iconaddress" parent="pf_general">
+        <item name="android:drawableLeft">@drawable/pf_icondireccion</item>
+    </style>
+
+    <style name="pf_iconvehicleregistration" parent="pf_general">
+        <item name="android:drawableLeft">@drawable/pf_icondocumento</item>
+    </style>
+
+    <style name="pf_iconlicenseregistration" parent="pf_general">
+        <item name="android:drawableLeft">@drawable/pf_icondocumento</item>
+    </style>
+
+    <style name="pf_iconbackgroundcheck" parent="pf_general">
+        <item name="android:drawableLeft">@drawable/pf_icondocumento</item>
+    </style>
+
+    <style name="pf_iconpropertycard" parent="pf_general">
+        <item name="android:drawableLeft">@drawable/pf_icondocumento</item>
+    </style>
+    <style name="pf_buttongeneral">
+        <item name="android:foreground">@drawable/pf_iconeditcontent</item>
+        <item name="android:background">@color/transparentPrimary</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_margin">@dimen/inner_frame_layout_padding</item>
+    </style>
     <!-- Modulo pedidos. -->
     <style name="pe_mpebtngeneral">
         <item name="android:layout_margin">@dimen/activity_margin</item>
@@ -64,6 +120,7 @@
     <style name="sp_mspbtngeneral">
         <item name="android:layout_margin">@dimen/activity_margin</item>
         <item name="android:padding">15dp</item>
+        <item name="android:background">@drawable/redondeado_transparente</item>
         <item name="android:textAlignment">textStart</item>
     </style>
 
