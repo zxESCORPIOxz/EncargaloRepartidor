@@ -15,6 +15,9 @@ public class is_actvalidacioncodigo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_is_actvalidacioncodigo);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.is_iconback);
+        getSupportActionBar().setTitle(R.string.toolbar_is);
         is_vcbtnreenviar = findViewById(R.id.is_vcbtnreenviar);
         is_vcbtncontinuar = findViewById(R.id.is_vcbtncontinuar);
         is_vcbtncontinuar.setOnClickListener(new View.OnClickListener() {

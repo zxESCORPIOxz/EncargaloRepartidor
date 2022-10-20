@@ -5,26 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/whitePrimary"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.is_actiniciosesionprincipal">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/activity_margin"
+        android:src="@drawable/pf_imgicono" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/txt_size_title"
+        android:textColor="@color/blackPrimary"
+        android:textAlignment="center"
+        android:layout_margin="30dp"
         android:text="Envia tus productos a mas personas" />
 
     <Button
         android:id="@+id/is_ispbtnfacebook"
+        style="@style/is_btnlogin"
+        android:drawableLeft="@drawable/is_imgfacebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Continuar con Facebook" />
 
     <Button
         android:id="@+id/is_ispbtngmail"
+        style="@style/is_btnlogin"
+        android:drawableLeft="@drawable/is_imggoogle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Continuar con Google" />
@@ -33,5 +44,6 @@
         android:id="@+id/is_ispbtncrearcuenta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/transparentPrimary"
         android:text="Aun no tienes cuenta?" />
 </LinearLayout>

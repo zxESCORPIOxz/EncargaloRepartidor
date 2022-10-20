@@ -15,6 +15,7 @@ public class is_actiniciosesionprincipal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_is_actiniciosesionprincipal);
+
         is_ispbtnfacebook = findViewById(R.id.is_ispbtnfacebook);
         is_ispbtngmail = findViewById(R.id.is_ispbtngmail);
         is_ispbtncrearcuenta = findViewById(R.id.is_ispbtncrearcuenta);

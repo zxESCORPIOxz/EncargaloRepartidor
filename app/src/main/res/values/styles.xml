@@ -6,6 +6,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorSecondary">@color/green_600</item>
+        <item name="actionBarStyle">@style/ActionBarStyle</item>
 
     </style>
 
@@ -17,8 +18,18 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+
     <style name="ToolbarColoredBackArrow" parent="AppTheme">
         <item name="android:textColorSecondary">@color/blackPrimary</item>
+    </style>
+
+    <style name="ActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="titleTextStyle">@style/ActionBarTitleTextStyle</item>
+        <item name="background">@color/blue_400</item>
+    </style>
+
+    <style name="ActionBarTitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/blackPrimary</item>
     </style>
     <!-- Modulo Notificaciones. -->
     <style name="nt_notificaciones">
@@ -27,6 +38,22 @@
         <item name="android:textAlignment">textStart</item>
         <item name="android:textSize">@dimen/txt_size_paragraph</item>
         <item name="android:background">@color/whitePrimary</item>
+    </style>
+
+    <!-- Modulo login. -->
+
+    <style name="is_btnlogin">
+        <item name="android:background">@drawable/redondeado_azul</item>
+        <item name="android:paddingTop">@dimen/btn_type05_paddingTop</item>
+        <item name="android:paddingBottom">@dimen/btn_type05_paddingBottom</item>
+        <item name="android:paddingLeft">@dimen/btn_type05_paddingLeft</item>
+        <item name="android:paddingRight">@dimen/btn_type05_paddingRight</item>
+        <item name="android:layout_marginTop">@dimen/btn_type05_paddingTop</item>
+        <item name="android:layout_marginBottom">@dimen/btn_type05_paddingBottom</item>
+        <item name="android:layout_marginLeft">@dimen/btn_type05_paddingLeft</item>
+        <item name="android:layout_marginRight">@dimen/btn_type05_paddingRight</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/whitePrimary</item>
     </style>
 
     <!-- Modulo perfil. -->

@@ -16,8 +16,8 @@
 
     <dimen name="btn_type_border">1px</dimen>
 
-    <dimen name="btn_type05_paddingLeft">10dp</dimen>
-    <dimen name="btn_type05_paddingRight">10dp</dimen>
+    <dimen name="btn_type05_paddingLeft">30dp</dimen>
+    <dimen name="btn_type05_paddingRight">30dp</dimen>
     <dimen name="btn_type05_paddingTop">15dp</dimen>
     <dimen name="btn_type05_paddingBottom">15dp</dimen>
 

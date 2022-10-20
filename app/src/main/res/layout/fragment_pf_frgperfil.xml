@@ -19,7 +19,7 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageButton"
-        android:src="@drawable/pf_iconcamara"
+        android:src="@drawable/pf_imgphoto"
         android:layout_margin="15dp"
         android:layout_gravity="center"
         android:layout_width="80dp"
