@@ -22,7 +22,7 @@
         android:textColor="@color/blackPrimary"
         android:textAlignment="center"
         android:layout_margin="30dp"
-        android:text="Envia tus productos a mas personas" />
+        android:text="@string/is_varstringmensaje" />
 
     <Button
         android:id="@+id/is_ispbtnfacebook"
@@ -30,7 +30,7 @@
         android:drawableLeft="@drawable/is_imgfacebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Continuar con Facebook" />
+        android:text="@string/is_varstringloginfacebook" />
 
     <Button
         android:id="@+id/is_ispbtngmail"
@@ -38,7 +38,7 @@
         android:drawableLeft="@drawable/is_imggoogle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Continuar con Google" />
+        android:text="@string/is_varstringlogingoogle" />
 
     <Button
         android:id="@+id/is_ispbtncrearcuenta"

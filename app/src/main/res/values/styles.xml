@@ -7,7 +7,6 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorSecondary">@color/green_600</item>
         <item name="actionBarStyle">@style/ActionBarStyle</item>
-
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -40,7 +39,7 @@
         <item name="android:background">@color/whitePrimary</item>
     </style>
 
-    <!-- Modulo login. -->
+    <!-- Modulo login -->
 
     <style name="is_btnlogin">
         <item name="android:background">@drawable/redondeado_azul</item>

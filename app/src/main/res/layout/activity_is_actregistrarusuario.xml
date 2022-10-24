@@ -12,36 +12,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="Nombre" />
+        android:hint="@string/is_varstringnombre" />
     <EditText
         android:id="@+id/is_ruedtApellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="Apellido" />
+        android:hint="@string/is_varstringapellido" />
     <EditText
         android:id="@+id/is_ruedtCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:hint="Correo" />
+        android:hint="@string/is_varstringcorreo" />
     <EditText
         android:id="@+id/is_ruedtTelefono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
-        android:hint="Telefono" />
+        android:hint="@string/is_varstringtelefono" />
 
     <Button
         android:id="@+id/is_rubtnRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar" />
+        android:text="@string/is_varstringbtnregistrar" />
 
     <CheckBox
         android:id="@+id/is_ruchkbTerminosycondiciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CheckBox"/>
+        android:text="@string/is_varstringchckterminos"/>
 
 </LinearLayout>

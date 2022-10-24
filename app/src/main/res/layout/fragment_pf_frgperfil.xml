@@ -4,21 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    tools:ignore="InefficientWeight"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil.pf_frgperfil">
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/pf_prftxtnombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/txt_size_title"
         android:textStyle="bold"
         android:textAlignment="center"
         android:padding="@dimen/inner_frame_layout_padding"
-        android:text="Nombre" />
+        android:text="@string/pf_varstringnombre" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageButton"
+        android:id="@+id/pf_prfimgvwfoto"
         android:src="@drawable/pf_imgphoto"
         android:layout_margin="15dp"
         android:layout_gravity="center"
@@ -42,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/pf_perfil"
-                android:text="PERFIL BASICO (información al público)" />
+                android:text="@string/pf_varvarstringsubtitulo1" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,7 +58,7 @@
                     android:layout_weight="1"
                     android:inputType="textPersonName"
                     style="@style/pf_iconperson"
-                    android:hint="Nombre" />
+                    android:hint="@string/pf_varstringnombre" />
 
                 <Button
                     android:id="@+id/pf_pfbtnmoddireccion"
@@ -77,11 +78,11 @@
                     android:layout_weight="1"
                     android:inputType="textPersonName"
                     style="@style/pf_iconphone"
-                    android:hint="Telefono" />
+                    android:hint="@string/pf_varstringtelefono" />
 
                 <Button
                     android:id="@+id/pf_pfbtnmodnombre"
-                    style="@style/pf_buttongeneral" /> />
+                    style="@style/pf_buttongeneral" />
             </LinearLayout>
 
             <LinearLayout
@@ -96,17 +97,17 @@
                     android:layout_weight="1"
                     android:inputType="textPersonName"
                     style="@style/pf_iconaddress"
-                    android:hint="Dirección" />
+                    android:hint="@string/pf_varstringdireccion" />
 
                 <Button
                     android:id="@+id/pf_pfbtnmodnumero"
-                    style="@style/pf_buttongeneral" /> />
+                    style="@style/pf_buttongeneral" />
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/pf_perfil"
-                android:text="CARGAR DOCUMENTOS" />
+                android:text="@string/pf_varstringsubtitulo2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -119,13 +120,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:inputType="textPersonName"
                     style="@style/pf_iconvehicleregistration"
-                    android:text="Registro de Vehículo"/>
-
+                    android:text="@string/pf_varstringregistrodeveh_culo"
+                    />
                 <Button
                     android:id="@+id/pf_pfbtnmodregistrodevehiculo"
-                    style="@style/pf_buttongeneral" /> />
+                    style="@style/pf_buttongeneral" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -137,12 +137,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:inputType="textPersonName"
                     style="@style/pf_iconlicenseregistration"
-                    android:text="Registro de Licencia" />
+                    android:text="@string/pf_varstringregistrodelicencia" />
                 <Button
                     android:id="@+id/pf_pfbtnmodregistrodelicencia"
-                    style="@style/pf_buttongeneral" /> />
+                    style="@style/pf_buttongeneral" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -154,12 +153,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:inputType="textPersonName"
                     style="@style/pf_iconbackgroundcheck"
-                    android:text="Registro de antecedentes" />
+                    android:text="@string/pf_varstringregistro_de_antecedentes" />
                 <Button
                     android:id="@+id/pf_pfbtnmodregistrodeantecedentes"
-                    style="@style/pf_buttongeneral" /> />
+                    style="@style/pf_buttongeneral" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -171,12 +169,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:inputType="textPersonName"
                     style="@style/pf_iconpropertycard"
-                    android:text="Tarjeta de propiedad" />
+                    android:text="@string/pf_varstringtarjeta_de_propiedad"/>
                 <Button
                     android:id="@+id/pf_pfbtnmodtargetadepropiedad"
-                    style="@style/pf_buttongeneral" /> />
+                    style="@style/pf_buttongeneral" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
