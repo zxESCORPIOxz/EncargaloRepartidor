@@ -50,11 +50,26 @@
 
     <!-- Modulo Notificaciones(nt)  -->
 
-
+    <string name="nt_varstringsubtitulo">Marca las notificaciones que desee para mantenerse al tanto de los pedidos</string>
+    <string name="nt_varstringchckmensajes">Mensajes</string>
+    <string name="nt_varstringchckactividad_de_cuenta">Actividad de cuenta</string>
+    <string name="nt_varstringchcknueva_orden">Nueva orden</string>
+    <string name="nt_varstringchckseguimiento_de_ordenes">Seguimiento de ordenes</string>
+    <string name="nt_varstringchckorden_completada">Orden completada</string>
 
     <!-- Modulo Pedidos(pe)  -->
 
-
+    <string name="pe_varstringbtndetalle">Detalle</string>
+    <string name="pe_varstringchat">Chat</string>
+    <string name="pe_varstringir_a_recoger_al_pedido">Ir a recoger al pedido</string>
+    <string name="pe_varstringorden_en_curso">Orden en curso</string>
+    <string name="pe_varstringhistorial_de_ordenes">Historial de ordenes</string>
+    <string name="pe_varstringcobros_realizados">Cobros realizados</string>
+    <string name="sp_varstringbtncentro_de_ayuda">Centro de ayuda</string>
+    <string name="sp_varstringbtnteminos_y_condiciones">Teminos y condiciones</string>
+    <string name="sp_varstringbtncompartir_encargalo">Compartir encargalo</string>
+    <string name="sp_varstringbtnacerca_de">Acerca de</string>
+    <string name="sp_varstringbtncerrar_sesion">Cerrar sesion</string>
 
     <!-- Modulo Soporte(sp)  -->
 

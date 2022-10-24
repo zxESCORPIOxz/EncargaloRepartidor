@@ -121,7 +121,6 @@
             android:background="@drawable/redondeado_melon"
             android:text="Ir a recoger al pedido" />
 
-
     </LinearLayout>
 
 </ScrollView>

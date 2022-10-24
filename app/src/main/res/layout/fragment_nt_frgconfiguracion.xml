@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,7 +6,6 @@
     android:background="@color/grey_400"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Notificaciones.nt_frgconfiguracion"
     tools:ignore="UseSwitchCompatOrMaterialXml">
-
 
     <ImageView
         android:layout_width="100dp"
@@ -22,40 +20,41 @@
         android:textColor="@color/blackPrimary"
         android:textAlignment="center"
         android:layout_margin="@dimen/activity_margin"
-        android:text="Marca las notificaciones que desee para mantenerse al tanto de los pedidos" />
+        android:text="@string/nt_varstringsubtitulo" />
 
     <Switch
         android:id="@+id/nt_ntstchmensajes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/nt_notificaciones"
-        android:text="Mensajes" />
+        android:text="@string/nt_varstringchckmensajes" />
 
     <Switch
         android:id="@+id/nt_ntstchactividad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/nt_notificaciones"
-        android:text="Actividad de cuenta" />
+        android:text="@string/nt_varstringchckactividad_de_cuenta" />
 
     <Switch
         android:id="@+id/nt_ntstchnueva"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/nt_notificaciones"
-        android:text="Nueva orden" />
+        android:text="@string/nt_varstringchcknueva_orden" />
 
     <Switch
         android:id="@+id/nt_ntstchseguimiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/nt_notificaciones"
-        android:text="Seguimiento de ordenes" />
+        android:text="@string/nt_varstringchckseguimiento_de_ordenes" />
 
     <Switch
         android:id="@+id/nt_ntstchcompletada"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/nt_notificaciones"
-        android:text="Orden completada" />
+        android:text="@string/nt_varstringchckorden_completada" />
+
 </LinearLayout>

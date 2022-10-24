@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/redondeado_verde"
         style="@style/pe_mpebtnordenencurso"
-        android:text="Orden en curso"/>
+        android:text="@string/pe_varstringorden_en_curso"
+        />
 
     <Button
         android:id="@+id/pe_mpebtnhistorialdeordenes"
@@ -20,7 +21,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/redondeado_verde"
         style="@style/pe_mpebtnhistorialdeordenes"
-        android:text="Historial de ordenes"/>
+        android:text="@string/pe_varstringhistorial_de_ordenes"
+        />
 
     <Button
         android:id="@+id/pe_mpebtncobrosrealizados"
@@ -28,6 +30,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/redondeado_verde"
         style="@style/pe_mpebtncobrosrealizados"
-        android:text="Cobros realizados"/>
+        android:text="@string/pe_varstringcobros_realizados"
+        />
 
 </LinearLayout>
