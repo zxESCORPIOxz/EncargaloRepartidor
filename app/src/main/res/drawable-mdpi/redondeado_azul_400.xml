@@ -1,8 +1,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
-        android:startColor="@color/cyan_600"
-        android:centerColor="@color/cyan_600"
-        android:endColor="@color/cyan_600"
+        android:startColor="@color/blue_400"
+        android:centerColor="@color/blue_400"
+        android:endColor="@color/blue_400"
     />
     <padding
         android:left="@dimen/btn_type_padding"
@@ -12,9 +12,9 @@
         />
     <stroke
         android:width="@dimen/btn_type_border"
-        android:color="@color/blackPrimary"
+        android:color="@color/blue_400"
         />
     <corners
-        android:radius="10px"
+        android:radius="20px"
         />
 </shape>

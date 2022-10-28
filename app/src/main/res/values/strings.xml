@@ -15,6 +15,7 @@
 
     <!-- OPCIONES DEL MENU -->
 
+    <string name="menu_inicio">INICIO</string>
     <string name="menu_miperfil">MI PERFIL</string>
     <string name="menu_mispedidos">PEDIDOS</string>
     <string name="menu_misnotificaciones">NOTIFICACIONES</string>
@@ -30,7 +31,7 @@
     <string name="is_varstringcorreo">Correo</string>
     <string name="is_varstringtelefono">Telefono</string>
     <string name="is_varstringbtnregistrar">Registrar</string>
-    <string name="is_varstringchckterminos">Aceptar los terminos y condiciones</string>
+    <string name="is_varstringchckterminos">Acepto los Terminos y Condiciones y la Politica de seguridad</string>
     <string name="is_varstringbtnreenviar">Reenviar</string>
     <string name="is_varstringcontinuar">Continuar</string>
     <string name="is_varstringtituloverificacion">Ingrese el código de verificación</string>
@@ -42,11 +43,20 @@
     <string name="pf_varvarstringsubtitulo1">PERFIL BASICO (información al público)</string>
     <string name="pf_varstringtelefono">Telefono</string>
     <string name="pf_varstringdireccion">Dirección</string>
+    <string name="pf_varstringvehiculo">Vehiculo</string>
+    <string name="pf_varstringplaca">Placa</string>
     <string name="pf_varstringsubtitulo2">CARGAR DOCUMENTOS</string>
     <string name="pf_varstringregistrodeveh_culo">Registro de Vehículo</string>
     <string name="pf_varstringregistrodelicencia">Registro de Licencia</string>
     <string name="pf_varstringregistro_de_antecedentes">Registro de antecedentes</string>
     <string name="pf_varstringtarjeta_de_propiedad">Tarjeta de propiedad</string>
+    <string name="pf_varstringregistrar">Registrar</string>
+
+    <string-array name="vehiculos">
+        <item>Categoria</item>
+        <item>Completada</item>
+        <item>Imcompleta</item>
+    </string-array>
 
     <!-- Modulo Notificaciones(nt)  -->
 
@@ -65,15 +75,28 @@
     <string name="pe_varstringorden_en_curso">Orden en curso</string>
     <string name="pe_varstringhistorial_de_ordenes">Historial de ordenes</string>
     <string name="pe_varstringcobros_realizados">Cobros realizados</string>
+
+    <!-- Modulo Soporte(sp)  -->
+
     <string name="sp_varstringbtncentro_de_ayuda">Centro de ayuda</string>
     <string name="sp_varstringbtnteminos_y_condiciones">Teminos y condiciones</string>
     <string name="sp_varstringbtncompartir_encargalo">Compartir encargalo</string>
     <string name="sp_varstringbtnacerca_de">Acerca de</string>
     <string name="sp_varstringbtncerrar_sesion">Cerrar sesion</string>
 
-    <!-- Modulo Soporte(sp)  -->
+    <!-- Modulo Menu(me)  -->
 
-
-
+    <string name="me_varstringbienvenido_al_app_repartidor">Bienvenido al app repartidor</string>
+    <string name="me_varstringcomensar">Comensar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pf_varstringsuba_la_imagen_dpf_varstringel_documento_requerido">Suba la imagen del documento requerido</string>
+    <string name="pf_varstringdocumentos_agregados_correctamente">Documentos agregados correctamente</string>
+    <string name="pf_varstringeso_fue_rapido">Eso fue rapido!</string>
+    <string name="pf_varstringvolver_a_inicio">Volver a inicio</string>
+    <string name="pe_varstringcobrar">Cobrar</string>
+    <string name="pe_varstringseguro_que_desea_completar_la_entrega">¿Seguro que desea completar la entrega?</string>
+    <string name="pe_varstringorden_entregada_exitosamente">Orden N°30212548 fue entregada exitosamente</string>
+    <string name="pe_varstringgracias">Gracias!</string>
 
 </resources>

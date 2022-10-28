@@ -46,8 +46,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="mx.com.encargalo.repartidor.Inicio_sesion.is_actiniciosesionprincipal"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

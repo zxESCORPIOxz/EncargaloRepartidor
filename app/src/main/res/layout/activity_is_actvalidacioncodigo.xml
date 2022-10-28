@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,36 +9,58 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/txt_size_title"
+        android:textColor="@color/blackPrimary"
+        android:gravity="center"
+        android:padding="@dimen/activity_margin"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
         android:text="@string/is_varstringtituloverificacion" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/txt_size_paragraph"
+        android:textColor="@color/blackPrimary"
+        android:gravity="center"
+        android:padding="@dimen/activity_margin"
+        android:layout_marginTop="100dp"
         android:text="@string/is_varstringsubtituloverificacion" />
 
     <EditText
         android:id="@+id/is_vcedtCodigo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center"
+        android:background="@drawable/redondeado_transparente"
+        android:hint="000000"
+        android:maxLength="6"
+        android:textSize="@dimen/txt_size_title"
+        android:textColor="@color/blackPrimary"
         android:inputType="number" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/is_vcbtnreenviar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_margin"
             android:layout_weight="1"
+            android:background="@drawable/redondeado_cyan"
             android:text="@string/is_varstringbtnreenviar" />
 
         <Button
             android:id="@+id/is_vcbtncontinuar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_margin"
             android:layout_weight="1"
+            android:background="@drawable/redondeado_cyan"
             android:text="@string/is_varstringcontinuar" />
     </LinearLayout>
-</LinearLayout>
+</FrameLayout>

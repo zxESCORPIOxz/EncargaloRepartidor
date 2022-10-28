@@ -17,12 +17,13 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/me_menuimgvwimgUsuario"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             app:srcCompat="@drawable/mn_imgusuario"/>
 
         <TextView
+            android:id="@+id/me_menutxtNombreUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/whitePrimary"

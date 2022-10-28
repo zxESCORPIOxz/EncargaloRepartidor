@@ -5,11 +5,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -21,19 +25,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import mx.com.repartidor.R;
 
-public class pe_frgrecogerorden extends Fragment {
-    Button pe_rgobtnrecoger;
+public class pe_frgentregarorden extends Fragment {
+    Button pe_etobtncobrar;
+    Dialog dialogyes_no;
+    View viewinterno;
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
-         */
         @Override
         public void onMapReady(GoogleMap googleMap) {
             LatLng sydney = new LatLng(-12.051392, -75.198301);
@@ -50,14 +47,33 @@ public class pe_frgrecogerorden extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_pe_frgrecogerorden, container, false);
-
-        pe_rgobtnrecoger = view.findViewById(R.id.pe_rgobtnrecoger);
-
-        pe_rgobtnrecoger.setOnClickListener(new View.OnClickListener() {
+        View view = inflater.inflate(R.layout.fragment_pe_frgentregarorden, container, false);
+        dialogyes_no = new Dialog(getContext());
+        pe_etobtncobrar = view.findViewById(R.id.pe_etobtncobrar);
+        pe_etobtncobrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_nav_recogerorden_to_nav_confirmarproductos);
+                viewinterno = v;
+                dialogyes_no.setContentView(R.layout.pe_dialogconfirmarcobro);
+                dialogyes_no.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialogyes_no.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialogyes_no.setCancelable(false);
+                Button pe_dynbtnno = dialogyes_no.findViewById(R.id.pe_dynbtnno);
+                Button pe_dynbtnsi = dialogyes_no.findViewById(R.id.pe_dynbtnsi);
+                pe_dynbtnsi.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogyes_no.dismiss();
+                        Navigation.findNavController(viewinterno).navigate(R.id.action_nav_entregarpedido_to_nav_cobrarpedido);
+                    }
+                });
+                pe_dynbtnno.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogyes_no.dismiss();
+                    }
+                });
+                dialogyes_no.show();
             }
         });
 

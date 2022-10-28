@@ -1,8 +1,11 @@
 package mx.com.encargalo.repartidor.Inicio_sesion;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -16,11 +19,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import mx.com.encargalo.repartidor.UTIL.DATOS;
 import mx.com.repartidor.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+
+    TextView me_menutxtNombreUsuario;
+    ImageView me_menuimgvwimgUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +48,22 @@ public class MainActivity extends AppCompatActivity {
         navigationView.getMenu().getItem(1).setActionView(R.layout.opcionarrow);
         navigationView.getMenu().getItem(2).setActionView(R.layout.opcionarrow);
         navigationView.getMenu().getItem(3).setActionView(R.layout.opcionarrow);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        navigationView.getMenu().getItem(4).setActionView(R.layout.opcionarrow);
+
+        View headView = navigationView.getHeaderView(0);
+
+
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
+
+        me_menutxtNombreUsuario = headView.findViewById(R.id.me_menutxtNombreUsuario);
+        me_menuimgvwimgUsuario = headView.findViewById(R.id.me_menuimgvwimgUsuario);
+
+        me_menutxtNombreUsuario.setText(sharedPreferences
+                .getString(DATOS.VARGOB_ID_USUARIO,"Nombre no encontrado"));
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_menuinicio,
                 R.id.nav_miperfil,
                 R.id.nav_pedidos,
                 R.id.nav_notificacion,
@@ -53,8 +73,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-
     }
 
     @Override

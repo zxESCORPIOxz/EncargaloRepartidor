@@ -9,11 +9,11 @@
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.is_actiniciosesionprincipal">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_margin="@dimen/activity_margin"
-        android:src="@drawable/pf_imgicono" />
+        android:src="@drawable/is_imglogo" />
 
     <TextView
         android:layout_width="match_parent"

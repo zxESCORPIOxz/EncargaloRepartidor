@@ -5,43 +5,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.is_actregistrarusuario">
 
-    <EditText
-        android:id="@+id/is_ruedtNombre"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="@string/is_varstringnombre" />
-    <EditText
-        android:id="@+id/is_ruedtApellido"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/is_ruedtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/redondeado_transparente"
+            android:layout_margin="@dimen/activity_margin"
+            android:inputType="textPersonName"
+            android:hint="@string/is_varstringnombre"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="@string/is_varstringapellido" />
-    <EditText
-        android:id="@+id/is_ruedtCorreo"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/is_ruedtApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/redondeado_transparente"
+            android:layout_margin="@dimen/activity_margin"
+            android:inputType="textPersonName"
+            android:hint="@string/is_varstringapellido"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="@string/is_varstringcorreo" />
-    <EditText
-        android:id="@+id/is_ruedtTelefono"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/is_ruedtCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/redondeado_transparente"
+            android:layout_margin="@dimen/activity_margin"
+            android:inputType="textEmailAddress"
+            android:hint="@string/is_varstringcorreo"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:hint="@string/is_varstringtelefono" />
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/is_ruedtTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/redondeado_transparente"
+            android:layout_margin="@dimen/activity_margin"
+            android:inputType="phone"
+            android:hint="@string/is_varstringtelefono"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/is_rubtnRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_margin"
+        android:background="@drawable/redondeado_naranja"
         android:text="@string/is_varstringbtnregistrar" />
 
     <CheckBox
         android:id="@+id/is_ruchkbTerminosycondiciones"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="@dimen/activity_margin"
         android:text="@string/is_varstringchckterminos"/>
 
 </LinearLayout>

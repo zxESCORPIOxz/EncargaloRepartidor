@@ -3,13 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_miperfil">
+    app:startDestination="@+id/nav_menuinicio">
 
     <fragment
         android:id="@+id/nav_miperfil"
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil.pf_frgperfil"
         android:label="@string/menu_miperfil"
-        tools:layout="@layout/fragment_pf_frgperfil" />
+        tools:layout="@layout/fragment_pf_frgperfil" >
+        <action
+            android:id="@+id/action_nav_miperfil_to_nav_cargardocumento"
+            app:destination="@id/nav_cargardocumento" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_cargardocumento"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil.pf_frgcargardocumentos"
+        android:label="Cargar documentos"
+        tools:layout="@layout/fragment_pf_frgcargardocumentos" >
+        <action
+            android:id="@+id/action_nav_cargardocumento_to_nav_docsubido"
+            app:destination="@id/nav_docsubido" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_docsubido"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil.pf_frgdocagregados"
+        android:label="Cocumentos subidos"
+        tools:layout="@layout/fragment_pf_frgdocagregados" >
+        <action
+            android:id="@+id/action_nav_docsubido_to_nav_menuinicio"
+            app:destination="@id/nav_menuinicio" />
+    </fragment>
     <fragment
         android:id="@+id/nav_pedidos"
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgmenupedidos"
@@ -18,6 +40,12 @@
         <action
             android:id="@+id/action_nav_pedidos_to_nav_recogerorden"
             app:destination="@id/nav_recogerorden" />
+        <action
+            android:id="@+id/action_nav_pedidos_to_nav_historialordenes"
+            app:destination="@id/nav_historialordenes" />
+        <action
+            android:id="@+id/action_nav_pedidos_to_nav_historialcobros"
+            app:destination="@id/nav_historialcobros" />
     </fragment>
     <fragment
         android:id="@+id/nav_notificacion"
@@ -73,10 +101,63 @@
             android:id="@+id/action_nav_recogerorden_to_nav_confirmarproductos"
             app:destination="@id/nav_confirmarproductos" />
     </fragment>
+
     <fragment
         android:id="@+id/nav_confirmarproductos"
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgconfirmarproductos"
         android:label="Orden en curso : Confirmar productos"
-        tools:layout="@layout/fragment_pe_frgconfirmarproductos"/>
+        tools:layout="@layout/fragment_pe_frgconfirmarproductos">
+        <action
+            android:id="@+id/action_nav_confirmarproductos_to_nav_entregarpedido"
+            app:destination="@id/nav_entregarpedido" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_entregarpedido"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgentregarorden"
+        android:label="Orden en curso : Entregar orden"
+        tools:layout="@layout/fragment_pe_frgentregarorden">
+        <action
+            android:id="@+id/action_nav_entregarpedido_to_nav_cobrarpedido"
+            app:destination="@id/nav_cobrarpedido" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/nav_menuinicio"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.me_frginicio"
+        android:label="INICIO"
+        tools:layout="@layout/fragment_me_frginicio">
+        <action
+            android:id="@+id/action_nav_menuinicio_to_nav_miperfil"
+            app:destination="@id/nav_miperfil" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_cobrarpedido"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgcobrarorden"
+        android:label="Orden en curso : Cobrar orden"
+        tools:layout="@layout/fragment_pe_frgcobrarorden">
+        <action
+            android:id="@+id/action_nav_cobrarpedido_to_nav_ordencompletada"
+            app:destination="@id/nav_ordencompletada" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_ordencompletada"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgordencompletada"
+        android:label="Orden en curso : Orden completada"
+        tools:layout="@layout/fragment_pe_frgordencompletada">
+        <action
+            android:id="@+id/action_nav_ordencompletada_to_nav_menuinicio"
+            app:destination="@id/nav_menuinicio" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_historialordenes"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frghistorialordenes"
+        android:label="Mis ordenes"
+        tools:layout="@layout/fragment_pe_frghistorialordenes"/>
+    <fragment
+        android:id="@+id/nav_historialcobros"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frghistorialcobros"
+        android:label="Mis cobros"
+        tools:layout="@layout/fragment_pe_frghistorialcobros"/>
 </navigation>

@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+
+<fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_weight="1"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgentregarorden"
+    android:layout_height="match_parent"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_weight="2"
+    android:background="@color/grey_400"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/redondeado_blanco"
+        android:layout_margin="@dimen/activity_margin"
+        android:padding="@dimen/btn_type_padding"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID ORDEN : 999999999"
+            style="@style/pe_rgotxtidorden"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_margin"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet"
+            style="@style/pe_rgotxtdireccion"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet"
+            style="@style/pe_rgotxtdireccion"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_margin"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pe_etobtnDetalle"
+                android:text="@string/pe_varstringbtndetalle"
+                style="@style/pe_rgobtnfunciones"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/pe_etobtnChat"
+                android:text="@string/pe_varstringchat"
+                style="@style/pe_rgobtnfunciones"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/pe_etobtncobrar"
+        android:layout_width="@dimen/btn_type01_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/redondeado_verde"
+        style="@style/pe_rgobtngeneral"
+        android:text="@string/pe_varstringcobrar"
+        />
+
+</LinearLayout>
+
+</LinearLayout>

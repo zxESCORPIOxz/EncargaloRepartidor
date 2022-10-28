@@ -30,6 +30,18 @@ public class pe_frgmenupedidos extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.action_nav_pedidos_to_nav_recogerorden);
             }
         });
+        pe_mpebtnhistorialdeordenes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_nav_pedidos_to_nav_historialordenes);
+            }
+        });
+        pe_mpebtncobrosrealizados.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_nav_pedidos_to_nav_historialcobros);
+            }
+        });
 
         return view;
     }
