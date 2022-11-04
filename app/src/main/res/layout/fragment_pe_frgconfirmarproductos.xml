@@ -9,7 +9,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="@dimen/inner_frame_layout_padding">
 
         <LinearLayout
@@ -18,33 +18,35 @@
             android:layout_margin="@dimen/activity_margin"
             android:background="@drawable/redondeado_blanco"
             android:orientation="vertical"
-            android:padding="@dimen/inner_frame_layout_padding">
+            android:padding="@dimen/activity_margin">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
+                    android:id="@+id/pe_dettxtidorden"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ID ORDEN"
                     style="@style/pe_rgotxtidorden"
                     android:layout_weight="1"/>
                 <TextView
+                    android:id="@+id/pe_dettxtfechahora"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="FECHA"
                     style="@style/pe_rgotxtidorden"
                     android:layout_weight="1"/>
             </LinearLayout>
             <TextView
+                android:id="@+id/pe_dettxtclientenombre"
+                android:layout_marginVertical="@dimen/inner_frame_layout_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet"
                 style="@style/pe_rgotxtdireccion"/>
             <TextView
+                android:id="@+id/pe_dettxtnombredireccion"
+                android:layout_marginVertical="@dimen/inner_frame_layout_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet"
                 style="@style/pe_rgotxtdireccion"/>
             <Space
                 android:layout_width="match_parent"
@@ -57,7 +59,39 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/activity_margin"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginVertical="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Descripción"
+                    android:textColor="@color/blackPrimary"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"/>
+                <TextView
+                    android:text="Cantidad"
+                    android:textColor="@color/blackPrimary"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"/>
+                <TextView
+                    android:text="Subtotal"
+                    android:textColor="@color/blackPrimary"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"/>
+
+            </LinearLayout>
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/pe_detrclvlistaproductos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
@@ -73,24 +107,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/activity_margin"/>
             <TextView
+                android:id="@+id/pe_dettxtmonto"
+                android:layout_marginVertical="@dimen/inner_frame_layout_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet"
                 style="@style/pe_rgotxtdireccion"/>
             <TextView
+                android:id="@+id/pe_dettxttipodepago"
+                android:layout_marginVertical="@dimen/inner_frame_layout_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet"
                 style="@style/pe_rgotxtdireccion"/>
             <TextView
+                android:id="@+id/pe_dettxthorayfechadeentrega"
+                android:layout_marginVertical="@dimen/inner_frame_layout_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet"
                 style="@style/pe_rgotxtdireccion"/>
             <TextView
+                android:id="@+id/pe_dettxttiempo"
+                android:layout_marginVertical="@dimen/inner_frame_layout_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet"
+                android:textAlignment="textEnd"
+                android:drawableRight="@drawable/pe_iconrelog"
                 style="@style/pe_rgotxtdireccion"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,14 +138,14 @@
                 android:orientation="horizontal">
                 <Button
                     android:id="@+id/pe_cfpbtnDetalle"
-                    android:text="Detalle"
+                    android:text="@string/pe_varstringdetalle"
                     style="@style/pe_rgobtnfunciones"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"/>
                 <Button
                     android:id="@+id/pe_cfpbtnChat"
-                    android:text="Chat"
+                    android:text="@string/pe_varstringchat"
                     style="@style/pe_rgobtnfunciones"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
@@ -119,8 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/redondeado_melon"
-            android:text="Ir a recoger al pedido" />
-
+            android:text="@string/pe_varstringir_a_recoger_al_pedido" />
     </LinearLayout>
 
 </ScrollView>

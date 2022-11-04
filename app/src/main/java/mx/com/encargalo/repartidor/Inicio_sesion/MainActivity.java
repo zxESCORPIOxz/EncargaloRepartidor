@@ -6,7 +6,15 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -19,6 +27,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import org.json.JSONObject;
+
 import mx.com.encargalo.repartidor.UTIL.DATOS;
 import mx.com.repartidor.R;
 
@@ -29,12 +39,16 @@ public class MainActivity extends AppCompatActivity {
     TextView me_menutxtNombreUsuario;
     ImageView me_menuimgvwimgUsuario;
 
+    RequestQueue request;
+    JsonObjectRequest jsonObjectRequest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        request= Volley.newRequestQueue(this);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -59,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
         me_menutxtNombreUsuario = headView.findViewById(R.id.me_menutxtNombreUsuario);
         me_menuimgvwimgUsuario = headView.findViewById(R.id.me_menuimgvwimgUsuario);
 
-        me_menutxtNombreUsuario.setText(sharedPreferences
-                .getString(DATOS.VARGOB_ID_USUARIO,"Nombre no encontrado"));
+
+        me_modgetNombre(sharedPreferences.getString(DATOS.VARGOB_ID_USUARIO,"X"));
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_menuinicio,
@@ -73,6 +87,31 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
+
+    public void me_modgetNombre(String Documento){
+        String APIREST_URL = DATOS.IP_SERVER+ "c_nombreusuario.php?"+
+                "iDocumentoPersona=" + Documento;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                SharedPreferences sharedPreferences =
+                        getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(DATOS.VARGOB_ID_REPARTIDOR, response.optString("idRepartidor"));
+                editor.apply();
+                me_menutxtNombreUsuario.setText(response.optString("Nombre"));
+                Glide.with(MainActivity.this).load(DATOS.IP_SERVER
+                        +response.optString("Imagen")).into(me_menuimgvwimgUsuario);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                me_menutxtNombreUsuario.setText(DATOS.NO_ENCONTRADO);
+            }
+        });
+        request.add(jsonObjectRequest);
     }
 
     @Override

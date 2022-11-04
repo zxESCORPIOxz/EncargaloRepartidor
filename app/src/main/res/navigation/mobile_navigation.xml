@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_nav_pedidos_to_nav_historialcobros"
             app:destination="@id/nav_historialcobros" />
+        <action
+            android:id="@+id/action_nav_pedidos_to_nav_entregarpedido"
+            app:destination="@id/nav_entregarpedido" />
     </fragment>
     <fragment
         android:id="@+id/nav_notificacion"

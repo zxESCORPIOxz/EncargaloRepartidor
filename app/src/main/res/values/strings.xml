@@ -51,6 +51,10 @@
     <string name="pf_varstringregistro_de_antecedentes">Registro de antecedentes</string>
     <string name="pf_varstringtarjeta_de_propiedad">Tarjeta de propiedad</string>
     <string name="pf_varstringregistrar">Registrar</string>
+    <string name="pf_varstringsuba_la_imagen_dpf_varstringel_documento_requerido">Suba la imagen del documento requerido</string>
+    <string name="pf_varstringdocumentos_agregados_correctamente">Documentos agregados correctamente</string>
+    <string name="pf_varstringeso_fue_rapido">Eso fue rapido!</string>
+    <string name="pf_varstringvolver_a_inicio">Volver a inicio</string>
 
     <string-array name="vehiculos">
         <item>Categoria</item>
@@ -75,6 +79,12 @@
     <string name="pe_varstringorden_en_curso">Orden en curso</string>
     <string name="pe_varstringhistorial_de_ordenes">Historial de ordenes</string>
     <string name="pe_varstringcobros_realizados">Cobros realizados</string>
+    <string name="pe_varstringcobrar">Cobrar</string>
+    <string name="pe_varstringseguro_que_desea_completar_la_entrega">¿Seguro que desea completar la entrega?</string>
+    <string name="pe_varstringorden_entregada_exitosamente">Orden N°30212548 fue entregada exitosamente</string>
+    <string name="pe_varstringgracias">Gracias!</string>
+    <string name="pe_varstringnoexistependientes">No existe ordenes pendientes</string>
+    <string name="pe_varstringdetalle">Detalle</string>
 
     <!-- Modulo Soporte(sp)  -->
 
@@ -88,15 +98,8 @@
 
     <string name="me_varstringbienvenido_al_app_repartidor">Bienvenido al app repartidor</string>
     <string name="me_varstringcomensar">Comensar</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="pf_varstringsuba_la_imagen_dpf_varstringel_documento_requerido">Suba la imagen del documento requerido</string>
-    <string name="pf_varstringdocumentos_agregados_correctamente">Documentos agregados correctamente</string>
-    <string name="pf_varstringeso_fue_rapido">Eso fue rapido!</string>
-    <string name="pf_varstringvolver_a_inicio">Volver a inicio</string>
-    <string name="pe_varstringcobrar">Cobrar</string>
-    <string name="pe_varstringseguro_que_desea_completar_la_entrega">¿Seguro que desea completar la entrega?</string>
-    <string name="pe_varstringorden_entregada_exitosamente">Orden N°30212548 fue entregada exitosamente</string>
-    <string name="pe_varstringgracias">Gracias!</string>
 
 </resources>

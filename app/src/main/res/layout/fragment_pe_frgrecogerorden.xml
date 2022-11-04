@@ -10,13 +10,13 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="2"
         tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgrecogerorden"
         android:layout_height="match_parent"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:background="@color/grey_400"
         android:orientation="vertical"
         android:gravity="center_vertical"
@@ -33,9 +33,9 @@
             >
 
             <TextView
+                android:id="@+id/pe_rgotxtidorden_fecha_hora"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ID ORDEN : 999999999"
                 style="@style/pe_rgotxtidorden"/>
 
             <Space
@@ -43,15 +43,15 @@
                 android:layout_height="@dimen/activity_margin"/>
 
             <TextView
+                android:id="@+id/pe_rgotxtnombretienda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet"
                 style="@style/pe_rgotxtdireccion"/>
 
             <TextView
+                android:id="@+id/pe_rgotxtdireccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet"
                 style="@style/pe_rgotxtdireccion"/>
 
             <Space
