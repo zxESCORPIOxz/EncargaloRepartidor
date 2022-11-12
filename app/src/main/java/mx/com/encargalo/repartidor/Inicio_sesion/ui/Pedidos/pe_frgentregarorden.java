@@ -16,6 +16,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -59,6 +60,7 @@ public class pe_frgentregarorden extends Fragment {
     View viewinterno;
 
     Marker ubicacionrt, destino;
+    LatLng coordenadasO = null;
 
     GoogleMap mMap;
 
@@ -78,27 +80,31 @@ public class pe_frgentregarorden extends Fragment {
             }else {
             }
             LocationManager lm = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
-            Location l = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-            Toast.makeText(getContext(), l.getLatitude()+"-"+l.getLongitude(), Toast.LENGTH_SHORT).show();
-            LatLng coordenadasO = new LatLng(l.getLatitude(),l.getLongitude());
-            ubicacionrt = googleMap.addMarker(new MarkerOptions().position(coordenadasO).draggable(true)
-                    .title("Repartidor").icon(BitmapDescriptorFactory.fromResource(R.drawable.pe_imgrepartidorgps)));
-
-            CameraUpdate myUbicacion = CameraUpdateFactory.newLatLngZoom(coordenadasO, 16);
-            googleMap.animateCamera(myUbicacion);
-            try {
-                Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
-                List<Address> list = geocoder.getFromLocation(
-                        l.getLatitude(),l.getLongitude(), 1);
-                if (!list.isEmpty()) {
-                    Address DirCalle = list.get(0);
-                    Toast.makeText(getContext(), DirCalle.getAddressLine(0), Toast.LENGTH_SHORT).show();
+            lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, new LocationListener() {
+                @Override
+                public void onLocationChanged(@NonNull Location l) {
+                    coordenadasO = new LatLng(l.getLatitude(),l.getLongitude());
+                    if(ubicacionrt == null){
+                        ubicacionrt = mMap.addMarker(new MarkerOptions().draggable(true).position(coordenadasO)
+                                .title("Repartidor").icon(BitmapDescriptorFactory.fromResource(R.drawable.pe_imgrepartidorgps)));
+                        CameraUpdate myUbicacion = CameraUpdateFactory.newLatLngZoom(coordenadasO, 20);
+                        mMap.animateCamera(myUbicacion);
+                    }
+                    ubicacionrt.setPosition(coordenadasO);
                 }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            });
+//            try {
+//                Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+//                List<Address> list = geocoder.getFromLocation(
+//                        l.getLatitude(),l.getLongitude(), 1);
+//                if (!list.isEmpty()) {
+//                    Address DirCalle = list.get(0);
+//                    Toast.makeText(getContext(), DirCalle.getAddressLine(0), Toast.LENGTH_SHORT).show();
+//                }
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         }
     };
 

@@ -13,7 +13,9 @@
         android:layout_weight="2"
         tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgrecogerorden"
         android:layout_height="match_parent"/>
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_weight="3"
@@ -93,5 +95,5 @@
             />
 
     </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>

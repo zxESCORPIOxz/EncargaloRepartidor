@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void me_modgetNombre(String Documento){
-        String APIREST_URL = DATOS.IP_SERVER+ "c_nombreusuario.php?"+
+        String APIREST_URL = DATOS.IP_SERVER+ "c_nombre_usuario_repartidor.php?"+
                 "iDocumentoPersona=" + Documento;
         APIREST_URL = APIREST_URL.replace(" ", "%20");
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences =
                         getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(DATOS.VARGOB_ID_REPARTIDOR, response.optString("idRepartidor"));
+                editor.putString(DATOS.VARGOB_ID_REPARTIDOR,response.optString("idRepartidor"));//response.optString("idRepartidor")
                 editor.apply();
                 me_menutxtNombreUsuario.setText(response.optString("Nombre"));
                 Glide.with(MainActivity.this).load(DATOS.IP_SERVER
