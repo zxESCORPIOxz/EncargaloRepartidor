@@ -10,24 +10,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/sp_pfbtnprg"
+        android:background="@drawable/outlinebtn_green"
         android:text="Pregunta 1" />
     <Button
         android:id="@+id/sp_pfbtnprg2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/sp_pfbtnprg"
+        android:background="@drawable/outlinebtn_green"
         android:text="Pregunta 2" />
     <Button
         android:id="@+id/sp_pfbtnprg3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/sp_pfbtnprg"
+        android:background="@drawable/outlinebtn_green"
         android:text="Pregunta 3" />
     <Button
         android:id="@+id/sp_pfbtnprg4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/outlinebtn_green"
         style="@style/sp_pfbtnprg"
+
         android:text="Pregunta 4" />
 
 </LinearLayout>

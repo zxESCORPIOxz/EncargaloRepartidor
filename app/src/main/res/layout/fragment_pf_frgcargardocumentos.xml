@@ -29,11 +29,12 @@
 
     <Button
         android:id="@+id/pf_rubtnRegistrar"
+        style="@style/textcolor2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_margin="@dimen/activity_margin"
-        android:background="@drawable/redondeado_naranja"
+        android:background="@drawable/containedbtn_green"
         android:text="@string/pf_varstringregistrar" />
 
 </FrameLayout>

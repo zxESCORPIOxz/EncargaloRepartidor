@@ -47,20 +47,21 @@
 
         <Button
             android:id="@+id/is_vcbtnreenviar"
+            style="@style/Outlined_button_blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_margin"
             android:layout_weight="1"
-            android:background="@drawable/redondeado_cyan"
+            android:background="@drawable/outlinebtn_blue"
             android:text="@string/is_varstringbtnreenviar" />
 
         <Button
             android:id="@+id/is_vcbtncontinuar"
+            style="@style/Contained_button_blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_margin"
             android:layout_weight="1"
-            android:background="@drawable/redondeado_cyan"
             android:text="@string/is_varstringcontinuar" />
     </LinearLayout>
 </FrameLayout>

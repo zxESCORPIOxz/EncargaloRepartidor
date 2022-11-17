@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cyan_400"
+    android:background="@color/grey"
     android:padding="@dimen/activity_margin"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgordencompletada">
 
@@ -24,6 +24,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/Headline_6"
             android:gravity="center"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -32,6 +33,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/Subtitle_1"
             android:gravity="center"
             android:layout_marginTop="30dp"
             android:textSize="20sp"
@@ -41,12 +43,13 @@
 
     <Button
         android:id="@+id/pe_ocbtnRegistrar"
+        style="@style/textcolor2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
         android:paddingHorizontal="50dp"
         android:layout_margin="@dimen/activity_margin"
-        android:background="@drawable/redondeado_blanco"
+        android:background="@drawable/containedbtn_green"
         android:text="@string/pf_varstringvolver_a_inicio" />
 
 </FrameLayout>

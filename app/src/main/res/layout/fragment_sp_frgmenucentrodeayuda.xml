@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/sp_mcabtnpreguntas"
+        android:background="@drawable/outlinebtn_green"
         android:text="Preguntas frecuentes" />
 
     <Button
@@ -17,13 +18,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/sp_mcabtnvideos"
+        android:background="@drawable/outlinebtn_green"
         android:text="Videos demostrativos" />
 
     <Button
         android:id="@+id/sp_mcabtnconsulta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/pe_mpebtnhistorialdeordenes"
+        style="@style/sp_mcabtnconsulta"
+        android:background="@drawable/outlinebtn_green"
         android:text="Realiza tu consulta" />
 
 </LinearLayout>

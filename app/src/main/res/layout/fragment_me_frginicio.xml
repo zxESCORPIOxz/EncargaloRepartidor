@@ -25,11 +25,12 @@
 
     <Button
         android:id="@+id/me_mebtncontimuar"
-        android:layout_width="match_parent"
+        style="@style/Contained_button_blue"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/activity_margin"
-        android:layout_marginHorizontal="60dp"
-        android:background="@drawable/redondeado_naranja"
+        android:layout_marginHorizontal="141dp"
+        android:background="@drawable/redondeado_azul"
         android:text="@string/me_varstringcomensar" />
 
 </LinearLayout>

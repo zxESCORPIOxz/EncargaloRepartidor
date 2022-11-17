@@ -42,6 +42,25 @@
     <!-- Modulo login -->
 
     <style name="is_btnlogin">
+        <item name="android:background">@drawable/containedbtn_blue</item>
+        <item name="android:paddingTop">@dimen/btn_type05_paddingTop</item>
+        <item name="android:paddingBottom">@dimen/btn_type05_paddingBottom</item>
+        <item name="android:paddingLeft">@dimen/btn_type05_paddingLeft</item>
+        <item name="android:paddingRight">@dimen/btn_type05_paddingRight</item>
+        <item name="android:layout_marginTop">@dimen/btn_type05_paddingTop</item>
+        <item name="android:layout_marginBottom">@dimen/btn_type05_paddingBottom</item>
+        <item name="android:layout_marginLeft">@dimen/btn_type05_paddingLeft</item>
+        <item name="android:layout_marginRight">@dimen/btn_type05_paddingRight</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/whitePrimary</item>
+    </style>
+
+    <style name="is_btnloginGoogle" parent="is_btnlogin">
+        <item name="android:background">@drawable/containedbtn_green</item>
+    </style>
+    <!-- Modulo login, usuario -->
+
+    <style name="is_usuario">
         <item name="android:background">@drawable/redondeado_azul</item>
         <item name="android:paddingTop">@dimen/btn_type05_paddingTop</item>
         <item name="android:paddingBottom">@dimen/btn_type05_paddingBottom</item>
@@ -53,6 +72,47 @@
         <item name="android:layout_marginRight">@dimen/btn_type05_paddingRight</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:textColor">@color/whitePrimary</item>
+    </style>
+    <!-- Modulo login, validación código -->
+    <style name="is_validacioncod">
+    <item name="android:paddingTop">@dimen/btn_type05_paddingTop</item>
+    <item name="android:paddingBottom">@dimen/btn_type05_paddingBottom</item>
+    <item name="android:paddingLeft">@dimen/btn_type05_paddingLeft</item>
+    <item name="android:paddingRight">@dimen/btn_type05_paddingRight</item>
+    <item name="android:layout_marginTop">@dimen/btn_type05_paddingTop</item>
+    <item name="android:layout_marginBottom">@dimen/btn_type05_paddingBottom</item>
+    <item name="android:layout_marginLeft">@dimen/btn_type05_paddingLeft</item>
+    <item name="android:layout_marginRight">@dimen/btn_type05_paddingRight</item>
+    <item name="android:textAlignment">textStart</item>
+    <item name="android:textColor">#1977AB</item>
+    </style>
+
+    <style name="is_continuar">
+        <item name="android:background">@drawable/redondeado_azul</item>
+        <item name="android:paddingTop">@dimen/btn_type05_paddingTop</item>
+        <item name="android:paddingBottom">@dimen/btn_type05_paddingBottom</item>
+        <item name="android:paddingLeft">@dimen/btn_type05_paddingLeft</item>
+        <item name="android:paddingRight">@dimen/btn_type05_paddingRight</item>
+        <item name="android:layout_marginTop">@dimen/btn_type05_paddingTop</item>
+        <item name="android:layout_marginBottom">@dimen/btn_type05_paddingBottom</item>
+        <item name="android:layout_marginLeft">@dimen/btn_type05_paddingLeft</item>
+        <item name="android:layout_marginRight">@dimen/btn_type05_paddingRight</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/whitePrimary</item>
+    </style>
+    <!-- Modulo menú. -->
+    <style name="me_inicio">
+    <item name="android:background">@drawable/redondeado_azul</item>
+    <item name="android:paddingTop">@dimen/btn_type05_paddingTop</item>
+    <item name="android:paddingBottom">@dimen/btn_type05_paddingBottom</item>
+    <item name="android:paddingLeft">@dimen/btn_type05_paddingLeft</item>
+    <item name="android:paddingRight">@dimen/btn_type05_paddingRight</item>
+    <item name="android:layout_marginTop">@dimen/btn_type05_paddingTop</item>
+    <item name="android:layout_marginBottom">@dimen/btn_type05_paddingBottom</item>
+    <item name="android:layout_marginLeft">@dimen/btn_type05_paddingLeft</item>
+    <item name="android:layout_marginRight">@dimen/btn_type05_paddingRight</item>
+    <item name="android:textAlignment">textStart</item>
+    <item name="android:textColor">@color/whitePrimary</item>
     </style>
 
     <!-- Modulo perfil. -->
@@ -112,21 +172,26 @@
         <item name="android:layout_margin">@dimen/inner_frame_layout_padding</item>
     </style>
     <!-- Modulo pedidos. -->
+
+
     <style name="pe_mpebtngeneral">
         <item name="android:layout_margin">@dimen/activity_margin</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:textSize">@dimen/txt_size_paragraph</item>
     </style>
 
     <style name="pe_mpebtnhistorialdeordenes" parent="pe_mpebtngeneral">
-        <item name="android:drawableLeft">@drawable/pe_icontruck</item>
+        <item name="android:drawableLeft">@drawable/icon_track</item>
+        <item name="android:textColor">@color/green</item>
     </style>
     <style name="pe_mpebtncobrosrealizados" parent="pe_mpebtngeneral">
-        <item name="android:drawableLeft">@drawable/pf_iconbilletes</item>
+        <item name="android:drawableLeft">@drawable/icon_cash</item>
+        <item name="android:textColor">@color/green</item>
     </style>
     <style name="pe_mpebtnordenencurso" parent="pe_mpebtngeneral">
-        <item name="android:drawableLeft">@drawable/pe_iconqrcode</item>
+        <item name="android:drawableLeft">@drawable/icon_qr</item>
+        <item name="android:textColor">@color/green</item>
     </style>
     <style name="pe_rgobtngeneral">
         <item name="android:layout_margin">@dimen/activity_margin</item>
@@ -178,54 +243,231 @@
         <item name="android:drawableLeft">@drawable/sp_iconinfosquare</item>
         <item name="android:drawableRight">@drawable/icon_chevronright</item>
     </style>
-
     <style name="sp_mspbtncerrarsesion" parent="sp_mspbtngeneral">
         <item name="android:drawableLeft">@drawable/sp_iconboxarrowright</item>
         <item name="android:drawableRight">@drawable/icon_chevronright</item>
     </style>
     <!-- Modulo Soporte - centro de ayuda. -->
+
     <style name="sp_mcabtnpreguntas">
-        <item name="android:background">@color/green_600</item>
+        <item name="android:textColor">@color/green</item>
         <item name="android:layout_margin">@dimen/activity_margin</item>
         <item name="android:padding">10dp</item>
         <item name="android:textAlignment">textStart</item>
-        <item name="android:drawableLeft">@drawable/sp_iconquestionlg</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableLeft">@drawable/icon_question</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
     </style>
 
     <style name="sp_mcabtnvideos">
-        <item name="android:background">@color/green_600</item>
+        <item name="android:textColor">@color/green</item>
         <item name="android:layout_margin">@dimen/activity_margin</item>
         <item name="android:padding">10dp</item>
         <item name="android:textAlignment">textStart</item>
-        <item name="android:drawableLeft">@drawable/sp_iconplaybtnfill</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableLeft">@drawable/icon_youtube</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
     </style>
 
     <style name="sp_mcabtnconsulta">
-        <item name="android:background">@color/green_600</item>
+        <item name="android:textColor">@color/green</item>
         <item name="android:layout_margin">@dimen/activity_margin</item>
         <item name="android:padding">10dp</item>
         <item name="android:textAlignment">textStart</item>
-        <item name="android:drawableLeft">@drawable/sp_iconpluscirclefill</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableLeft">@drawable/icon_query</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
     </style>
     <!-- Modulo Soporte - preguntas. -->
     <style name="sp_pfbtnprg">
-        <item name="android:background">@color/green_600</item>
+        <item name="android:textColor">@color/green</item>
         <item name="android:layout_margin">@dimen/activity_margin</item>
         <item name="android:padding">10dp</item>
         <item name="android:textAlignment">textStart</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
     </style>
     <!-- Modulo Soporte - terminos y condiciones. -->
 
-    <style name="tc_mtcbtnordenencurso">
-        <item name="android:background">@color/green_600</item>
+    <style name="tc_mtcbtnterminosycondiciones">
+        <item name="android:textColor">@color/green</item>
         <item name="android:layout_margin">@dimen/activity_margin</item>
         <item name="android:padding">10dp</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:drawableLeft">@drawable/ic_prueba</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableLeft">@drawable/so_iconterminosycondiciones</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
+    </style>
+
+    <style name="tc_mtcbtnpoliticasdeprivacidad">
+        <item name="android:textColor">@color/green</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:drawableLeft">@drawable/ic_prueba</item>
+        <item name="android:drawableLeft">@drawable/icon_privacy</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
+    </style>
+
+    <style name="tc_mtcbtnproductosprohibidos">
+        <item name="android:textColor">@color/green</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:drawableLeft">@drawable/ic_prueba</item>
+        <item name="android:drawableLeft">@drawable/icon_prohibided</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
+    </style>
+
+    <!--Estilos de textos-->
+    <style name="txtstyle_content">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+    </style>
+    <style name="txtstyle_content_bold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="txtstyle_title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+    </style>
+    <style name="txtstyle_white">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/whitePrimary</item>
+
+    </style>
+    <style name="txtstyle_blue">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/blue_600</item>
+    </style>
+    <style name="txtstyle_h1">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">27sp</item>
+        <item name="android:textColor">@color/blackPrimary</item>
+    </style>
+
+    <!--Estilos de textos NUEVOS-->
+    <style name="textcolor1">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textcolor2">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="textcolor3">
+        <item name="android:textColor">@color/green</item>
+    </style>
+    <style name="textcolor4">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="Headline_5" parent="textcolor1">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Headline_6" parent="textcolor1">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Subtitle_1" parent="textcolor1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    <style name="Subtitle_2" parent="textcolor1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    <style name="Body_1" parent="textcolor1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    <style name="Body_2" parent="textcolor1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+    <style name="Body_3" parent="textcolor1">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+    <style name="Button" parent="textcolor1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.12</item>
+    </style>
+
+    <style name="NOMBRE_ESTILO" parent="Body_2">
+        <item name="android:background">@drawable/containedbtn_green</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Outlined_buttonXL_black" parent="Body_1">
+        <item name="android:background">@drawable/outlinebtn_black</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="Outlined_buttonXL_green" parent="Body_1">
+        <item name="android:background">@drawable/outlinebtn_green</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="Outlined_buttonXL_blue" parent="Body_1">
+        <item name="android:background">@drawable/outlinebtn_blue</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Body_2_b">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <!--Botones NUEVO-->
+    <style name="Contained_button_blue" parent="Button">
+        <item name="android:background">@drawable/containedbtn_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Contained_button_green" parent="Button">
+        <item name="android:background">@drawable/containedbtn_green</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Outlined_button_blue" parent="Button">
+        <item name="android:background">@drawable/outline_blue</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="Text_button_red" parent="Button">
+        <item name="android:background">@drawable/textbutton</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="Text_button_blue" parent="Button">
+        <item name="android:background">@drawable/textbutton</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!--Inputs NUEVO-->
+    <style name="textinput" parent="Body_2">
+        <item name="android:textColor">@color/grey_dark</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+    <style name="input" parent="Body_2">
+        <item name="android:background">@drawable/inputstyle</item>
+    </style>
+
+
+    <style name="textinput1" parent="Body_2">
+        <item name="android:textColor">@color/grey_dark</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+    <style name="input1" parent="Body_2">
+        <item name="android:background">@drawable/inputstyle</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 </resources>

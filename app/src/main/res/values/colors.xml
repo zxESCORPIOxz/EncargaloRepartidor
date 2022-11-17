@@ -24,7 +24,7 @@
 <!--    <color name="orangePrimary">#F4C74A</color>-->
 <!--    <color name="redPrimary">#E44848</color>-->
 <!--    <color name="purplePrimary">#B6A6D6</color>-->
-<!--    <color name="melonPrimary">#F9CA9C</color>-->
+    <color name="melonPrimary">#F9CA9C</color>
 <!--    <color name="transparentPrimary">#00000000</color>-->
 
 <!--    <color name="white">#FFFFFF</color>-->
@@ -35,30 +35,40 @@
 <!--    <color name="grey_dark">#878787</color>-->
 <!--    <color name="green">#109A83</color>-->
 
-    <color name="colorPrimary">@color/blue_400</color>
-    <color name="colorPrimaryDark">@color/blackPrimary</color>
-    <color name="colorAccent">@color/blue_600</color>
+    <color name="colorPrimary">#00AAE4</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
 
-    <color name="blue_400">#1977AB</color>
-    <color name="blue_600">#1977AB</color>
+    <color name="blue_400">#9FC5F8</color>
+    <color name="blue_600">#0366AA</color>
 
-    <color name="cyan_400">#878787</color>
-    <color name="cyan_600">#878787</color>
+    <color name="cyan_400">#A2C3C8</color>
+    <color name="cyan_600">#01FFFF</color>
 
-    <color name="green_400">#BF109A83</color>
-    <color name="green_600">#BF109A83</color>
-    <color name="green_800">#BF109A83</color>
+    <color name="green_400">#B6D7A8</color>
+    <color name="green_600">#91C57B</color>
+    <color name="green_800">#367B19</color>
 
-    <color name="grey_200">#878787</color>
-    <color name="grey_400">#F5F5F5</color>
-    <color name="grey_600">#878787</color>
-    <color name="grey_800">#878787</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_400">#D9D9D9</color>
+    <color name="grey_600">#909090</color>
+    <color name="grey_800">#666666</color>
 
     <color name="whitePrimary">#FFFFFF</color>
     <color name="blackPrimary">#1D1D1D</color>
-    <color name="orangePrimary">#1977AB</color>
-    <color name="redPrimary">#E3001B</color>
-    <color name="purplePrimary">#1977AB</color>
-    <color name="melonPrimary">#E3001B</color>
+    <color name="orangePrimary">#F4C74A</color>
+    <color name="redPrimary">#E44848</color>
+    <color name="purplePrimary">#B6A6D6</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#06141D</color>
+    <color name="blue">#1977AB</color>
+    <color name="red">#E3001B</color>
+    <color name="grey">#F5F5F5</color>
+    <color name="grey_dark">#878787</color>
+    <color name="green">#109A83</color>
     <color name="transparentPrimary">#00000000</color>
+
+
+
 </resources>

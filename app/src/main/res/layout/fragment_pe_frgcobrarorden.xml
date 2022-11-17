@@ -81,19 +81,21 @@
 
     <Button
         android:id="@+id/pe_cobbtnregistrarcobro"
+        style="@style/Contained_button_blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_margin"
-        android:background="@drawable/redondeado_azul_400"
+        android:background="@drawable/redondeado_azul"
         android:text="Registrar cobro"
         />
 
     <Button
         android:id="@+id/pe_cobbtnentregarorden"
+        style="@style/Contained_button_green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_margin"
-        android:background="@drawable/redondeado_azul_400"
+        android:background="@drawable/redondeado_green"
         android:text="Entregar producto"
         />
 

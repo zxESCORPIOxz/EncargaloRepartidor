@@ -66,19 +66,21 @@ android:orientation="vertical">
 
             <Button
                 android:id="@+id/pe_etobtnDetalle"
-                android:text="@string/pe_varstringbtndetalle"
-                style="@style/pe_rgobtnfunciones"
+                style="@style/textcolor3"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"/>
+                android:background="@drawable/containedbtn_transparente"
+                android:layout_height="wrap_content"
+                android:text="@string/pe_varstringbtndetalle"/>
 
             <Button
                 android:id="@+id/pe_etobtnChat"
-                android:text="@string/pe_varstringchat"
-                style="@style/pe_rgobtnfunciones"
+                style="@style/textcolor3"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"/>
+                android:background="@drawable/containedbtn_transparente"
+                android:layout_height="wrap_content"
+                android:text="@string/pe_varstringchat"/>
 
         </LinearLayout>
 
@@ -86,10 +88,10 @@ android:orientation="vertical">
 
     <Button
         android:id="@+id/pe_etobtncobrar"
-        android:layout_width="@dimen/btn_type01_width"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/redondeado_verde"
-        style="@style/pe_rgobtngeneral"
+        android:layout_gravity="center"
+        style="@style/Contained_button_green"
         android:text="@string/pe_varstringcobrar"
         />
 

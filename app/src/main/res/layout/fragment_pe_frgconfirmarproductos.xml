@@ -138,27 +138,30 @@
                 android:orientation="horizontal">
                 <Button
                     android:id="@+id/pe_cfpbtnDetalle"
-                    android:text="@string/pe_varstringdetalle"
-                    style="@style/pe_rgobtnfunciones"
+                    style="@style/textcolor3"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/containedbtn_transparente"
+                    android:text="@string/pe_varstringdetalle"/>
                 <Button
                     android:id="@+id/pe_cfpbtnChat"
-                    android:text="@string/pe_varstringchat"
-                    style="@style/pe_rgobtnfunciones"
+                    style="@style/textcolor3"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/containedbtn_transparente"
+                    android:text="@string/pe_varstringchat"/>
             </LinearLayout>
         </LinearLayout>
 
         <Button
             android:id="@+id/pe_rgobtnrecoger"
+            style="@style/Contained_button_green"
             android:layout_width="@dimen/btn_type01_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/redondeado_melon"
+            android:background="@drawable/redondeado_green"
             android:text="@string/pe_varstringir_a_recoger_al_pedido" />
     </LinearLayout>
 

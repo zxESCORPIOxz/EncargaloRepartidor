@@ -10,7 +10,7 @@
         android:id="@+id/pe_mpebtnordenencurso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/redondeado_verde"
+        android:background="@drawable/outlinebtn_green"
         style="@style/pe_mpebtnordenencurso"
         android:text="@string/pe_varstringorden_en_curso"
         />
@@ -19,7 +19,7 @@
         android:id="@+id/pe_mpebtnhistorialdeordenes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/redondeado_verde"
+        android:background="@drawable/outlinebtn_green"
         style="@style/pe_mpebtnhistorialdeordenes"
         android:text="@string/pe_varstringhistorial_de_ordenes"
         />
@@ -28,7 +28,7 @@
         android:id="@+id/pe_mpebtncobrosrealizados"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/redondeado_verde"
+        android:background="@drawable/outlinebtn_green"
         style="@style/pe_mpebtncobrosrealizados"
         android:text="@string/pe_varstringcobros_realizados"
         />

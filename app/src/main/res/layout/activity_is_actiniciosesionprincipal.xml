@@ -34,7 +34,7 @@
 
     <Button
         android:id="@+id/is_ispbtngmail"
-        style="@style/is_btnlogin"
+        style="@style/is_btnloginGoogle"
         android:drawableLeft="@drawable/is_imggoogle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,5 +45,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/transparentPrimary"
-        android:text="Aun no tienes cuenta?" />
+        android:text="Aún no tienes cuenta?" />
 </LinearLayout>

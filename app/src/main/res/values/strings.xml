@@ -23,16 +23,16 @@
 
     <!-- Modulo Inicio de sesion(is)  -->
 
-    <string name="is_varstringmensaje">Envia tus productos a mas personas</string>
+    <string name="is_varstringmensaje">Envia tus productos a más personas</string>
     <string name="is_varstringloginfacebook">Continuar con Facebook</string>
     <string name="is_varstringlogingoogle">Continuar con Google</string>
     <string name="is_varstringnombre">Nombre</string>
     <string name="is_varstringapellido">Apellido</string>
     <string name="is_varstringcorreo">Correo</string>
-    <string name="is_varstringtelefono">Telefono</string>
+    <string name="is_varstringtelefono">Teléfono</string>
     <string name="is_varstringbtnregistrar">Registrar</string>
-    <string name="is_varstringchckterminos">Acepto los Terminos y Condiciones y la Politica de seguridad</string>
-    <string name="is_varstringbtnreenviar">Reenviar</string>
+    <string name="is_varstringchckterminos">Acepto los Términos y Condiciones y la Política de seguridad</string>
+    <string name="is_varstringbtnreenviar">Reenviar código</string>
     <string name="is_varstringcontinuar">Continuar</string>
     <string name="is_varstringtituloverificacion">Ingrese el código de verificación</string>
     <string name="is_varstringsubtituloverificacion">Sele a enviado un código de verificación a tu cuenta de correo</string>
@@ -41,9 +41,9 @@
 
     <string name="pf_varstringnombre">Nombre</string>
     <string name="pf_varvarstringsubtitulo1">PERFIL BASICO (información al público)</string>
-    <string name="pf_varstringtelefono">Telefono</string>
+    <string name="pf_varstringtelefono">Teléfono</string>
     <string name="pf_varstringdireccion">Dirección</string>
-    <string name="pf_varstringvehiculo">Vehiculo</string>
+    <string name="pf_varstringvehiculo">Vehículo</string>
     <string name="pf_varstringplaca">Placa</string>
     <string name="pf_varstringsubtitulo2">CARGAR DOCUMENTOS</string>
     <string name="pf_varstringregistrodeveh_culo">Registro de Vehículo</string>
@@ -53,7 +53,7 @@
     <string name="pf_varstringregistrar">Registrar</string>
     <string name="pf_varstringsuba_la_imagen_dpf_varstringel_documento_requerido">Suba la imagen del documento requerido</string>
     <string name="pf_varstringdocumentos_agregados_correctamente">Documentos agregados correctamente</string>
-    <string name="pf_varstringeso_fue_rapido">Eso fue rapido!</string>
+    <string name="pf_varstringeso_fue_rapido">Eso fue rápido!</string>
     <string name="pf_varstringvolver_a_inicio">Volver a inicio</string>
 
     <string-array name="vehiculos">
@@ -89,15 +89,15 @@
     <!-- Modulo Soporte(sp)  -->
 
     <string name="sp_varstringbtncentro_de_ayuda">Centro de ayuda</string>
-    <string name="sp_varstringbtnteminos_y_condiciones">Teminos y condiciones</string>
+    <string name="sp_varstringbtnteminos_y_condiciones">Términos y condiciones</string>
     <string name="sp_varstringbtncompartir_encargalo">Compartir encargalo</string>
     <string name="sp_varstringbtnacerca_de">Acerca de</string>
-    <string name="sp_varstringbtncerrar_sesion">Cerrar sesion</string>
+    <string name="sp_varstringbtncerrar_sesion">Cerrar sesión</string>
 
     <!-- Modulo Menu(me)  -->
 
-    <string name="me_varstringbienvenido_al_app_repartidor">Bienvenido al app repartidor</string>
-    <string name="me_varstringcomensar">Comensar</string>
+    <string name="me_varstringbienvenido_al_app_repartidor">Bienvenido a Encárgalo</string>
+    <string name="me_varstringcomensar">Comenzar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
