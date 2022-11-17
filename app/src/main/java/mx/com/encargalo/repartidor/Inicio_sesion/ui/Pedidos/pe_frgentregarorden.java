@@ -31,6 +31,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -66,6 +67,7 @@ public class pe_frgentregarorden extends Fragment {
 
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
+    StringRequest stringRequest;
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
@@ -80,7 +82,7 @@ public class pe_frgentregarorden extends Fragment {
             }else {
             }
             LocationManager lm = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
-            lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, new LocationListener() {
+            lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1000, new LocationListener() {
                 @Override
                 public void onLocationChanged(@NonNull Location l) {
                     coordenadasO = new LatLng(l.getLatitude(),l.getLongitude());
@@ -91,20 +93,13 @@ public class pe_frgentregarorden extends Fragment {
                         mMap.animateCamera(myUbicacion);
                     }
                     ubicacionrt.setPosition(coordenadasO);
+
+                    SharedPreferences sharedPreferences =
+                            getContext().getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
+                    m_setcoordenadaTR(sharedPreferences.getString(DATOS.VARGOB_ID_ORDEN,""),
+                            l.getLatitude()+"",l.getLongitude()+"");
                 }
             });
-//            try {
-//                Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
-//                List<Address> list = geocoder.getFromLocation(
-//                        l.getLatitude(),l.getLongitude(), 1);
-//                if (!list.isEmpty()) {
-//                    Address DirCalle = list.get(0);
-//                    Toast.makeText(getContext(), DirCalle.getAddressLine(0), Toast.LENGTH_SHORT).show();
-//                }
-//
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
         }
     };
 
@@ -211,4 +206,27 @@ public class pe_frgentregarorden extends Fragment {
                 });
         request.add(jsonObjectRequest);
     }
+
+
+
+    public void m_setcoordenadaTR(final String idOrden, final String Latitud, final String Longitud){
+        String APIREST_URL = DATOS.IP_SERVER+ "m_coordenadas_repartidor.php?"
+                +"idOrden=" + idOrden
+                +"&Latitud=" + Latitud
+                +"&Longitud=" + Longitud;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        stringRequest = new StringRequest(Request.Method.GET, APIREST_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        request.add(stringRequest);
+    }
+
 }

@@ -8,12 +8,44 @@
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgcobrarorden">
 
     <TextView
+        android:id="@+id/pe_cobtxtidorden"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/txt_size_title"
         android:textStyle="bold"
-        android:textAlignment="center"
-        android:text="Cargar pago de la orden 30212548 "/>
+        android:textAlignment="center"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_margin"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/redondeado_negro"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_margin"/>
+    <TextView
+        android:id="@+id/pe_cobtxttotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/txt_size_paragraph"
+        style="@style/pe_rgotxtidorden"/>
+    <TextView
+        android:id="@+id/pe_cobtxtmediopago"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/txt_size_paragraph"
+        style="@style/pe_rgotxtidorden"/>
+    <TextView
+        android:id="@+id/pe_cobtxtnombretienda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/txt_size_paragraph"
+        style="@style/pe_rgotxtidorden"/>
     <Space
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_margin"/>
@@ -30,53 +62,22 @@
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
         android:textSize="@dimen/txt_size_paragraph"
-        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        android:text="Deducciones :"
+        android:layout_marginVertical="@dimen/activity_margin"
         style="@style/pe_rgotxtidorden"/>
     <TextView
+        android:id="@+id/pe_cobtxtgantienda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
         android:textSize="@dimen/txt_size_paragraph"
-        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         style="@style/pe_rgotxtidorden"/>
     <TextView
+        android:id="@+id/pe_cobtxtganrepartidor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
         android:textSize="@dimen/txt_size_paragraph"
-        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-        style="@style/pe_rgotxtidorden"/>
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_margin"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@drawable/redondeado_negro"
-        />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_margin"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/txt_size_paragraph"
-        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-        style="@style/pe_rgotxtidorden"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/txt_size_paragraph"
-        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-        style="@style/pe_rgotxtidorden"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/txt_size_paragraph"
-        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         style="@style/pe_rgotxtidorden"/>
 
     <Button

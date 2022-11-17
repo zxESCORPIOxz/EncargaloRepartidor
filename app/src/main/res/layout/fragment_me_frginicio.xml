@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.me_frginicio">
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +13,7 @@
         android:textColor="@color/blackPrimary"
         android:textAlignment="center"
         android:layout_margin="30dp"
-        android:text="@string/me_varstringbienvenido_al_app_repartidor" />
+        android:text="@string/me_varstringbienvenido_al_app_repartidor"/>
 
     <ImageView
         android:layout_width="match_parent"
@@ -29,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/activity_margin"
-        android:layout_marginHorizontal="141dp"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/redondeado_azul"
         android:text="@string/me_varstringcomensar" />
 
