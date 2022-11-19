@@ -1,15 +1,45 @@
 package mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import mx.com.encargalo.repartidor.Adapters.pe_adplistaproductos;
+import mx.com.encargalo.repartidor.Entidades.pe_claseproducto_lista;
+import mx.com.encargalo.repartidor.Inicio_sesion.MainActivity;
+import mx.com.encargalo.repartidor.UTIL.DATOS;
 import mx.com.repartidor.R;
 
 
@@ -18,10 +48,32 @@ public class pf_frgperfil extends Fragment {
             pf_pfbtnmodregistrodelicencia,
             pf_pfbtnmodregistrodeantecedentes,
             pf_pfbtnmodtargetadepropiedad;
+
+    TextView pf_pfedtdireccion,
+            pf_pfedtnombre,
+            pf_pfedtnumero,
+            pf_pfedtmovilidad,
+            pf_pfedtplaca;
+
+    RequestQueue request;
+    JsonObjectRequest jsonObjectRequest;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_pf_frgperfil, container, false);
+        request= Volley.newRequestQueue(getContext());
+
+        pf_pfedtdireccion = view.findViewById(R.id.pf_pfedtdireccion);
+        pf_pfedtnombre = view.findViewById(R.id.pf_pfedtnombre);
+        pf_pfedtnumero = view.findViewById(R.id.pf_pfedtnumero);
+        pf_pfedtmovilidad = view.findViewById(R.id.pf_pfedtmovilidad);
+        pf_pfedtplaca = view.findViewById(R.id.pf_pfedtplaca);
+
+        SharedPreferences sharedPreferences =
+                getContext().getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
+
+        me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_USUARIO,"X"));
 
         pf_pfbtnmodregistrodevehiculo = view.findViewById(R.id.pf_pfbtnmodregistrodevehiculo);
         pf_pfbtnmodregistrodevehiculo.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +104,59 @@ public class pf_frgperfil extends Fragment {
             }
         });
 
+
         return view;
     }
+
+    public void me_modgetPerfil(String Documento){
+        String APIREST_URL = DATOS.IP_SERVER+ "c_perfil_usuario.php?"+
+                "id_DocumentoPersona=" + Documento;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null,
+                new Response.Listener<JSONObject>() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        JSONArray jsonObject = null;
+                        try {
+                            jsonObject = response.getJSONArray("consulta");
+                            //pf_pfedtdireccion.setText(jsonObject.optString("Nombre"));
+                            for (int i = 0; i < jsonObject.length(); i++) {
+                                JSONObject myjsonObject = jsonObject.getJSONObject(i);
+                                Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+                                List<Address> list = null;
+                                try {
+                                    list = geocoder.getFromLocation(
+                                            Double.parseDouble(myjsonObject.optString("perUbiLatitud")),
+                                            Double.parseDouble(myjsonObject.optString("perUbiLongitud")),
+                                            1);
+                                    if (!list.isEmpty()) {
+                                        Address DirCalle = list.get(0);
+                                        pf_pfedtdireccion.setText(DirCalle.getAddressLine(0));
+                                    }
+                                } catch (IOException e) {
+                                    Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                                }
+                                pf_pfedtnombre.setText(myjsonObject.getString("perNombres") + " " + myjsonObject.getString("perApellidos"));
+                                pf_pfedtnumero.setText(myjsonObject.getString("perNumeroCelular"));
+                                pf_pfedtmovilidad.setText(myjsonObject.getString("vrTipoVehiculo"));
+                                pf_pfedtplaca.setText(myjsonObject.getString("vrPlaca"));
+
+
+                            }
+                        } catch (JSONException e) {
+                            Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), DATOS.NO_ENCONTRADO, Toast.LENGTH_SHORT).show();
+                    }
+                });
+        request.add(jsonObjectRequest);
+    }
+
 }

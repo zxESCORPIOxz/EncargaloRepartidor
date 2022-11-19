@@ -54,7 +54,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/pf_pfedtdireccion"
+                    android:id="@+id/pf_pfedtnombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -73,7 +73,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/pf_pfedtnombre"
+                    android:id="@+id/pf_pfedtnumero"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -92,7 +92,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/pf_pfedtnumero"
+                    android:id="@+id/pf_pfedtdireccion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
