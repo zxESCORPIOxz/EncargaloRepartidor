@@ -130,7 +130,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="textEnd"
-                android:drawableRight="@drawable/pe_iconrelog"
+                android:drawableRight="@drawable/icon_relog"
                 style="@style/pe_rgotxtdireccion"/>
             <LinearLayout
                 android:layout_width="match_parent"

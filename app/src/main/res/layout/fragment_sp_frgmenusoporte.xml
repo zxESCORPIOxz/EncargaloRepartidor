@@ -10,6 +10,7 @@
         android:id="@+id/sp_mspbtncentrodeayuda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
         android:background="@drawable/outlinebtn_black"
         style="@style/sp_mspbtncentrodeayuda"
         android:text="@string/sp_varstringbtncentro_de_ayuda" />
@@ -18,6 +19,7 @@
         android:id="@+id/sp_mspbtnteminosycondiciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
         android:background="@drawable/outlinebtn_black"
         style="@style/sp_mspbtnteminosycondiciones"
         android:text="@string/sp_varstringbtnteminos_y_condiciones" />
@@ -26,6 +28,7 @@
         android:id="@+id/sp_mspbtncompartirencargalo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
         android:background="@drawable/outlinebtn_black"
         style="@style/sp_mspbtncompartirencargalo"
         android:text="@string/sp_varstringbtncompartir_encargalo" />
@@ -34,6 +37,7 @@
         android:id="@+id/sp_mspbtnacercade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
         android:background="@drawable/outlinebtn_black"
         style="@style/sp_mspbtnacercade"
         android:text="@string/sp_varstringbtnacerca_de" />
@@ -42,7 +46,8 @@
         android:id="@+id/sp_mspbtncerrarsesion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
         android:background="@drawable/outlinebtn_black"
-        style="@style/sp_mspbtncentrodeayuda"
+        style="@style/sp_mspbtncerrarsesion"
         android:text="@string/sp_varstringbtncerrar_sesion" />
 </LinearLayout>

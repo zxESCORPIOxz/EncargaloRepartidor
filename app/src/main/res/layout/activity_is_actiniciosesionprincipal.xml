@@ -30,6 +30,7 @@
         android:drawableLeft="@drawable/is_imgfacebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
         android:text="@string/is_varstringloginfacebook" />
 
     <Button
@@ -38,6 +39,7 @@
         android:drawableLeft="@drawable/is_imggoogle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
         android:text="@string/is_varstringlogingoogle" />
 
     <Button

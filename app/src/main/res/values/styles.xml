@@ -130,42 +130,42 @@
     </style>
 
     <style name="pf_iconperson" parent="pf_general">
-        <item name="android:drawableLeft">@drawable/pf_iconpersona</item>
+        <item name="android:drawableLeft">@drawable/pf_iconperson</item>
     </style>
 
     <style name="pf_iconphone" parent="pf_general">
-        <item name="android:drawableLeft">@drawable/pf_icontelefono</item>
+        <item name="android:drawableLeft">@drawable/pf_iconcelular</item>
     </style>
 
     <style name="pf_iconaddress" parent="pf_general">
-        <item name="android:drawableLeft">@drawable/pf_icondireccion</item>
+        <item name="android:drawableLeft">@drawable/pf_iconubicacion</item>
     </style>
 
     <style name="pf_iconvehicle" parent="pf_general">
-        <item name="android:drawableLeft">@drawable/pf_iconvehicle</item>
+        <item name="android:drawableLeft">@drawable/sp_iconvehiculo</item>
     </style>
 
     <style name="pf_iconplaca" parent="pf_general">
-        <item name="android:drawableLeft">@drawable/pf_iconplaca</item>
+        <item name="android:drawableLeft">@drawable/sp_iconnewplaca</item>
     </style>
 
     <style name="pf_iconvehicleregistration" parent="pf_general">
-        <item name="android:drawableLeft">@drawable/pf_icondocumento</item>
+        <item name="android:drawableLeft">@drawable/pf_icondocvehiculo</item>
     </style>
 
     <style name="pf_iconlicenseregistration" parent="pf_general">
-        <item name="android:drawableLeft">@drawable/pf_icondocumento</item>
+        <item name="android:drawableLeft">@drawable/pf_icondoclicencia</item>
     </style>
 
     <style name="pf_iconbackgroundcheck" parent="pf_general">
-        <item name="android:drawableLeft">@drawable/pf_icondocumento</item>
+        <item name="android:drawableLeft">@drawable/pf_icondocantecedentes</item>
     </style>
 
     <style name="pf_iconpropertycard" parent="pf_general">
-        <item name="android:drawableLeft">@drawable/pf_icondocumento</item>
+        <item name="android:drawableLeft">@drawable/pf_icondocpropiedad</item>
     </style>
     <style name="pf_buttongeneral">
-        <item name="android:foreground">@drawable/pf_iconeditcontent</item>
+        <item name="android:foreground">@drawable/pf_iconedit</item>
         <item name="android:background">@color/transparentPrimary</item>
         <item name="android:layout_width">30dp</item>
         <item name="android:layout_height">30dp</item>
@@ -225,27 +225,27 @@
     </style>
 
     <style name="sp_mspbtncentrodeayuda" parent="sp_mspbtngeneral">
-        <item name="android:drawableLeft">@drawable/sp_iconquestioncircle</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableLeft">@drawable/sp_iconcentrodeayuda</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
     </style>
 
     <style name="sp_mspbtnteminosycondiciones" parent="sp_mspbtngeneral">
-        <item name="android:drawableLeft">@drawable/sp_iconnewspaper</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableLeft">@drawable/so_iconterminosycondiciones</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
     </style>
 
     <style name="sp_mspbtncompartirencargalo" parent="sp_mspbtngeneral">
-        <item name="android:drawableLeft">@drawable/sp_iconshare</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableLeft">@drawable/sp_iconcompartir</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
     </style>
 
     <style name="sp_mspbtnacercade" parent="sp_mspbtngeneral">
-        <item name="android:drawableLeft">@drawable/sp_iconinfosquare</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableLeft">@drawable/sp_iconacercade</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
     </style>
     <style name="sp_mspbtncerrarsesion" parent="sp_mspbtngeneral">
-        <item name="android:drawableLeft">@drawable/sp_iconboxarrowright</item>
-        <item name="android:drawableRight">@drawable/icon_chevronright</item>
+        <item name="android:drawableLeft">@drawable/sp_iconcerrarsesion</item>
+        <item name="android:drawableRight">@drawable/icon_right_</item>
     </style>
     <!-- Modulo Soporte - centro de ayuda. -->
 
