@@ -199,6 +199,4 @@ public class pe_frgrecogerorden extends Fragment {
         });
         request.add(stringRequest);
     }
-
-
 }

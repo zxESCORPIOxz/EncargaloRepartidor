@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/redondeado_blanco"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <!--Titulo id Orden-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/pe_varstringitemidorden"
+                android:textColor="@color/blackPrimary"/>
+            <TextView
+                android:id="@+id/pe_htotxtIdOrden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText,RtlHardcoded"
+                android:hint="00000000"
+                android:layout_marginLeft="5dp" />
+
+        </LinearLayout>
+
+        <!--Titulo nombre de cliente-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pe_varstringitemcliente"
+                android:textColor="@color/blackPrimary"
+                />
+
+            <TextView
+                android:id="@+id/pe_htotxtNombres"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:hint="00000000" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pe_varstringitemfechao"
+                android:textColor="@color/blackPrimary"
+                android:paddingTop="10dp"/>
+            <TextView
+                android:id="@+id/pe_htotxtOrdCreada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="00/00/0000"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/blackPrimary"
+                android:paddingTop="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pe_varstringitemestado"
+                android:textColor="@color/blackPrimary"
+                android:paddingTop="10dp"/>
+
+            <TextView
+                android:id="@+id/pe_htotxtOrdEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="00/00/0000"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/blackPrimary"
+                android:paddingTop="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

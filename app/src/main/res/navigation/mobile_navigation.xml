@@ -157,10 +157,19 @@
         android:id="@+id/nav_historialordenes"
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frghistorialordenes"
         android:label="Mis ordenes"
-        tools:layout="@layout/fragment_pe_frghistorialordenes"/>
+        tools:layout="@layout/fragment_pe_frghistorialordenes">
+        <action
+            android:id="@+id/action_nav_historialordenes_to_nav_detallehistorial"
+            app:destination="@id/nav_detallehistorial" />
+    </fragment>
     <fragment
         android:id="@+id/nav_historialcobros"
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frghistorialcobros"
         android:label="Mis cobros"
         tools:layout="@layout/fragment_pe_frghistorialcobros"/>
+    <fragment
+        android:id="@+id/nav_detallehistorial"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgdetallehistorial"
+        android:label="Detalle orden"
+        tools:layout="@layout/fragment_pe_frgdetallehistorial"/>
 </navigation>

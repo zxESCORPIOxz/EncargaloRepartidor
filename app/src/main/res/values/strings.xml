@@ -102,5 +102,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pe_varstringitemcliente">Cliente :</string>
+    <string name="pe_varstringitemidorden">ID ORDEN :</string>
+    <string name="pe_varstringitemfechao">Orden emitida :</string>
+    <string name="pe_varstringitemestado">Estada :</string>
 
 </resources>
