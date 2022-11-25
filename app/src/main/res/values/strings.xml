@@ -40,6 +40,7 @@
     <!-- Modulo Perfil(pf)  -->
 
     <string name="pf_varstringnombre">Nombre</string>
+    <string name="pf_varstringapellidos">Apellidos</string>
     <string name="pf_varvarstringsubtitulo1">PERFIL BASICO (información al público)</string>
     <string name="pf_varstringtelefono">Teléfono</string>
     <string name="pf_varstringdireccion">Dirección</string>

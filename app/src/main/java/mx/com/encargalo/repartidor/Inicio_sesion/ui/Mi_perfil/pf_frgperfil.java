@@ -51,6 +51,7 @@ public class pf_frgperfil extends Fragment {
 
     TextView pf_pfedtdireccion,
             pf_pfedtnombre,
+            pf_pfedtapellidos,
             pf_pfedtnumero,
             pf_pfedtmovilidad,
             pf_pfedtplaca;
@@ -66,6 +67,7 @@ public class pf_frgperfil extends Fragment {
 
         pf_pfedtdireccion = view.findViewById(R.id.pf_pfedtdireccion);
         pf_pfedtnombre = view.findViewById(R.id.pf_pfedtnombre);
+        pf_pfedtapellidos = view.findViewById(R.id.pf_pfedtapellidos);
         pf_pfedtnumero = view.findViewById(R.id.pf_pfedtnumero);
         pf_pfedtmovilidad = view.findViewById(R.id.pf_pfedtmovilidad);
         pf_pfedtplaca = view.findViewById(R.id.pf_pfedtplaca);
@@ -134,14 +136,21 @@ public class pf_frgperfil extends Fragment {
                                     if (!list.isEmpty()) {
                                         Address DirCalle = list.get(0);
                                         pf_pfedtdireccion.setText(DirCalle.getAddressLine(0));
+                                        pf_pfedtdireccion.setEnabled(false);
                                     }
                                 } catch (IOException e) {
                                     Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
                                 }
-                                pf_pfedtnombre.setText(myjsonObject.getString("perNombres") + " " + myjsonObject.getString("perApellidos"));
+                                pf_pfedtnombre.setText(myjsonObject.getString("perNombres"));
+                                pf_pfedtnombre.setEnabled(false);
+                                pf_pfedtapellidos.setText(myjsonObject.getString("perApellidos"));
+                                pf_pfedtapellidos.setEnabled(false);
                                 pf_pfedtnumero.setText(myjsonObject.getString("perNumeroCelular"));
-                                pf_pfedtmovilidad.setText(myjsonObject.getString("vrTipoVehiculo"));
-                                pf_pfedtplaca.setText(myjsonObject.getString("vrPlaca"));
+                                pf_pfedtnumero.setEnabled(false);
+                                pf_pfedtmovilidad.setText(myjsonObject.getString("repTipoVehiculo"));
+                                pf_pfedtmovilidad.setEnabled(false);
+                                pf_pfedtplaca.setText(myjsonObject.getString("repPlaca"));
+                                pf_pfedtplaca.setEnabled(false);
 
 
                             }
