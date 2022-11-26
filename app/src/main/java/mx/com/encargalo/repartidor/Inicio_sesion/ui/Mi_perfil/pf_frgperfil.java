@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,7 +55,10 @@ public class pf_frgperfil extends Fragment {
             pf_pfedtapellidos,
             pf_pfedtnumero,
             pf_pfedtmovilidad,
+            pf_pfedttienda,
             pf_pfedtplaca;
+
+    ImageView pf_prfimgvwfoto;
 
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
@@ -71,9 +75,14 @@ public class pf_frgperfil extends Fragment {
         pf_pfedtnumero = view.findViewById(R.id.pf_pfedtnumero);
         pf_pfedtmovilidad = view.findViewById(R.id.pf_pfedtmovilidad);
         pf_pfedtplaca = view.findViewById(R.id.pf_pfedtplaca);
+        pf_pfedttienda = view.findViewById(R.id.pf_pfedttienda);
+        pf_prfimgvwfoto = view.findViewById(R.id.pf_prfimgvwfoto);
 
         SharedPreferences sharedPreferences =
                 getContext().getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
+
+        Glide.with(getContext()).load(DATOS.IP_SERVER
+                +sharedPreferences.getString("IMAGEN_REPARTIDOR","")).into(pf_prfimgvwfoto);
 
         me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_USUARIO,"X"));
 
@@ -151,6 +160,8 @@ public class pf_frgperfil extends Fragment {
                                 pf_pfedtmovilidad.setEnabled(false);
                                 pf_pfedtplaca.setText(myjsonObject.getString("repPlaca"));
                                 pf_pfedtplaca.setEnabled(false);
+                                pf_pfedttienda.setText(myjsonObject.getString("tieNombre"));
+                                pf_pfedttienda.setEnabled(false);
 
 
                             }
@@ -167,5 +178,9 @@ public class pf_frgperfil extends Fragment {
                 });
         request.add(jsonObjectRequest);
     }
+
+
+
+
 
 }

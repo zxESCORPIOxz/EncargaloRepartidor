@@ -44,6 +44,7 @@
     <string name="pf_varvarstringsubtitulo1">PERFIL BASICO (información al público)</string>
     <string name="pf_varstringtelefono">Teléfono</string>
     <string name="pf_varstringdireccion">Dirección</string>
+    <string name="pf_varstringtienda">Tienda</string>
     <string name="pf_varstringvehiculo">Vehículo</string>
     <string name="pf_varstringplaca">Placa</string>
     <string name="pf_varstringsubtitulo2">CARGAR DOCUMENTOS</string>

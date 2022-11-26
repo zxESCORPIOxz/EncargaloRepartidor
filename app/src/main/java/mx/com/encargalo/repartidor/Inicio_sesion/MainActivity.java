@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                         getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(DATOS.VARGOB_ID_REPARTIDOR,response.optString("idRepartidor"));//response.optString("idRepartidor")
+                editor.putString("IMAGEN_REPARTIDOR",response.optString("Imagen"));//response.optString("idRepartidor")
                 editor.apply();
                 me_menutxtNombreUsuario.setText(response.optString("Nombre"));
                 Glide.with(MainActivity.this).load(DATOS.IP_SERVER

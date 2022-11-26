@@ -137,6 +137,10 @@
         <item name="android:drawableLeft">@drawable/pf_iconcelular</item>
     </style>
 
+    <style name="pf_icontiendarep" parent="pf_general">
+        <item name="android:drawableLeft">@drawable/pf_icontiendarep</item>
+    </style>
+
     <style name="pf_iconaddress" parent="pf_general">
         <item name="android:drawableLeft">@drawable/pf_iconubicacion</item>
     </style>

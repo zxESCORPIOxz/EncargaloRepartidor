@@ -4,6 +4,7 @@ public class DATOS {
 
     //public static final String IP_SERVER = "http://192.168.0.7/APIS/";
     public static final String IP_SERVER = "http://129.151.103.228/Encargalo/APIS/TenderoApp/";
+    //public static final String IP_SERVER = "http://localhost/android_mysql/";
 
     //SHAREDPREFERENCES para herencia de datos
     public static final String SHAREDPREFERENCES = "SHAREDPREFERENCES_DATOS";
