@@ -69,7 +69,7 @@ public class is_actiniciosesionprincipal extends AppCompatActivity {
         SharedPreferences sharedPreferences =
                 getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(DATOS.VARGOB_ID_USUARIO, varstringdocumento);
+        editor.putString(DATOS.VARGOB_ID_PERSONA, varstringdocumento);
         editor.apply();
         startActivity(i);
     }
@@ -83,7 +83,8 @@ public class is_actiniciosesionprincipal extends AppCompatActivity {
     }
 
     public void is_fctgetDocumentoUsuario(){
-        varstringdocumento = "96489898";
+        //varstringdocumento = "96489898";
+        varstringdocumento = "11111115";
     }
 
 }

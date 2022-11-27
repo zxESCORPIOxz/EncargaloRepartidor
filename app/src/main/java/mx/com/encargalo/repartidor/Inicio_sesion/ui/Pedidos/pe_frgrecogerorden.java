@@ -53,7 +53,7 @@ import mx.com.repartidor.R;
 import static android.content.Context.MODE_PRIVATE;
 
 public class pe_frgrecogerorden extends Fragment {
-    Button pe_rgobtnrecoger;
+    Button pe_rgobtnrecoger,pe_rgobtnChat;
     TextView pe_rgotxtidorden_fecha_hora, pe_rgotxtnombretienda, pe_rgotxtdireccion;
 
     Marker ubicacionrt, destino;
@@ -112,6 +112,15 @@ public class pe_frgrecogerorden extends Fragment {
         pe_rgotxtidorden_fecha_hora = view.findViewById(R.id.pe_rgotxtidorden_fecha_hora);
         pe_rgotxtnombretienda = view.findViewById(R.id.pe_rgotxtnombretienda);
         pe_rgotxtdireccion = view.findViewById(R.id.pe_rgotxtdireccion);
+
+        pe_rgobtnChat = view.findViewById(R.id.pe_rgobtnChat);
+
+        pe_rgobtnChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_misordenesconversacion);
+            }
+        });
 
         pe_rgobtnrecoger = view.findViewById(R.id.pe_rgobtnrecoger);
 

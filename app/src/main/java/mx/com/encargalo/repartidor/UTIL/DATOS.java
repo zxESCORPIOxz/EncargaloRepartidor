@@ -13,7 +13,8 @@ public class DATOS {
     public static final String NO_ENCONTRADO = "NO ENCONTRADO";
 
     //Login
-    public static final String VARGOB_ID_USUARIO = "id_persona";
+    public static final String VARGOB_ID_USUARIO = "id_usuario";
+    public static final String VARGOB_ID_PERSONA = "id_persona";
 
     //MENU
     public static final String VARGOB_ID_REPARTIDOR = "id_repartidor";

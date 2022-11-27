@@ -55,7 +55,7 @@ import mx.com.repartidor.R;
 import static android.content.Context.MODE_PRIVATE;
 
 public class pe_frgentregarorden extends Fragment {
-    Button pe_etobtncobrar;
+    Button pe_etobtncobrar,pe_etobtnChat;
     TextView pe_etotxtidorden_fecha_hora, pe_etotxtnombretienda, pe_etotxtdireccion;
     Dialog dialogyes_no;
     View viewinterno;
@@ -118,6 +118,15 @@ public class pe_frgentregarorden extends Fragment {
         pe_etotxtidorden_fecha_hora = view.findViewById(R.id.pe_etotxtidorden_fecha_hora);
         pe_etotxtnombretienda = view.findViewById(R.id.pe_etotxtnombretienda);
         pe_etotxtdireccion = view.findViewById(R.id.pe_etotxtdireccion);
+
+        pe_etobtnChat = view.findViewById(R.id.pe_etobtnChat);
+
+        pe_etobtnChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_misordenesconversacion);
+            }
+        });
 
         pe_etobtncobrar.setOnClickListener(new View.OnClickListener() {
             @Override

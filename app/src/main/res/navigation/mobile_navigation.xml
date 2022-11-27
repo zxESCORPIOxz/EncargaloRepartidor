@@ -206,11 +206,17 @@
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frghistorialcobros"
         android:label="Mis cobros"
         tools:layout="@layout/fragment_pe_frghistorialcobros"/>
+
     <fragment
         android:id="@+id/nav_detallehistorial"
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgdetallehistorial"
         android:label="Detalle orden"
         tools:layout="@layout/fragment_pe_frgdetallehistorial"/>
 
+    <fragment
+        android:id="@+id/nav_misordenesconversacion"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.mio_frgconversacion"
+        android:label="CONVERSACIÓN"
+        tools:layout="@layout/fragment_mio_frgconversacion" />
 
 </navigation>

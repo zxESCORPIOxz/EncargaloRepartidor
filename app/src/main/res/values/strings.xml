@@ -88,6 +88,8 @@
     <string name="pe_varstringnoexistependientes">No existe ordenes pendientes</string>
     <string name="pe_varstringdetalle">Detalle</string>
 
+    <string name="mio_varstrchatcliente7">Escribir aqui</string>
+
     <!-- Modulo Soporte(sp)  -->
 
     <string name="sp_varstringbtncentro_de_ayuda">Centro de ayuda</string>
