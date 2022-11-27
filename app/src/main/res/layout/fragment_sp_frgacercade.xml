@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgacercade">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:id="@+id/btn_so_05_website"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/menu_soporte_acerca_de_btn_1"
+
+        android:background="@drawable/outlinebtn_black"
+        android:layout_margin="@dimen/activity_margin"
+        android:drawablePadding="10dp"
+        android:textAlignment="center"
+        android:paddingLeft="@dimen/btn_type05_paddingLeft"/>
+
+    <Button
+        android:id="@+id/btn_so_05_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/menu_soporte_acerca_de_btn_2"
+        android:background="@drawable/outlinebtn_black"
+        android:layout_margin="@dimen/activity_margin"
+        android:drawablePadding="10dp"
+        android:textAlignment="center"
+        android:paddingLeft="@dimen/btn_type05_paddingLeft"/>
+
+    <Button
+        android:id="@+id/btn_so_05_instagram"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/menu_soporte_acerca_de_btn_3"
+        android:background="@drawable/outlinebtn_black"
+        android:layout_margin="@dimen/activity_margin"
+        android:drawablePadding="10dp"
+        android:textAlignment="center"
+        android:paddingLeft="@dimen/btn_type05_paddingLeft"/>
+
+    <Button
+        android:id="@+id/btn_so_05_desarrolladores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/menu_soporte_acerca_de_btn_4"
+        android:background="@drawable/outlinebtn_black"
+        android:layout_margin="@dimen/activity_margin"
+        android:drawablePadding="10dp"
+        android:textAlignment="center"
+        android:paddingLeft="@dimen/btn_type05_paddingLeft"/>
+
+</LinearLayout>

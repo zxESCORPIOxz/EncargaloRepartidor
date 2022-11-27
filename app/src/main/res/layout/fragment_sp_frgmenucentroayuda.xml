@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    android:gravity="center_horizontal"
+    android:focusable="true"
+    android:clickable="true"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgmenucentroayuda">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center|top">
+
+        <Button
+            android:id="@+id/btn_so_02_PregFrecuentes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            style="@style/sp_mcabtnpreguntas"
+            android:background="@drawable/outlinebtn_green"
+            android:text="Preguntas frecuentes" />
+
+        <Button
+            android:id="@+id/btn_so_02_VideosDem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            style="@style/sp_mcabtnvideos"
+            android:background="@drawable/outlinebtn_green"
+            android:text="Videos demostrativos" />
+
+        <Button
+            android:id="@+id/btn_so_02_RealizarConsul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            style="@style/sp_mcabtnconsulta"
+            android:background="@drawable/outlinebtn_green"
+            android:text="Realiza tu consulta" />
+    </LinearLayout>
+
+</LinearLayout>

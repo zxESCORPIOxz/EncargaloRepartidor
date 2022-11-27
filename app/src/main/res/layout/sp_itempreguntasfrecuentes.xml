@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:background="@drawable/outlinebtn_green"
+        android:padding="15dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txt_so_02_pregunta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:drawableRight="@drawable/sp_iconflecha"
+            android:text="@string/menu_soporte_Preguntas_Frecuentes_preg1_titulo"
+            />
+    </LinearLayout>
+</LinearLayout>

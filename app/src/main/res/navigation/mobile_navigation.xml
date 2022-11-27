@@ -63,25 +63,46 @@
         <action
             android:id="@+id/action_nav_soporte_to_nav_centrodeayuda"
             app:destination="@id/nav_centrodeayuda" />
+        <action
+            android:id="@+id/action_nav_soporte_to_nav_terminosYcondiciones"
+            app:destination="@id/nav_terminosYcondiciones" />
+        <action
+            android:id="@+id/action_nav_soporte_to_nav_acercade"
+            app:destination="@id/nav_acercade" />
     </fragment>
 
+    <fragment
+        android:id="@+id/nav_acercade"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgacercade"
+        android:label="@string/menu_soporte_acerca_de"
+        tools:layout="@layout/fragment_sp_frgacercade" />
+
+    <fragment
+        android:id="@+id/nav_desarrolladores"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgdesarrolladores"
+        android:label="@string/menu_soporte_acerca_de_desarrolladores"
+        tools:layout="@layout/fragment_sp_frgdesarrolladores"/>
     <!-- OPCIONES DE SOPORTE -->
 
     <fragment
         android:id="@+id/nav_centrodeayuda"
-        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgmenucentrodeayuda"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgmenucentroayuda"
         android:label="Centro de ayuda"
-        tools:layout="@layout/fragment_sp_frgmenucentrodeayuda" >
+        tools:layout="@layout/fragment_sp_frgmenucentroayuda" >
         <action
             android:id="@+id/action_nav_centrodeayuda_to_nav_preguntas"
             app:destination="@id/nav_preguntas" />
+        <action
+            android:id="@+id/action_nav_centrodeayuda_to_nav_detallevideodemo"
+            app:destination="@id/nav_detallevideodemo" />
     </fragment>
+
 
     <fragment
         android:id="@+id/nav_preguntas"
-        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgpreguntas"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgDetallePreguntaFrecuentes"
         android:label="Preguntas"
-        tools:layout="@layout/fragment_sp_frgpreguntas">
+        tools:layout="@layout/fragment_sp__frgdetalle_pregunta_frecuentes">
         <action
             android:id="@+id/action_nav_preguntas_to_nav_detallepregunta"
             app:destination="@id/nav_detallepregunta" />
@@ -89,9 +110,27 @@
 
     <fragment
         android:id="@+id/nav_detallepregunta"
-        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgdetallepregunta"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgDetallepreguntas"
         android:label="Detalle"
-        tools:layout="@layout/fragment_sp_frgdetallepregunta"/>
+        tools:layout="@layout/fragment_sp_frgdetallepreguntas"/>
+
+    <fragment
+        android:id="@+id/nav_detallevideodemo"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgdetallevideodemostrativo"
+        android:label="@string/menu_soporte_centro_de_ayuda_btn_2"
+        tools:layout="@layout/fragment_sp_frgdetallevideodemostrativo" />
+
+    <fragment
+        android:id="@+id/nav_terminosYcondiciones"
+        android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgMenuterminoscondiciones"
+        android:label="@string/menu_soporte_terminos_condiciones_terminos"
+        tools:layout="@layout/fragment_sp_frgmenuterminoscondiciones" />
+
+
+
+
+
+
 
     <!-- OPCIONES DE PEDIDOS -->
 
@@ -172,4 +211,6 @@
         android:name="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgdetallehistorial"
         android:label="Detalle orden"
         tools:layout="@layout/fragment_pe_frgdetallehistorial"/>
+
+
 </navigation>

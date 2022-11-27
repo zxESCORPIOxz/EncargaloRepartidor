@@ -5,10 +5,30 @@
       <map>
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/fragment_pf_frgcargardocumentos.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/fragment_pf_frgperfil.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_pf_frgdocagregados.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_pf_frgperfil.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp__frgdetalle_pregunta_frecuentes.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp__frgterminoscondicionesdetalles.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frg_codigo_tienda.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgacercade.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgdesarrolladores.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgdetallepregunta.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgdetallepreguntas.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgdetallevideodemostrativo.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgmenucentroayuda.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgmenucentrodeayuda.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgmenusoporte.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgmenuterminoscondiciones.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgpreguntas.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/fragment_sp_frgterminoscondiciones.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/pe_dialogconfirmarcobro.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/sp_itemdesarrolladores.xml" value="0.18802083333333333" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/sp_itemdetallevideosdemo.xml" value="0.36666666666666664" />
+        <entry key="..\:/ciclo 10/Proyecto repartidor/EncargaloRepartidor/app/src/main/res/layout/sp_itempreguntasfrecuentes.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

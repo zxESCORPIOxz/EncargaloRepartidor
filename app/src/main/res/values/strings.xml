@@ -96,6 +96,59 @@
     <string name="sp_varstringbtnacerca_de">Acerca de</string>
     <string name="sp_varstringbtncerrar_sesion">Cerrar sesión</string>
 
+    <!--  SO_02_1  -->
+    <string name="menu_soporte_centro_de_ayuda">Centro de ayuda</string>
+    <string name="menu_soporte_centro_de_ayuda_btn_1">Preguntas Frecuentes</string>
+    <string name="menu_soporte_centro_de_ayuda_btn_2">Videos Demostrativos</string>
+    <string name="menu_soporte_centro_de_ayuda_btn_3">Realizar una Consulta</string>
+    <!--  SO_02_2  -->
+    <string name="menu_soporte_Preguntas_Frecuentes">Preguntas Frecuentes</string>
+    <string name="menu_soporte_Preguntas_Frecuentes_preg1">Pregunta 1</string>
+    <string name="menu_soporte_Preguntas_Frecuentes_preg2">Pregunta 2</string>
+    <string name="menu_soporte_Preguntas_Frecuentes_preg3">Pregunta 3</string>
+
+    <!--  SO_02_3  -->
+
+    <string name="menu_soporte_Preguntas_Frecuentes_preg1_titulo">Crea tu tienda Virtual</string>
+    <string name="menu_soporte_Preguntas_Frecuentes_preg1_stitulo">Aprende los primeros pasos</string>
+    <string name="menu_soporte_Preguntas_Frecuentes_preg1_detalle">
+        titulo:
+
+        Publicado el:
+
+        Tiempo de duración:
+    </string>
+    <!--  SO_03  -->
+
+    <string name="menu_soporte_notificaciones">Notificaciones</string>
+    <string name="menu_soporte_notificaciones_texto">Activa las notificaciones para mantener al tanto de tu actividad</string>
+    <string name="menu_soporte_notificaciones_switch_1">Mensajes</string>
+    <string name="menu_soporte_notificaciones_switch_2">Actividad de cuenta</string>
+    <string name="menu_soporte_notificaciones_switch_3">Nueva orden</string>
+    <string name="menu_soporte_notificaciones_switch_4">Segumiento de ordenes</string>
+    <string name="menu_soporte_notificaciones_switch_5">Orden completada</string>
+    <!--  SO_04  -->
+    <string name="menu_soporte_terminos_condiciones_terminos">Terminos y condiciones de Uso</string>
+    <string name="menu_soporte_terminos_condiciones_politicas">Política de privacidad y datos personales</string>
+    <string name="menu_soporte_terminos_condiciones_lista_negra">Lista de productos prohibidos a la venta</string>
+    <!--  SO_05  -->
+    <string name="menu_soporte_acerca_de">Acerca de</string>
+    <string name="menu_soporte_acerca_de_btn_1">Website</string>
+    <string name="menu_soporte_acerca_de_btn_2">Facebook</string>
+    <string name="menu_soporte_acerca_de_btn_3">Instagram</string>
+    <string name="menu_soporte_acerca_de_btn_4">Desarrolladores</string>
+    <!--  SO_06  -->
+    <string name="menu_soporte_compartir_website">Website</string>
+    <string name="menu_soporte_compartir_facebook">Facebook</string>
+    <string name="menu_soporte_compartir_instagram">Instagram</string>
+    <!--  SO_06  -->
+    <string name="menu_soporte_Codigo_de_Tienda">Còdigo de tienda</string>
+    <!--  SO_07  -->
+    <string name="menu_soporte_acerca_de_desarrolladores">Desarrolladores</string>
+    <string name="menu_soporte_acerca_de_desarrolladores_txt_autor">Autor</string>
+    <string name="menu_soporte_acerca_de_desarrolladores_txt_cargo">Cargo</string>
+    <string name="menu_soporte_acerca_de_desarrolladores_txt_correo">Correo</string>
+
     <!-- Modulo Menu(me)  -->
 
     <string name="me_varstringbienvenido_al_app_repartidor">Bienvenido a Encárgalo</string>

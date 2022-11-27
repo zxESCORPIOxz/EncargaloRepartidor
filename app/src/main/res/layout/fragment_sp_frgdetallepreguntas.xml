@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:focusable="true"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgDetallepreguntas">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_so_02_3_PregFrecuentes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+
+                    android:text="@string/menu_soporte_Preguntas_Frecuentes" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_so_02_3_Pregunta1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/menu_soporte_Preguntas_Frecuentes_preg1_titulo"
+                        tools:text="@string/menu_soporte_Preguntas_Frecuentes_preg1_titulo" />
+
+                    <TextView
+                        android:id="@+id/txt_so_02_3_preg1_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:justificationMode="inter_word"
+                        android:text="@string/menu_soporte_Preguntas_Frecuentes_preg1_stitulo"
+                        tools:text="@string/menu_soporte_Preguntas_Frecuentes_preg1_stitulo" />
+
+                    <ImageView
+                        android:id="@+id/img_so_02_3_preg1_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        tools:src="@tools:sample/avatars" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <VideoView
+                        android:id="@+id/View_so_02_3_preg1"
+                        android:layout_width="match_parent"
+                        android:layout_height="264dp" />
+                </FrameLayout>
+
+                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ytpv_videopregfrec"
+                    app:showVideoCurrentTime="true"
+                    app:showFullScreenButton="true"
+                    app:showVideoDuration="true"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

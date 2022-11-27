@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:clickable="true"
+    android:padding="@dimen/activity_margin"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgMenuterminoscondiciones">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_so_04_terminos_condiciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            style="@style/tc_mtcbtnterminosycondiciones"
+            android:background="@drawable/outlinebtn_green"
+            android:text="Términos y condiciones de uso"/>
+
+        <Button
+            android:id="@+id/btn_so_04_politica_privacidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            style="@style/tc_mtcbtnpoliticasdeprivacidad"
+            android:background="@drawable/outlinebtn_green"
+            android:text="Política de privacidad y datos personales"/>
+
+        <Button
+            android:id="@+id/btn_so_04_produc_prohibidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            style="@style/tc_mtcbtnproductosprohibidos"
+            android:background="@drawable/outlinebtn_green"
+            android:text="Lista de productos prohibidos para venta"/>
+    </LinearLayout>
+
+
+</LinearLayout>

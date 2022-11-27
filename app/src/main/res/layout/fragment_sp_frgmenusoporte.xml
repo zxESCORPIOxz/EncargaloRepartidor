@@ -1,53 +1,66 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/grey_400"
-    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgmenusoporte">
+    android:focusable="true"
+    android:clickable="true"
+    android:padding="@dimen/activity_margin"
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Soporte.sp_frgmenusoporte" >
 
-    <Button
-        android:id="@+id/sp_mspbtncentrodeayuda"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="10dp"
-        android:background="@drawable/outlinebtn_black"
-        style="@style/sp_mspbtncentrodeayuda"
-        android:text="@string/sp_varstringbtncentro_de_ayuda" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/sp_mspbtnteminosycondiciones"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="10dp"
-        android:background="@drawable/outlinebtn_black"
-        style="@style/sp_mspbtnteminosycondiciones"
-        android:text="@string/sp_varstringbtnteminos_y_condiciones" />
+        <Button
+            android:id="@+id/btn_centroayuda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:background="@drawable/outlinebtn_black"
+            style="@style/sp_mspbtncentrodeayuda"
+            android:text="@string/sp_varstringbtncentro_de_ayuda" />
 
-    <Button
-        android:id="@+id/sp_mspbtncompartirencargalo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="10dp"
-        android:background="@drawable/outlinebtn_black"
-        style="@style/sp_mspbtncompartirencargalo"
-        android:text="@string/sp_varstringbtncompartir_encargalo" />
 
-    <Button
-        android:id="@+id/sp_mspbtnacercade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="10dp"
-        android:background="@drawable/outlinebtn_black"
-        style="@style/sp_mspbtnacercade"
-        android:text="@string/sp_varstringbtnacerca_de" />
 
-    <Button
-        android:id="@+id/sp_mspbtncerrarsesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="10dp"
-        android:background="@drawable/outlinebtn_black"
-        style="@style/sp_mspbtncerrarsesion"
-        android:text="@string/sp_varstringbtncerrar_sesion" />
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_terminois_condiciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:background="@drawable/outlinebtn_black"
+            style="@style/sp_mspbtnteminosycondiciones"
+            android:text="@string/sp_varstringbtnteminos_y_condiciones" />
+
+        <Button
+            android:id="@+id/btn_compartir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:background="@drawable/outlinebtn_black"
+            style="@style/sp_mspbtncompartirencargalo"
+            android:text="@string/sp_varstringbtncompartir_encargalo" />
+
+        <Button
+            android:id="@+id/btn_acerca_de"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:background="@drawable/outlinebtn_black"
+            style="@style/sp_mspbtnacercade"
+            android:text="@string/sp_varstringbtnacerca_de" />
+
+
+        <Button
+            android:id="@+id/btn_cerrar_sesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:background="@drawable/outlinebtn_black"
+            style="@style/sp_mspbtncerrarsesion"
+            android:text="@string/sp_varstringbtncerrar_sesion" />
+
+    </LinearLayout>
+</ScrollView>
