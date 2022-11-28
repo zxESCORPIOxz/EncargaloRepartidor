@@ -13,8 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.SearchEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.SearchView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -51,7 +55,9 @@ public class pe_frghistorialordenes extends Fragment {
     JsonObjectRequest jsonObjectRequest;
     SharedPreferences preferences;
     ArrayList<pe_claseorden_lista_hto> listaordenes;
-
+    SearchView pe_htosrchlistaordenes;
+    Spinner pe_htospnrlistaordenes;
+    pe_adhtolistaorden adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -62,6 +68,33 @@ public class pe_frghistorialordenes extends Fragment {
         listaordenes = new ArrayList<>();
 
         request= Volley.newRequestQueue(getContext());
+        pe_htospnrlistaordenes = view.findViewById(R.id.pe_htospnrlistaordenes);
+        pe_htospnrlistaordenes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(adapter != null){
+                    adapter.filtrado_by_estado(pe_htospnrlistaordenes.getSelectedItem().toString());
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    pe_htosrchlistaordenes = view.findViewById(R.id.pe_htosrchlistaordenes);
+    pe_htosrchlistaordenes.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        @Override
+        public boolean onQueryTextSubmit(String query) {
+            return false;
+        }
+
+        @Override
+        public boolean onQueryTextChange(String newText) {
+            adapter.filtrado_by_id(newText);
+            return false;
+        }
+    });
         pe_htorclvlistaordenes = view.findViewById(R.id.pe_htorclvlistaordenes);
         me_modgetordenes();
         return view;
@@ -107,7 +140,7 @@ public class pe_frghistorialordenes extends Fragment {
 
     private void showRecicler() {
         pe_htorclvlistaordenes.setLayoutManager(new LinearLayoutManager(getContext()));
-        pe_adhtolistaorden adapter = new pe_adhtolistaorden(getContext(),listaordenes);
+        adapter = new pe_adhtolistaorden(getContext(),listaordenes);
         pe_htorclvlistaordenes.setAdapter(adapter);
         adapter.setOnListener(new View.OnClickListener() {
             @Override

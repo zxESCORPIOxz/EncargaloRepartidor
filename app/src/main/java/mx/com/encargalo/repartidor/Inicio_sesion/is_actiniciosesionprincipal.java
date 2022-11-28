@@ -83,8 +83,7 @@ public class is_actiniciosesionprincipal extends AppCompatActivity {
     }
 
     public void is_fctgetDocumentoUsuario(){
-        //varstringdocumento = "96489898";
-        varstringdocumento = "11111115";
+        varstringdocumento = "72727272";
+        //varstringdocumento = "11111115";
     }
-
 }

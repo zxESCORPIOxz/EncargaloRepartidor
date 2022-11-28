@@ -59,9 +59,24 @@
     <string name="pf_varstringvolver_a_inicio">Volver a inicio</string>
 
     <string-array name="vehiculos">
-        <item>Categoria</item>
-        <item>Completada</item>
-        <item>Imcompleta</item>
+        <item>VEHICULO</item>
+        <item>MOTO</item>
+        <item>BICICLETA</item>
+        <item>AUTO</item>
+        <item>CAMION</item>
+        <item>SKUTER</item>
+    </string-array>
+
+    <string-array name="estados">
+        <item>SELECCIONE</item>
+        <item>SOLICITADO</item>
+        <item>ACEPTADO</item>
+        <item>RECHAZADO</item>
+        <item>EN PREPARACIÓN</item>
+        <item>PREPARADO</item>
+        <item>EN CAMINO</item>
+        <item>ENTREGADO</item>
+        <item>RECLAMADO</item>
     </string-array>
 
     <!-- Modulo Notificaciones(nt)  -->
@@ -87,6 +102,10 @@
     <string name="pe_varstringgracias">Gracias!</string>
     <string name="pe_varstringnoexistependientes">No existe ordenes pendientes</string>
     <string name="pe_varstringdetalle">Detalle</string>
+    <string name="pe_varstringitemcliente">Cliente :</string>
+    <string name="pe_varstringitemidorden">ID ORDEN :</string>
+    <string name="pe_varstringitemfechao">Orden emitida :</string>
+    <string name="pe_varstringitemestado">Estada :</string>
 
     <string name="mio_varstrchatcliente7">Escribir aqui</string>
 
@@ -158,9 +177,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="pe_varstringitemcliente">Cliente :</string>
-    <string name="pe_varstringitemidorden">ID ORDEN :</string>
-    <string name="pe_varstringitemfechao">Orden emitida :</string>
-    <string name="pe_varstringitemestado">Estada :</string>
+    <string name="re_varstringnombre_de_vehiculo">Modelo de vehiculo</string>
+    <string name="re_varstringplaca_del_vehiculo">Placa del vehiculo</string>
+    <string name="re_varstringregistrar">Registrar vehiculo</string>
+    <string name="re_varstringcodigo_de_tienda">CODIGO DE TIENDA</string>
+    <string name="re_varstringsolicitar">Solicitar</string>
 
 </resources>

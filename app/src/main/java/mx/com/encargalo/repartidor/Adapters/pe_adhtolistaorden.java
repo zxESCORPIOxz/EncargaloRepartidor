@@ -18,6 +18,7 @@ import mx.com.repartidor.R;
 public class pe_adhtolistaorden extends RecyclerView.Adapter<pe_adhtolistaorden.RecyclerHolder> implements View.OnClickListener{
     LayoutInflater inflater;
     ArrayList<pe_claseorden_lista_hto> model;
+    ArrayList<pe_claseorden_lista_hto> modelmaster = new ArrayList<>();
     Context context;
     View.OnClickListener listener;
 
@@ -25,6 +26,7 @@ public class pe_adhtolistaorden extends RecyclerView.Adapter<pe_adhtolistaorden.
         this.inflater = LayoutInflater.from(context);
         this.model = model;
         this.context = context;
+        modelmaster.addAll(model);
     }
 
     @Override
@@ -49,6 +51,38 @@ public class pe_adhtolistaorden extends RecyclerView.Adapter<pe_adhtolistaorden.
         holder.pe_htotxtNombres.setText(model.get(position).getApellido()+" "+model.get(position).getNombre());
         holder.pe_htotxtOrdCreada.setText(model.get(position).getFecha()+" - "+model.get(position).getHora());
         holder.pe_htotxtOrdEstado.setText(model.get(position).getEstado());
+    }
+
+    public void filtrado_by_id(String filtro){
+        model.clear();
+        model.addAll(modelmaster);
+        if (filtro.length()!=0) {
+            ArrayList<pe_claseorden_lista_hto> modelaux = new ArrayList<>();
+            modelaux.addAll(model);
+            model.clear();
+            for (int i = 0 ; i < modelaux.size();i++){
+                if(modelaux.get(i).getIdorden().equals(filtro)){
+                    model.add(modelaux.get(i));
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
+
+    public void filtrado_by_estado(String filtro){
+        model.clear();
+        model.addAll(modelmaster);
+        if (filtro != "SELECCIONE") {
+            ArrayList<pe_claseorden_lista_hto> modelaux = new ArrayList<>();
+            modelaux.addAll(model);
+            model.clear();
+            for (int i = 0 ; i < modelaux.size();i++){
+                if(modelaux.get(i).getEstado().equals(filtro)){
+                    model.add(modelaux.get(i));
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     public  void setOnListener(View.OnClickListener listener){

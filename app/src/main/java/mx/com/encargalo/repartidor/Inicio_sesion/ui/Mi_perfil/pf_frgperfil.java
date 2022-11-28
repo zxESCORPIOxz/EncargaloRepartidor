@@ -3,7 +3,10 @@ package mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -46,20 +49,24 @@ import mx.com.repartidor.R;
 
 public class pf_frgperfil extends Fragment {
     Button  pf_pfbtnmodregistrodevehiculo,
+            pf_pfbtntienda,
             pf_pfbtnmodregistrodelicencia,
             pf_pfbtnmodregistrodeantecedentes,
             pf_pfbtnmodtargetadepropiedad;
 
     TextView pf_pfedtdireccion,
+            re_reedtcodtienda,
             pf_pfedtnombre,
             pf_pfedtapellidos,
             pf_pfedtnumero,
             pf_pfedtmovilidad,
             pf_pfedttienda,
+            pf_prftxtnombre,
             pf_pfedtplaca;
+    Dialog dialog;
 
     ImageView pf_prfimgvwfoto;
-
+    SharedPreferences sharedPreferences;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
 
@@ -69,6 +76,9 @@ public class pf_frgperfil extends Fragment {
         View view = inflater.inflate(R.layout.fragment_pf_frgperfil, container, false);
         request= Volley.newRequestQueue(getContext());
 
+        pf_pfbtntienda = view.findViewById(R.id.pf_pfbtntienda);
+
+        pf_prftxtnombre = view.findViewById(R.id.pf_prftxtnombre);
         pf_pfedtdireccion = view.findViewById(R.id.pf_pfedtdireccion);
         pf_pfedtnombre = view.findViewById(R.id.pf_pfedtnombre);
         pf_pfedtapellidos = view.findViewById(R.id.pf_pfedtapellidos);
@@ -78,13 +88,13 @@ public class pf_frgperfil extends Fragment {
         pf_pfedttienda = view.findViewById(R.id.pf_pfedttienda);
         pf_prfimgvwfoto = view.findViewById(R.id.pf_prfimgvwfoto);
 
-        SharedPreferences sharedPreferences =
-                getContext().getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
+        sharedPreferences = getContext().getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
 
         Glide.with(getContext()).load(DATOS.IP_SERVER
-                +sharedPreferences.getString("IMAGEN_REPARTIDOR","")).into(pf_prfimgvwfoto);
-
-        me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_USUARIO,"X"));
+                +sharedPreferences.getString(DATOS.VARGOB_IMG_REPARIDOR,"")).into(pf_prfimgvwfoto);
+        pf_prftxtnombre.setText(sharedPreferences.getString(DATOS.VARGOB_NAME_REPARIDOR,""));
+        me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
+        me_modgetTienda(sharedPreferences.getString(DATOS.VARGOB_ID_REPARTIDOR,"X"));
 
         pf_pfbtnmodregistrodevehiculo = view.findViewById(R.id.pf_pfbtnmodregistrodevehiculo);
         pf_pfbtnmodregistrodevehiculo.setOnClickListener(new View.OnClickListener() {
@@ -114,9 +124,74 @@ public class pf_frgperfil extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.action_nav_miperfil_to_nav_cargardocumento);
             }
         });
-
+        pf_pfbtntienda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog = new Dialog(getContext());
+                dialog.setContentView(R.layout.re_dialogregreptotienda);
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialog.setCancelable(false);
+                re_reedtcodtienda = dialog.findViewById(R.id.re_reedtcodtienda);
+                ImageView re_rebtnclose = dialog.findViewById(R.id.re_rebtnclose);
+                re_rebtnclose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                Button btn_Reg = dialog.findViewById(R.id.re_rebtnregistrartienda);
+                btn_Reg.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        me_modsetTienda(sharedPreferences.getString(DATOS.VARGOB_ID_REPARTIDOR,""),re_reedtcodtienda.getText().toString());
+                    }
+                });
+                dialog.show();
+            }
+        });
 
         return view;
+    }
+
+    public void me_modsetTienda(final String idrepartidor, String idtienda){
+        String APIREST_URL = DATOS.IP_SERVER+ "a_contrata_rep.php?"+
+                "idrep=" + idrepartidor+
+                "&idten=" + idtienda;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                pf_pfedttienda.setText(response.optString("Nombre"));
+                pf_pfbtntienda.setEnabled(false);
+                dialog.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "Aun no perteneces a una tienda", Toast.LENGTH_SHORT).show();
+            }
+        });
+        request.add(jsonObjectRequest);
+    }
+
+    public void me_modgetTienda(String idrepartidor){
+        String APIREST_URL = DATOS.IP_SERVER+ "c_tienda_repartidor.php?"+
+                "idRepartidor=" + idrepartidor;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                pf_pfedttienda.setText(response.optString("Nombre"));
+                pf_pfbtntienda.setEnabled(false);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "Aun no perteneces a una tienda", Toast.LENGTH_SHORT).show();
+            }
+        });
+        request.add(jsonObjectRequest);
     }
 
     public void me_modgetPerfil(String Documento){
@@ -160,10 +235,14 @@ public class pf_frgperfil extends Fragment {
                                 pf_pfedtmovilidad.setEnabled(false);
                                 pf_pfedtplaca.setText(myjsonObject.getString("repPlaca"));
                                 pf_pfedtplaca.setEnabled(false);
-                                pf_pfedttienda.setText(myjsonObject.getString("tieNombre"));
+//                                pf_pfedttienda.setText(myjsonObject.getString("tieNombre"));
                                 pf_pfedttienda.setEnabled(false);
-
-
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString(DATOS.VARGOB_ESTADO_REPARIDOR,myjsonObject.getString("repEstado"));
+                                if(myjsonObject.getString("repEstado").equals("INACTIVO")){
+                                    pf_prftxtnombre.append("\n (INACTIVO) \n Valide los documentos requeridos para laborar como repartidor antes de comensar");
+                                    pf_prftxtnombre.setTextColor(Color.RED);
+                                }
                             }
                         } catch (JSONException e) {
                             Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();

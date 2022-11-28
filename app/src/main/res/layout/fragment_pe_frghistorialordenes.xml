@@ -7,18 +7,19 @@
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frghistorialordenes">
 
     <SearchView
+        android:id="@+id/pe_htosrchlistaordenes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_margin="@dimen/activity_margin"
         android:background="@drawable/redondeado_blanco">
     </SearchView>
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/pe_htospnrlistaordenes"
         android:layout_width="match_parent"
         android:layout_margin="@dimen/activity_margin"
         android:layout_height="50dp"
-        android:entries="@array/vehiculos"
+        android:entries="@array/estados"
         android:background="@drawable/redondeado_blanco" />
 
     <androidx.recyclerview.widget.RecyclerView

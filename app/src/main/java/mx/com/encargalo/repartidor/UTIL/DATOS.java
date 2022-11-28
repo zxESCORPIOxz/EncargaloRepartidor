@@ -18,6 +18,9 @@ public class DATOS {
 
     //MENU
     public static final String VARGOB_ID_REPARTIDOR = "id_repartidor";
+    public static final String VARGOB_IMG_REPARIDOR = "IMAGEN_REPARTIDOR";
+    public static final String VARGOB_NAME_REPARIDOR = "NOMBRE_REPARTIDOR";
+    public static final String VARGOB_ESTADO_REPARIDOR = "ESTADO_REPARIDOR";
 
     //Pedidos
     public static final String VARGOB_ID_ORDEN = "id_orden";

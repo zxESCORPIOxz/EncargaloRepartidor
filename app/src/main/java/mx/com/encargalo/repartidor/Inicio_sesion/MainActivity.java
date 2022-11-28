@@ -1,10 +1,15 @@
 package mx.com.encargalo.repartidor.Inicio_sesion;
 
+import android.app.Dialog;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
 
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
+    JsonObjectRequest jsonObjectRequest1;
+    JsonObjectRequest jsonObjectRequest2;
+    Dialog dialog;
+
+
+    Spinner re_respntipo;
+    TextView re_reedtnombrevehiculo;
+    TextView re_reedtplaca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         me_menuimgvwimgUsuario = headView.findViewById(R.id.me_menuimgvwimgUsuario);
 
 
-        me_modgetNombre(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
+        me_modgetexist(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_menuinicio,
@@ -88,7 +101,49 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
-
+    public void me_modgetexist(String Documento){
+        final String doc = Documento;
+        String APIREST_URL = DATOS.IP_SERVER+ "c_existe_repartidor.php?"+
+                "documento=" + doc;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest1 = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                if(response.optString("EXISTE").equals("1")){
+                    me_modgetNombre(doc);
+                }else{
+                    dialog = new Dialog(MainActivity.this);
+                    dialog.setContentView(R.layout.re_dialogregrepartidor);
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                    dialog.setCancelable(false);
+                    re_respntipo = dialog.findViewById(R.id.re_respntipo);
+                    re_reedtnombrevehiculo = dialog.findViewById(R.id.re_reedtnombrevehiculo);
+                    re_reedtplaca = dialog.findViewById(R.id.re_reedtplaca);
+                    Button btn_Reg = dialog.findViewById(R.id.re_rebtnregistrar);
+                    btn_Reg.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            me_modREGgetNombre(
+                                    re_respntipo.getSelectedItem().toString(),
+                                    re_reedtnombrevehiculo.getText().toString(),
+                                    re_reedtplaca.getText().toString(),
+                                    doc
+                            );
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                me_menutxtNombreUsuario.setText(DATOS.NO_ENCONTRADO+error.getMessage());
+            }
+        });
+        request.add(jsonObjectRequest1);
+    }
     public void me_modgetNombre(String Documento){
         String APIREST_URL = DATOS.IP_SERVER+ "c_nombre_usuario_repartidor.php?"+
                 "iDocumentoPersona=" + Documento;
@@ -101,7 +156,8 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(DATOS.VARGOB_ID_REPARTIDOR,response.optString("idRepartidor"));//response.optString("idRepartidor")
                 editor.putString(DATOS.VARGOB_ID_USUARIO,response.optString("idUsuario"));//response.optString("idRepartidor")
-                editor.putString("IMAGEN_REPARTIDOR",response.optString("Imagen"));//response.optString("idRepartidor")
+                editor.putString(DATOS.VARGOB_IMG_REPARIDOR,response.optString("Imagen"));//response.optString("idRepartidor")
+                editor.putString(DATOS.VARGOB_NAME_REPARIDOR,response.optString("Nombre"));//response.optString("idRepartidor")
                 editor.apply();
                 me_menutxtNombreUsuario.setText(response.optString("Nombre"));
                 Glide.with(MainActivity.this).load(DATOS.IP_SERVER
@@ -114,6 +170,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         request.add(jsonObjectRequest);
+    }
+
+    public void me_modREGgetNombre(String tipo,String nombre,String placa,String documento){
+        String APIREST_URL = DATOS.IP_SERVER+ "a_registrar_repartidor.php?"
+                +"tipo=" + tipo
+                +"&nombre=" + nombre
+                +"&placa=" + placa
+                +"&documento=" + documento;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest2 = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                SharedPreferences sharedPreferences =
+                        getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(DATOS.VARGOB_ID_REPARTIDOR,response.optString("idRepartidor"));//response.optString("idRepartidor")
+                editor.putString(DATOS.VARGOB_ID_USUARIO,response.optString("idUsuario"));//response.optString("idRepartidor")
+                editor.putString(DATOS.VARGOB_IMG_REPARIDOR,response.optString("Imagen"));//response.optString("idRepartidor")
+                editor.putString(DATOS.VARGOB_NAME_REPARIDOR,response.optString("Nombre"));//response.optString("idRepartidor")
+                editor.apply();
+                me_menutxtNombreUsuario.setText(response.optString("Nombre"));
+                Glide.with(MainActivity.this).load(DATOS.IP_SERVER
+                        +response.optString("Imagen")).into(me_menuimgvwimgUsuario);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                me_menutxtNombreUsuario.setText(DATOS.NO_ENCONTRADO);
+            }
+        });
+        request.add(jsonObjectRequest2);
     }
 
     @Override
