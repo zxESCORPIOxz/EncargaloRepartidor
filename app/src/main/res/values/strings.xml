@@ -181,6 +181,7 @@
     <string name="re_varstringplaca_del_vehiculon">Nombre</string>
     <string name="re_varstringplaca_del_vehiculo">Nombre</string>
     <string name="re_varstringapellidosedit">Apellidos</string>
+    <string name="re_varstringtelefonoedit">Teléfono</string>
     <string name="re_varstringregistrara">Actualizar</string>
     <string name="re_varstringcodigo_de_tienda">CODIGO DE TIENDA</string>
     <string name="re_varstringsolicitar">Solicitar</string>

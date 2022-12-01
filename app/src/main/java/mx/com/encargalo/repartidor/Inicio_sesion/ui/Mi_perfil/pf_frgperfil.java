@@ -73,6 +73,7 @@ public class pf_frgperfil extends Fragment {
             pf_pfbtntienda,
             pf_pfbtnmodnombre,
             pf_pfbtnmodapellidos,
+            pf_pfbtnmodnumero,
             pf_pfbtnmodregistrodelicencia,
             pf_pfbtnmodregistrodeantecedentes,
             pf_pfbtnmodimagen,
@@ -82,6 +83,7 @@ public class pf_frgperfil extends Fragment {
             re_reedtcodtienda,
             re_reedtnombre,
             re_reedtapellid,
+            re_reedttelef,
             pf_pfedtnombre,
             pf_pfedtapellidos,
             pf_pfedtnumero,
@@ -92,7 +94,8 @@ public class pf_frgperfil extends Fragment {
 
     Dialog  dialog,
             dialognomb,
-            dialogapell;
+            dialogapell,
+            dialogtelefono;
 
     ImageView pf_prfimgvwfoto;
     SharedPreferences sharedPreferences;
@@ -113,6 +116,7 @@ public class pf_frgperfil extends Fragment {
 
         pf_pfbtnmodnombre = view.findViewById(R.id.pf_pfbtnmodnombre);
         pf_pfbtnmodapellidos = view.findViewById(R.id.pf_pfbtnmodapellidos);
+        pf_pfbtnmodnumero = view.findViewById(R.id.pf_pfbtnmodnumero);
 
         pf_prftxtnombre = view.findViewById(R.id.pf_prftxtnombre);
         pf_pfedtdireccion = view.findViewById(R.id.pf_pfedtdireccion);
@@ -287,6 +291,33 @@ public class pf_frgperfil extends Fragment {
             }
         });
 
+        pf_pfbtnmodnumero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogtelefono = new Dialog(getContext());
+                dialogtelefono.setContentView(R.layout.re_dialogrepapellido);
+                dialogtelefono.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialogtelefono.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialogtelefono.setCancelable(false);
+                re_reedttelef = dialogtelefono.findViewById(R.id.re_reedttelef);
+                ImageView re_rebtnclose2 = dialogtelefono.findViewById(R.id.re_rebtnclose3);
+                re_rebtnclose2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogtelefono.dismiss();
+                    }
+                });
+                Button btn_Act2 = dialogtelefono.findViewById(R.id.re_rebtnactualizar3);
+                btn_Act2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        me_modTelefono(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,""),re_reedttelef.getText().toString());
+                    }
+                });
+                dialogtelefono.show();
+            }
+        });
+
         return view;
     }
 
@@ -407,6 +438,27 @@ public class pf_frgperfil extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getContext(), "Apellido Actualizado", Toast.LENGTH_SHORT).show();
+            }
+        });
+        request.add(jsonObjectRequest);
+    }
+
+    public void me_modTelefono(final String id_DocumentoPersona, String per_NumeroCelular){
+        String APIREST_URL = DATOS.IP_SERVER+ "m_numerocelular_persona.php?"+
+                "id_DocumentoPersona=" + id_DocumentoPersona+
+                "&per_NumeroCelular=" + per_NumeroCelular;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                pf_pfedtnumero.setText(response.optString("Nombre"));
+                pf_pfedtnumero.setEnabled(false);
+                dialogtelefono.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "Telefono Actualizado", Toast.LENGTH_SHORT).show();
             }
         });
         request.add(jsonObjectRequest);
