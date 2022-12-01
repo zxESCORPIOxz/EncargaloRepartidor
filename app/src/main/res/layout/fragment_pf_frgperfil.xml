@@ -171,6 +171,10 @@
                     style="@style/pf_iconvehicle"
                     android:hint="@string/pf_varstringvehiculo" />
 
+                <Button
+                    android:id="@+id/pf_pfbtnvehiculo"
+                    style="@style/pf_buttongeneral" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -187,6 +191,10 @@
                     android:drawablePadding="10dp"
                     style="@style/pf_iconplaca"
                     android:hint="@string/pf_varstringplaca" />
+
+                <Button
+                    android:id="@+id/pf_pfbtnplaca"
+                    style="@style/pf_buttongeneral" />
 
             </LinearLayout>
             <TextView

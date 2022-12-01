@@ -4,13 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/drawable-anydpi/ic_tienda.xml" value="0.1975" />
+        <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/activity_main.xml" value="0.2814814814814815" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/app_bar_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/fragment_pf_frgcargardocumentos.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/fragment_pf_frgperfil.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/nav_header_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/re_dialogeditvehiculo.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/re_dialogregrepartidor.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/re_dialogregreptotienda.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/re_dialogrepapellido.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/re_dialogrepeditplaca.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/re_dialogrepnombre.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/re_dialogreptelefono.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />

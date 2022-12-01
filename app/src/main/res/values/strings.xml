@@ -67,6 +67,15 @@
         <item>SKUTER</item>
     </string-array>
 
+    <string-array name="vehiculos2">
+        <item>VEHICULO</item>
+        <item>MOTO</item>
+        <item>BICICLETA</item>
+        <item>AUTO</item>
+        <item>CAMION</item>
+        <item>PATINES</item>
+    </string-array>
+
     <string-array name="estados">
         <item>SELECCIONE</item>
         <item>SOLICITADO</item>
@@ -179,12 +188,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="re_varstringnombre_de_vehiculo">Modelo de vehiculo</string>
     <string name="re_varstringplaca_del_vehiculon">Nombre</string>
-    <string name="re_varstringplaca_del_vehiculo">Nombre</string>
+    <string name="re_varstringplaca_del_vehiculo">Placa Vehiculo</string>
     <string name="re_varstringapellidosedit">Apellidos</string>
+    <string name="re_varstringplacaedit">Placa</string>
     <string name="re_varstringtelefonoedit">Teléfono</string>
     <string name="re_varstringregistrara">Actualizar</string>
     <string name="re_varstringcodigo_de_tienda">CODIGO DE TIENDA</string>
     <string name="re_varstringsolicitar">Solicitar</string>
     <string name="re_varstringregistrar">Registrar</string>
+
 
 </resources>

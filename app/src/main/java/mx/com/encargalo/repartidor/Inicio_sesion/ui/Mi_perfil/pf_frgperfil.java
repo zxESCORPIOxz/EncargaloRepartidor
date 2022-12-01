@@ -34,6 +34,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -77,7 +78,9 @@ public class pf_frgperfil extends Fragment {
             pf_pfbtnmodregistrodelicencia,
             pf_pfbtnmodregistrodeantecedentes,
             pf_pfbtnmodimagen,
-            pf_pfbtnmodtargetadepropiedad;
+            pf_pfbtnmodtargetadepropiedad,
+            pf_pfbtnvehiculo,
+            pf_pfbtnplaca;
 
     TextView pf_pfedtdireccion,
             re_reedtcodtienda,
@@ -90,12 +93,18 @@ public class pf_frgperfil extends Fragment {
             pf_pfedtmovilidad,
             pf_pfedttienda,
             pf_prftxtnombre,
-            pf_pfedtplaca;
+            pf_pfedtplaca,
+            re_reedtnombrevehiculo2,
+            re_reeditplaca;
 
     Dialog  dialog,
             dialognomb,
             dialogapell,
-            dialogtelefono;
+            dialogtelefono,
+            dialogvehiculo,
+            dialogplac;
+
+    Spinner re_respntipo2;
 
     ImageView pf_prfimgvwfoto;
     SharedPreferences sharedPreferences;
@@ -117,6 +126,8 @@ public class pf_frgperfil extends Fragment {
         pf_pfbtnmodnombre = view.findViewById(R.id.pf_pfbtnmodnombre);
         pf_pfbtnmodapellidos = view.findViewById(R.id.pf_pfbtnmodapellidos);
         pf_pfbtnmodnumero = view.findViewById(R.id.pf_pfbtnmodnumero);
+        pf_pfbtnvehiculo = view.findViewById(R.id.pf_pfbtnvehiculo);
+        pf_pfbtnplaca = view.findViewById(R.id.pf_pfbtnplaca);
 
         pf_prftxtnombre = view.findViewById(R.id.pf_prftxtnombre);
         pf_pfedtdireccion = view.findViewById(R.id.pf_pfedtdireccion);
@@ -295,26 +306,81 @@ public class pf_frgperfil extends Fragment {
             @Override
             public void onClick(View v) {
                 dialogtelefono = new Dialog(getContext());
-                dialogtelefono.setContentView(R.layout.re_dialogrepapellido);
+                dialogtelefono.setContentView(R.layout.re_dialogreptelefono);
                 dialogtelefono.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 dialogtelefono.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialogtelefono.setCancelable(false);
                 re_reedttelef = dialogtelefono.findViewById(R.id.re_reedttelef);
-                ImageView re_rebtnclose2 = dialogtelefono.findViewById(R.id.re_rebtnclose3);
-                re_rebtnclose2.setOnClickListener(new View.OnClickListener() {
+                ImageView re_rebtnclose3 = dialogtelefono.findViewById(R.id.re_rebtnclose3);
+                re_rebtnclose3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dialogtelefono.dismiss();
                     }
                 });
-                Button btn_Act2 = dialogtelefono.findViewById(R.id.re_rebtnactualizar3);
-                btn_Act2.setOnClickListener(new View.OnClickListener() {
+                Button btn_Act3 = dialogtelefono.findViewById(R.id.re_rebtnactualizar3);
+                btn_Act3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         me_modTelefono(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,""),re_reedttelef.getText().toString());
                     }
                 });
                 dialogtelefono.show();
+            }
+        });
+
+        pf_pfbtnvehiculo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogvehiculo = new Dialog(getContext());
+                dialogvehiculo.setContentView(R.layout.re_dialogeditvehiculo);
+                dialogvehiculo.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialogvehiculo.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialogvehiculo.setCancelable(false);
+                re_respntipo2 = dialogvehiculo.findViewById(R.id.re_respntipo2);
+                re_reedtnombrevehiculo2 = dialogvehiculo.findViewById(R.id.re_reedtnombrevehiculo2);
+                ImageView re_rebtnclose4 = dialogvehiculo.findViewById(R.id.re_rebtnclose4);
+                re_rebtnclose4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogvehiculo.dismiss();
+                    }
+                });
+                Button btn_Act4 = dialogvehiculo.findViewById(R.id.re_rebtnactualizar4);
+                btn_Act4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        me_modvehiculo(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,""), re_respntipo2.getSelectedItem().toString(), re_reedtnombrevehiculo2.getText().toString());
+                    }
+                });
+                dialogvehiculo.show();
+            }
+        });
+
+        pf_pfbtnplaca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogplac = new Dialog(getContext());
+                dialogplac.setContentView(R.layout.re_dialogrepeditplaca);
+                dialogplac.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialogplac.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialogplac.setCancelable(false);
+                re_reeditplaca = dialogplac.findViewById(R.id.re_reeditplaca);
+                ImageView re_rebtnclose5 = dialogplac.findViewById(R.id.re_rebtnclose5);
+                re_rebtnclose5.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogplac.dismiss();
+                    }
+                });
+                Button btn_Act5 = dialogplac.findViewById(R.id.re_rebtnactualizar5);
+                btn_Act5.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        me_modPlaca(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,""),re_reeditplaca.getText().toString());
+                    }
+                });
+                dialogplac.show();
             }
         });
 
@@ -409,8 +475,8 @@ public class pf_frgperfil extends Fragment {
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                pf_pfedtnombre.setText(response.optString("Nombre"));
-                pf_pfbtnmodnombre.setEnabled(false);
+                //pf_pfedtnombre.setText(response.optString("Nombre"));
+               //pf_pfbtnmodnombre.setEnabled(false);
                 dialognomb.dismiss();
             }
         }, new Response.ErrorListener() {
@@ -430,8 +496,8 @@ public class pf_frgperfil extends Fragment {
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                pf_pfedtapellidos.setText(response.optString("Nombre"));
-                pf_pfedtapellidos.setEnabled(false);
+                //pf_pfedtapellidos.setText(response.optString("Nombre"));
+                //pf_pfedtapellidos.setEnabled(false);
                 dialogapell.dismiss();
             }
         }, new Response.ErrorListener() {
@@ -451,14 +517,57 @@ public class pf_frgperfil extends Fragment {
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                pf_pfedtnumero.setText(response.optString("Nombre"));
-                pf_pfedtnumero.setEnabled(false);
+                //pf_pfedtnumero.setText(response.optString("Nombre"));
+                //pf_pfedtnumero.setEnabled(false);
                 dialogtelefono.dismiss();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getContext(), "Telefono Actualizado", Toast.LENGTH_SHORT).show();
+            }
+        });
+        request.add(jsonObjectRequest);
+    }
+
+    public void me_modvehiculo(final String id_DocumentoPersona, String rep_TipoVehiculo, String rep_NombreVehiculo){
+        String APIREST_URL = DATOS.IP_SERVER+ "m_vehiculo_persona.php?"+
+                "id_DocumentoPersona=" + id_DocumentoPersona+
+                "&rep_TipoVehiculo=" + rep_TipoVehiculo+
+                "&rep_NombreVehiculo=" + rep_NombreVehiculo;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                //pf_pfedtnumero.setText(response.optString("Nombre"));
+                //pf_pfedtnumero.setEnabled(false);
+                dialogvehiculo.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "Vehiculo Actualizado", Toast.LENGTH_SHORT).show();
+            }
+        });
+        request.add(jsonObjectRequest);
+    }
+
+    public void me_modPlaca(final String id_DocumentoPersona, String rep_Placa){
+        String APIREST_URL = DATOS.IP_SERVER+ "m_placa_repartidor.php?"+
+                "id_DocumentoPersona=" + id_DocumentoPersona+
+                "&rep_Placa=" + rep_Placa;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                //pf_pfedtnumero.setText(response.optString("Nombre"));
+                //pf_pfedtnumero.setEnabled(false);
+                dialogplac.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "Placa Actualizada", Toast.LENGTH_SHORT).show();
             }
         });
         request.add(jsonObjectRequest);
@@ -578,6 +687,7 @@ public class pf_frgperfil extends Fragment {
                                 pf_pfedttienda.setEnabled(false);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(DATOS.VARGOB_ESTADO_REPARIDOR,myjsonObject.getString("repEstado"));
+                                //Validación si estado es INACTIVO
                                 if(myjsonObject.getString("repEstado").equals("INACTIVO")){
                                     pf_prftxtnombre.append("\n (INACTIVO) \n Valide los documentos requeridos para laborar como repartidor antes de comensar");
                                     pf_prftxtnombre.setTextColor(Color.RED);
