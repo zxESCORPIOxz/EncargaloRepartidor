@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_margin"
             android:background="@drawable/redondeado_blanco"
+            android:maxLength="10"
             android:hint="@string/re_varstringplacaedit"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>

@@ -5,7 +5,7 @@
     android:layout_margin="30dp"
     android:padding="20dp"
     android:layout_gravity="center_vertical"
-    android:background="@drawable/redondeado_gris_600"
+    android:background="@drawable/redondeado_azul_400"
     android:orientation="vertical">
 
     <ImageView
@@ -38,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/redondeado_blanco"
+            android:maxLength="20"
             android:layout_margin="@dimen/activity_margin"
             android:inputType="text"
             android:hint="@string/re_varstringnombre_de_vehiculo"/>
@@ -51,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/redondeado_blanco"
+            android:maxLength="10"
             android:layout_margin="@dimen/activity_margin"
             android:inputType="text"
             android:hint="@string/re_varstringplaca_del_vehiculo"/>

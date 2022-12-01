@@ -269,6 +269,7 @@ public class pf_frgperfil extends Fragment {
                     @Override
                     public void onClick(View v) {
                         me_modNombre(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,""),re_reedtnombre.getText().toString());
+
                     }
                 });
                 dialognomb.show();
@@ -462,6 +463,8 @@ public class pf_frgperfil extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getContext(), "Aun no perteneces a una tienda", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+                me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
             }
         });
         request.add(jsonObjectRequest);
@@ -483,6 +486,8 @@ public class pf_frgperfil extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getContext(), "Nombre Actualizado", Toast.LENGTH_SHORT).show();
+                dialognomb.dismiss();
+                me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
             }
         });
         request.add(jsonObjectRequest);
@@ -504,6 +509,8 @@ public class pf_frgperfil extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getContext(), "Apellido Actualizado", Toast.LENGTH_SHORT).show();
+                dialogapell.dismiss();
+                me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
             }
         });
         request.add(jsonObjectRequest);
@@ -525,6 +532,8 @@ public class pf_frgperfil extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getContext(), "Telefono Actualizado", Toast.LENGTH_SHORT).show();
+                dialogtelefono.dismiss();
+                me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
             }
         });
         request.add(jsonObjectRequest);
@@ -547,6 +556,8 @@ public class pf_frgperfil extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getContext(), "Vehiculo Actualizado", Toast.LENGTH_SHORT).show();
+                dialogvehiculo.dismiss();
+                me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
             }
         });
         request.add(jsonObjectRequest);
@@ -568,6 +579,8 @@ public class pf_frgperfil extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getContext(), "Placa Actualizada", Toast.LENGTH_SHORT).show();
+                dialogplac.dismiss();
+                me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
             }
         });
         request.add(jsonObjectRequest);
