@@ -50,12 +50,14 @@ import mx.com.repartidor.R;
 public class pf_frgperfil extends Fragment {
     Button  pf_pfbtnmodregistrodevehiculo,
             pf_pfbtntienda,
+            pf_pfbtnmodnombre,
             pf_pfbtnmodregistrodelicencia,
             pf_pfbtnmodregistrodeantecedentes,
             pf_pfbtnmodtargetadepropiedad;
 
     TextView pf_pfedtdireccion,
             re_reedtcodtienda,
+            re_reedtnombre,
             pf_pfedtnombre,
             pf_pfedtapellidos,
             pf_pfedtnumero,
@@ -63,7 +65,9 @@ public class pf_frgperfil extends Fragment {
             pf_pfedttienda,
             pf_prftxtnombre,
             pf_pfedtplaca;
-    Dialog dialog;
+
+    Dialog  dialog,
+            dialognomb;
 
     ImageView pf_prfimgvwfoto;
     SharedPreferences sharedPreferences;
@@ -77,6 +81,7 @@ public class pf_frgperfil extends Fragment {
         request= Volley.newRequestQueue(getContext());
 
         pf_pfbtntienda = view.findViewById(R.id.pf_pfbtntienda);
+        pf_pfbtnmodnombre = view.findViewById(R.id.pf_pfbtnmodnombre);
 
         pf_prftxtnombre = view.findViewById(R.id.pf_prftxtnombre);
         pf_pfedtdireccion = view.findViewById(R.id.pf_pfedtdireccion);
@@ -151,6 +156,33 @@ public class pf_frgperfil extends Fragment {
             }
         });
 
+        pf_pfbtnmodnombre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialognomb = new Dialog(getContext());
+                dialognomb.setContentView(R.layout.re_dialogrepnombre);
+                dialognomb.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialognomb.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialognomb.setCancelable(false);
+                re_reedtnombre = dialognomb.findViewById(R.id.re_reedtnombre);
+                ImageView re_rebtnclose1 = dialognomb.findViewById(R.id.re_rebtnclose1);
+                re_rebtnclose1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialognomb.dismiss();
+                    }
+                });
+                Button btn_Act = dialognomb.findViewById(R.id.re_rebtnactualizar);
+                btn_Act.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        me_modNombre(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,""),re_reedtnombre.getText().toString());
+                    }
+                });
+                dialognomb.show();
+            }
+        });
+
         return view;
     }
 
@@ -175,6 +207,27 @@ public class pf_frgperfil extends Fragment {
         request.add(jsonObjectRequest);
     }
 
+    public void me_modNombre(final String id_DocumentoPersona, String per_Nombres){
+        String APIREST_URL = DATOS.IP_SERVER+ "m_nombre_persona.php?"+
+                "id_DocumentoPersona=" + id_DocumentoPersona+
+                "&per_Nombres=" + per_Nombres;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                pf_pfedttienda.setText(response.optString("Nombre"));
+                pf_pfbtnmodnombre.setEnabled(false);
+                dialognomb.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "Actualizado", Toast.LENGTH_SHORT).show();
+            }
+        });
+        request.add(jsonObjectRequest);
+    }
+
     public void me_modgetTienda(String idrepartidor){
         String APIREST_URL = DATOS.IP_SERVER+ "c_tienda_repartidor.php?"+
                 "idRepartidor=" + idrepartidor;
@@ -183,12 +236,12 @@ public class pf_frgperfil extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 pf_pfedttienda.setText(response.optString("Nombre"));
-                pf_pfbtntienda.setEnabled(false);
+                pf_pfedttienda.setEnabled(false);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Aun no perteneces a una tienda", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), DATOS.NO_ENCONTRADO, Toast.LENGTH_SHORT).show();
             }
         });
         request.add(jsonObjectRequest);

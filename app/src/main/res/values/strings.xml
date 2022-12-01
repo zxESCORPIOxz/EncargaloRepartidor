@@ -178,9 +178,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="re_varstringnombre_de_vehiculo">Modelo de vehiculo</string>
-    <string name="re_varstringplaca_del_vehiculo">Placa del vehiculo</string>
-    <string name="re_varstringregistrar">Registrar vehiculo</string>
+    <string name="re_varstringplaca_del_vehiculon">Nombre</string>
+    <string name="re_varstringplaca_del_vehiculo">Nombre</string>
+    <string name="re_varstringregistrara">Actualizar</string>
     <string name="re_varstringcodigo_de_tienda">CODIGO DE TIENDA</string>
     <string name="re_varstringsolicitar">Solicitar</string>
+    <string name="re_varstringregistrar">Registrar</string>
 
 </resources>
