@@ -34,8 +34,9 @@ public class sp_Adapterdesarrollador extends RecyclerView.Adapter<sp_Adapterdesa
     @Override
     public void onBindViewHolder(@NonNull final DesarrolladorHolder holder, int position) {
         final sp_Entidaddesarrollador item = listadesarrolladores.get(position);
-
         holder.txt_so_07_autor.setText(String.valueOf(listadesarrolladores.get(position).getNombre()));
+        holder.txt_so_07_cargo.setText(String.valueOf(listadesarrolladores.get(position).getCargo()));
+        holder.txt_so_07_correo.setText(String.valueOf(listadesarrolladores.get(position).getCorreo()));
 
     }
 
