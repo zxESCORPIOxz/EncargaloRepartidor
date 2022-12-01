@@ -38,6 +38,10 @@
             android:value="@string/google_maps_key" />
 
         <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name="mx.com.encargalo.repartidor.Inicio_sesion.is_actvalidacioncodigo"
             android:parentActivityName="mx.com.encargalo.repartidor.Inicio_sesion.is_actregistrarusuario" />
         <activity
