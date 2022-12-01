@@ -4,10 +4,6 @@ android {
     compileSdkVersion 30
     buildToolsVersion '30.0.3'
 
-    buildFeatures{
-        viewBinding = true
-    }
-
     defaultConfig {
         applicationId "mx.com.repartidor"
         minSdkVersion 23
@@ -60,8 +56,5 @@ dependencies {
 
 
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
-
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
-
 
 }
