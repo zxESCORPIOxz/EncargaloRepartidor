@@ -124,13 +124,19 @@ public class MainActivity extends AppCompatActivity {
                     btn_Reg.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            me_modREGgetNombre(
-                                    re_respntipo.getSelectedItem().toString(),
-                                    re_reedtnombrevehiculo.getText().toString(),
-                                    re_reedtplaca.getText().toString(),
-                                    doc
-                            );
-                            dialog.dismiss();
+                            if (re_respntipo.getSelectedItem().toString().equals("VEHICULO") &&
+                                    re_reedtnombrevehiculo.length() != 0 &&
+                                    re_reedtplaca.getText().length()!= 0){
+                                me_modREGgetNombre(
+                                        re_respntipo.getSelectedItem().toString(),
+                                        re_reedtnombrevehiculo.getText().toString(),
+                                        re_reedtplaca.getText().toString(),
+                                        doc
+                                );
+                                dialog.dismiss();
+                            }else {
+                                Toast.makeText(MainActivity.this, "Ingrese todos los campos", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
                     dialog.show();

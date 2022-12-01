@@ -72,6 +72,7 @@ public class pf_frgperfil extends Fragment {
     Button  pf_pfbtnmodregistrodevehiculo,
             pf_pfbtntienda,
             pf_pfbtnmodnombre,
+            pf_pfbtnmodapellidos,
             pf_pfbtnmodregistrodelicencia,
             pf_pfbtnmodregistrodeantecedentes,
             pf_pfbtnmodimagen,
@@ -80,6 +81,7 @@ public class pf_frgperfil extends Fragment {
     TextView pf_pfedtdireccion,
             re_reedtcodtienda,
             re_reedtnombre,
+            re_reedtapellid,
             pf_pfedtnombre,
             pf_pfedtapellidos,
             pf_pfedtnumero,
@@ -89,7 +91,8 @@ public class pf_frgperfil extends Fragment {
             pf_pfedtplaca;
 
     Dialog  dialog,
-            dialognomb;
+            dialognomb,
+            dialogapell;
 
     ImageView pf_prfimgvwfoto;
     SharedPreferences sharedPreferences;
@@ -107,7 +110,9 @@ public class pf_frgperfil extends Fragment {
         request= Volley.newRequestQueue(getContext());
 
         pf_pfbtntienda = view.findViewById(R.id.pf_pfbtntienda);
+
         pf_pfbtnmodnombre = view.findViewById(R.id.pf_pfbtnmodnombre);
+        pf_pfbtnmodapellidos = view.findViewById(R.id.pf_pfbtnmodapellidos);
 
         pf_prftxtnombre = view.findViewById(R.id.pf_prftxtnombre);
         pf_pfedtdireccion = view.findViewById(R.id.pf_pfedtdireccion);
@@ -217,7 +222,11 @@ public class pf_frgperfil extends Fragment {
                 btn_Reg.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        me_modsetTienda(sharedPreferences.getString(DATOS.VARGOB_ID_REPARTIDOR,""),re_reedtcodtienda.getText().toString());
+                        if(re_reedtcodtienda.getText().length() != 0){
+                            me_modsetTienda(sharedPreferences.getString(DATOS.VARGOB_ID_REPARTIDOR,""),re_reedtcodtienda.getText().toString());
+                        }else {
+                            Toast.makeText(getContext(), "Ingrese el codigo de tienda", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
                 dialog.show();
@@ -248,6 +257,33 @@ public class pf_frgperfil extends Fragment {
                     }
                 });
                 dialognomb.show();
+            }
+        });
+
+        pf_pfbtnmodapellidos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogapell = new Dialog(getContext());
+                dialogapell.setContentView(R.layout.re_dialogrepapellido);
+                dialogapell.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialogapell.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialogapell.setCancelable(false);
+                re_reedtapellid = dialogapell.findViewById(R.id.re_reedtapellid);
+                ImageView re_rebtnclose2 = dialogapell.findViewById(R.id.re_rebtnclose2);
+                re_rebtnclose2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogapell.dismiss();
+                    }
+                });
+                Button btn_Act2 = dialogapell.findViewById(R.id.re_rebtnactualizar2);
+                btn_Act2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        me_modApellido(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,""),re_reedtapellid.getText().toString());
+                    }
+                });
+                dialogapell.show();
             }
         });
 
@@ -342,14 +378,35 @@ public class pf_frgperfil extends Fragment {
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                pf_pfedttienda.setText(response.optString("Nombre"));
+                pf_pfedtnombre.setText(response.optString("Nombre"));
                 pf_pfbtnmodnombre.setEnabled(false);
                 dialognomb.dismiss();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Actualizado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Nombre Actualizado", Toast.LENGTH_SHORT).show();
+            }
+        });
+        request.add(jsonObjectRequest);
+    }
+
+    public void me_modApellido(final String id_DocumentoPersona, String per_Apellidos){
+        String APIREST_URL = DATOS.IP_SERVER+ "m_apellidos_persona.php?"+
+                "id_DocumentoPersona=" + id_DocumentoPersona+
+                "&per_Apellidos=" + per_Apellidos;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                pf_pfedtapellidos.setText(response.optString("Nombre"));
+                pf_pfedtapellidos.setEnabled(false);
+                dialogapell.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "Apellido Actualizado", Toast.LENGTH_SHORT).show();
             }
         });
         request.add(jsonObjectRequest);
