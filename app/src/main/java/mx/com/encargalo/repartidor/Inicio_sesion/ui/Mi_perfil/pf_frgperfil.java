@@ -1,44 +1,65 @@
 package mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil;
 
+import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Dialog;
+import android.content.ContentValues;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import mx.com.encargalo.repartidor.Adapters.pe_adplistaproductos;
 import mx.com.encargalo.repartidor.Entidades.pe_claseproducto_lista;
@@ -52,6 +73,7 @@ public class pf_frgperfil extends Fragment {
             pf_pfbtntienda,
             pf_pfbtnmodregistrodelicencia,
             pf_pfbtnmodregistrodeantecedentes,
+            pf_pfbtnmodimagen,
             pf_pfbtnmodtargetadepropiedad;
 
     TextView pf_pfedtdireccion,
@@ -69,7 +91,11 @@ public class pf_frgperfil extends Fragment {
     SharedPreferences sharedPreferences;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
-
+    int TOMAR_FOTO = 100;
+    int SELEC_IMAGEN = 200;
+    boolean cimg=false;
+    private Uri imageUri;
+    Bitmap bitmapimgselecionada;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -95,7 +121,49 @@ public class pf_frgperfil extends Fragment {
         pf_prftxtnombre.setText(sharedPreferences.getString(DATOS.VARGOB_NAME_REPARIDOR,""));
         me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
         me_modgetTienda(sharedPreferences.getString(DATOS.VARGOB_ID_REPARTIDOR,"X"));
-
+        pf_prfimgvwfoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                elegirAccion();
+            }
+        });
+        pf_pfbtnmodimagen = view.findViewById(R.id.pf_pfbtnmodimagen);
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) pf_pfbtnmodimagen.getLayoutParams();
+        params.height = 0;
+        pf_pfbtnmodimagen.setLayoutParams(params);
+        pf_pfbtnmodimagen.setVisibility(View.INVISIBLE);
+        pf_pfbtnmodimagen.setEnabled(false);
+        pf_pfbtnmodimagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String myURL = DATOS.IP_SERVER+ "m_imagen_usuario_repartidor.php";
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, myURL,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                Toast.makeText(getContext(), "Imagen de perfil modificada", Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(getContext(), MainActivity.class);
+                                startActivity(i);
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), "Imagen de perfil no se pudo modificar", Toast.LENGTH_LONG).show();
+                    }
+                }){
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        SharedPreferences sharedPreferences =
+                                getContext().getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
+                        Map<String, String> params = new Hashtable<String, String>();
+                        params.put("usu_Imagen", getStringImagen(bitmapimgselecionada) );
+                        params.put("id_DocumentoPersona", sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,""));
+                        return params;
+                    }
+                };
+                request.add(stringRequest);
+            }
+        });
         pf_pfbtnmodregistrodevehiculo = view.findViewById(R.id.pf_pfbtnmodregistrodevehiculo);
         pf_pfbtnmodregistrodevehiculo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,6 +222,65 @@ public class pf_frgperfil extends Fragment {
         return view;
     }
 
+    public void elegirAccion(){
+        dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.pf_dialog_camara_galeria);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.setCancelable(false);
+        ImageView close = dialog.findViewById(R.id.btn_close);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        Button camara = dialog.findViewById(R.id.btn_Camara);
+        camara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int estadoDePermiso = ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA);
+                if (estadoDePermiso == PackageManager.PERMISSION_GRANTED) {
+                    estadoDePermiso = ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                    if (estadoDePermiso == PackageManager.PERMISSION_GRANTED) {
+                        dialog.dismiss();
+                        tomarFoto();
+                    } else {
+                        ActivityCompat.requestPermissions(getActivity(),
+                                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                PackageManager.PERMISSION_GRANTED);
+                    }
+                } else {
+                    ActivityCompat.requestPermissions(getActivity(),
+                            new String[]{Manifest.permission.CAMERA},
+                            PackageManager.PERMISSION_GRANTED);
+                }
+            }
+        });
+        Button galeria = dialog.findViewById(R.id.btn_Galeria);
+        galeria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                seleccionarImagen();
+            }
+        });
+        dialog.show();
+    }
+    public void tomarFoto() {
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.Media.TITLE, "Titulo de la Imagen");
+        values.put(MediaStore.Images.Media.DESCRIPTION, "Descripción de la imagen");
+        imageUri = getActivity().getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+        startActivityForResult(cameraIntent, TOMAR_FOTO);
+    }
+    public void seleccionarImagen() {
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK);
+        galleryIntent.setType("image/*");
+        startActivityForResult(galleryIntent, SELEC_IMAGEN);
+    }
     public void me_modsetTienda(final String idrepartidor, String idtienda){
         String APIREST_URL = DATOS.IP_SERVER+ "a_contrata_rep.php?"+
                 "idrep=" + idrepartidor+
@@ -192,6 +319,56 @@ public class pf_frgperfil extends Fragment {
             }
         });
         request.add(jsonObjectRequest);
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        try {
+            if (resultCode == RESULT_OK){
+                if(requestCode == SELEC_IMAGEN){
+                    CropImage.activity(data.getData())
+                            .setGuidelines(CropImageView.Guidelines.ON)
+                            .setAspectRatio(1, 1)
+                            .setBorderCornerColor(Color.BLACK)
+                            .start(getContext(), this);
+                }
+                else if(requestCode == TOMAR_FOTO){
+                    CropImage.activity(imageUri)
+                            .setAspectRatio(1, 1)
+                            .setBorderCornerColor(Color.BLACK)
+                            .start(getContext(), this);
+                }
+                else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
+                    //Croped image received
+                    CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                    if (resultCode == RESULT_OK){
+                        Uri resultUri = result.getUri();
+                        imageUri = resultUri;
+                        pf_prfimgvwfoto.setImageURI(resultUri);
+                        Bitmap bm = ((BitmapDrawable)pf_prfimgvwfoto.getDrawable()).getBitmap();
+                        bitmapimgselecionada=Bitmap.createScaledBitmap(bm, 100, 100, true);
+                        cimg=true;
+                        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) pf_pfbtnmodimagen.getLayoutParams();
+                        params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                        pf_pfbtnmodimagen.setLayoutParams(params);
+                        pf_pfbtnmodimagen.setVisibility(View.VISIBLE);
+                        pf_pfbtnmodimagen.setEnabled(true);
+                    }else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE){
+                        Exception error = result.getError();
+                        Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        }catch (Exception e){
+            Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
+        }
+    }
+    public String getStringImagen(Bitmap bmp) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
     }
 
     public void me_modgetPerfil(String Documento){

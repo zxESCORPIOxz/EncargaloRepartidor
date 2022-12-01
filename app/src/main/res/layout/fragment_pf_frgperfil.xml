@@ -24,12 +24,23 @@
         android:src="@drawable/pf_imgphoto"
         android:layout_margin="15dp"
         android:layout_gravity="center"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:civ_border_width="2dp"
         android:layout_marginRight="10dp"
         app:civ_border_color="@color/blackPrimary"
         app:civ_border_overlay="true"/>
+
+    <Button
+        android:id="@+id/pf_pfbtnmodimagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Guardar imagen"
+        android:background="@drawable/redondeado_naranja"
+        android:drawableLeft="@drawable/ic_save"
+        android:drawablePadding="5dp"
+        android:layout_margin="@dimen/activity_margin"/>
 
     <ScrollView
         android:layout_width="match_parent"
