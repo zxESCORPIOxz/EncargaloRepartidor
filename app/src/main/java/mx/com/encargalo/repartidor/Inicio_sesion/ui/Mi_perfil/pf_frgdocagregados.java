@@ -1,3 +1,8 @@
+// CÓDIGO: KEVIN DURAN Y JEAN PIERRE LAURENTE
+// WEB SERVICE: JEAN LAURENTE
+// UNIVERSIDAD CONTINENTAL
+// 11/2022
+
 package mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil;
 
 import android.os.Bundle;

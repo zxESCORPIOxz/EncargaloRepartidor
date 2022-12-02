@@ -1,3 +1,8 @@
+// CÓDIGO: KEVIN DURAN
+// WEB SERVICE: JEAN LAURENTE
+// UNIVERSIDAD CONTINENTAL
+// 11/2022
+
 package mx.com.encargalo.repartidor.Inicio_sesion;
 
 import android.app.Dialog;

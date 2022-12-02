@@ -1,3 +1,8 @@
+// CÓDIGO: KEVIN DURAN Y JEAN PIERRE LAURENTE
+// WEB SERVICE: JEAN LAURENTE
+// UNIVERSIDAD CONTINENTAL
+// 11/2022
+
 package mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil;
 
 import static android.app.Activity.RESULT_OK;
@@ -95,7 +100,11 @@ public class pf_frgperfil extends Fragment {
             pf_prftxtnombre,
             pf_pfedtplaca,
             re_reedtnombrevehiculo2,
-            re_reeditplaca;
+            re_reeditplaca,
+            pf_pftxtESTADO1,
+            pf_pftxtESTADO2,
+            pf_pftxtESTADO3,
+            pf_pftxtESTADO4;
 
     Dialog  dialog,
             dialognomb,
@@ -132,6 +141,10 @@ public class pf_frgperfil extends Fragment {
         pf_pfbtnplaca = view.findViewById(R.id.pf_pfbtnplaca);
 
         pf_prftxtnombre = view.findViewById(R.id.pf_prftxtnombre);
+        pf_pftxtESTADO1 = view.findViewById(R.id.pf_pftxtESTADO1);
+        pf_pftxtESTADO2 = view.findViewById(R.id.pf_pftxtESTADO2);
+        pf_pftxtESTADO3 = view.findViewById(R.id.pf_pftxtESTADO3);
+        pf_pftxtESTADO4 = view.findViewById(R.id.pf_pftxtESTADO4);
         pf_pfedtdireccion = view.findViewById(R.id.pf_pfedtdireccion);
         pf_pfedtnombre = view.findViewById(R.id.pf_pfedtnombre);
         pf_pfedtapellidos = view.findViewById(R.id.pf_pfedtapellidos);
@@ -146,7 +159,9 @@ public class pf_frgperfil extends Fragment {
         Glide.with(getContext()).load(DATOS.IP_SERVER
                 +sharedPreferences.getString(DATOS.VARGOB_IMG_REPARIDOR,"")).into(pf_prfimgvwfoto);
         pf_prftxtnombre.setText(sharedPreferences.getString(DATOS.VARGOB_NAME_REPARIDOR,""));
+
         me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
+        me_modgetEstados(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
         me_modgetTienda(sharedPreferences.getString(DATOS.VARGOB_ID_REPARTIDOR,"X"));
 
         //Boton Imagen
@@ -754,7 +769,101 @@ public class pf_frgperfil extends Fragment {
     }
 
 
+    public void me_modgetEstados(String Documento){
+        String APIREST_URL = DATOS.IP_SERVER+ "c_documentos_repartidor.php?"+
+                "id_DocumentoPersona=" + Documento;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null,
+                new Response.Listener<JSONObject>() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onResponse(JSONObject response) {
 
+                        JSONArray jsonObject = null;
+                        try {
+                            jsonObject = response.getJSONArray("consulta");
+                            //pf_pfedtdireccion.setText(jsonObject.optString("Nombre"));
+                            for (int i = 0; i < jsonObject.length(); i++) {
+                                JSONObject myjsonObject = jsonObject.getJSONObject(i);
+
+//                                pf_pftxtESTADO1.setText(myjsonObject.getString("repDocumentoVehiculoEstado"));
+//                                pf_pftxtESTADO1.setEnabled(false);
+//                                pf_pftxtESTADO2.setText(myjsonObject.getString("repLicenciaEstado"));
+//                                pf_pftxtESTADO2.setEnabled(false);
+//                                pf_pftxtESTADO3.setText(myjsonObject.getString("repAntecedentesEstado"));
+//                                pf_pftxtESTADO3.setEnabled(false);
+//                                pf_pftxtESTADO4.setText(myjsonObject.getString("repTarjetaPropiedadEstado"));
+//                                pf_pftxtESTADO4.setEnabled(false);
+
+                                SharedPreferences.Editor editor1 = sharedPreferences.edit();
+                                editor1.putString(DATOS.VARGOB_ESTADO_REPARIDOR,myjsonObject.getString("repDocumentoVehiculoEstado"));
+                                //Validación si estado es INACTIVO
+                                if(myjsonObject.getString("repDocumentoVehiculoEstado").equals("INACTIVO")){
+                                    pf_pftxtESTADO1.append("INACTIVO");
+                                    pf_pftxtESTADO1.setTextColor(Color.RED);
+                                }else if(myjsonObject.getString("repDocumentoVehiculoEstado").equals("EN REVISION")){
+                                    pf_pftxtESTADO1.append("EN REVISION");
+                                    pf_pftxtESTADO1.setTextColor(Color.BLUE);
+                                }else if(myjsonObject.getString("repDocumentoVehiculoEstado").equals("ACTIVO")){
+                                    pf_pftxtESTADO1.append("ACTIVO");
+                                    pf_pftxtESTADO1.setTextColor(Color.GREEN);
+                                }
+
+                                SharedPreferences.Editor editor2 = sharedPreferences.edit();
+                                editor2.putString(DATOS.VARGOB_ESTADO_REPARIDOR,myjsonObject.getString("repLicenciaEstado"));
+                                //Validación si estado es INACTIVO
+                                if(myjsonObject.getString("repLicenciaEstado").equals("INACTIVO")){
+                                    pf_pftxtESTADO2.append("INACTIVO");
+                                    pf_pftxtESTADO2.setTextColor(Color.RED);
+                                }else if(myjsonObject.getString("repLicenciaEstado").equals("EN REVISION")){
+                                    pf_pftxtESTADO2.append("EN REVISION");
+                                    pf_pftxtESTADO2.setTextColor(Color.BLUE);
+                                }else if(myjsonObject.getString("repLicenciaEstado").equals("ACTIVO")){
+                                    pf_pftxtESTADO2.append("ACTIVO");
+                                    pf_pftxtESTADO2.setTextColor(Color.GREEN);
+                                }
+
+                                SharedPreferences.Editor editor3 = sharedPreferences.edit();
+                                editor3.putString(DATOS.VARGOB_ESTADO_REPARIDOR,myjsonObject.getString("repAntecedentesEstado"));
+                                //Validación si estado es INACTIVO
+                                if(myjsonObject.getString("repAntecedentesEstado").equals("INACTIVO")){
+                                    pf_pftxtESTADO3.append("INACTIVO");
+                                    pf_pftxtESTADO3.setTextColor(Color.RED);
+                                }else if(myjsonObject.getString("repAntecedentesEstado").equals("EN REVISION")){
+                                    pf_pftxtESTADO3.append("EN REVISION");
+                                    pf_pftxtESTADO3.setTextColor(Color.BLUE);
+                                }else if(myjsonObject.getString("repAntecedentesEstado").equals("ACTIVO")){
+                                    pf_pftxtESTADO3.append("ACTIVO");
+                                    pf_pftxtESTADO3.setTextColor(Color.GREEN);
+                                }
+
+                                SharedPreferences.Editor editor4 = sharedPreferences.edit();
+                                editor4.putString(DATOS.VARGOB_ESTADO_REPARIDOR,myjsonObject.getString("repTarjetaPropiedadEstado"));
+                                //Validación si estado es INACTIVO
+                                if(myjsonObject.getString("repTarjetaPropiedadEstado").equals("INACTIVO")){
+                                    pf_pftxtESTADO4.append("INACTIVO");
+                                    pf_pftxtESTADO4.setTextColor(Color.RED);
+                                }else if(myjsonObject.getString("repTarjetaPropiedadEstado").equals("EN REVISION")){
+                                    pf_pftxtESTADO4.append("EN REVISION");
+                                    pf_pftxtESTADO4.setTextColor(Color.BLUE);
+                                }else if(myjsonObject.getString("repTarjetaPropiedadEstado").equals("ACTIVO")){
+                                    pf_pftxtESTADO4.append("ACTIVO");
+                                    pf_pftxtESTADO4.setTextColor(Color.GREEN);
+                                }
+                            }
+                        } catch (JSONException e) {
+                            Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), DATOS.NO_ENCONTRADO, Toast.LENGTH_SHORT).show();
+                    }
+                });
+        request.add(jsonObjectRequest);
+    }
 
 
 }

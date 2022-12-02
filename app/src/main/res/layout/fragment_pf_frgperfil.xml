@@ -1,3 +1,5 @@
+<!-- Interfaz realizada por Jean Pierre Laurente | Universidad Continental | 11/2022 -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -219,6 +221,13 @@
                     style="@style/pf_iconvehicleregistration"
                     android:text="@string/pf_varstringregistrodeveh_culo"
                     />
+                <TextView
+                    android:id="@+id/pf_pftxtESTADO1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:drawablePadding="10dp"
+                    />
                 <Button
                     android:id="@+id/pf_pfbtnmodregistrodevehiculo"
                     style="@style/pf_buttongeneral" />
@@ -236,6 +245,13 @@
                     android:drawablePadding="10dp"
                     style="@style/pf_iconlicenseregistration"
                     android:text="@string/pf_varstringregistrodelicencia" />
+                <TextView
+                    android:id="@+id/pf_pftxtESTADO2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:drawablePadding="10dp"
+                    />
                 <Button
                     android:id="@+id/pf_pfbtnmodregistrodelicencia"
                     style="@style/pf_buttongeneral" />
@@ -253,6 +269,13 @@
                     android:drawablePadding="10dp"
                     style="@style/pf_iconbackgroundcheck"
                     android:text="@string/pf_varstringregistro_de_antecedentes" />
+                <TextView
+                    android:id="@+id/pf_pftxtESTADO3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:drawablePadding="10dp"
+                    />
                 <Button
                     android:id="@+id/pf_pfbtnmodregistrodeantecedentes"
                     style="@style/pf_buttongeneral" />
@@ -270,6 +293,13 @@
                     android:drawablePadding="10dp"
                     style="@style/pf_iconpropertycard"
                     android:text="@string/pf_varstringtarjeta_de_propiedad"/>
+                <TextView
+                    android:id="@+id/pf_pftxtESTADO4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:drawablePadding="10dp"
+                    />
                 <Button
                     android:id="@+id/pf_pfbtnmodtargetadepropiedad"
                     style="@style/pf_buttongeneral" />
