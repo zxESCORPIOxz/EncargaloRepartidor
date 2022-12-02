@@ -51,7 +51,7 @@ public class pe_frgmenupedidos extends Fragment {
 
         pe_mpebtnordenencurso = view.findViewById(R.id.pe_mpebtnordenencurso);
         pe_mpebtnhistorialdeordenes = view.findViewById(R.id.pe_mpebtnhistorialdeordenes);
-        pe_mpebtncobrosrealizados = view.findViewById(R.id.pe_mpebtncobrosrealizados);
+//        pe_mpebtncobrosrealizados = view.findViewById(R.id.pe_mpebtncobrosrealizados);
 
         pe_mpebtnordenencurso.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +83,7 @@ public class pe_frgmenupedidos extends Fragment {
                                 case "PREPARADO":{
                                     Navigation.findNavController(viewaux).navigate(R.id.action_nav_pedidos_to_nav_recogerorden);
                                 }break;
-                                case "ENCAMINO":{
+                                case "EN CAMINO":{
                                     Navigation.findNavController(viewaux).navigate(R.id.action_nav_pedidos_to_nav_entregarpedido);
                                 }break;
                             }
@@ -108,12 +108,12 @@ public class pe_frgmenupedidos extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.action_nav_pedidos_to_nav_historialordenes);
             }
         });
-        pe_mpebtncobrosrealizados.setOnClickListener(new View.OnClickListener() {
+/*        pe_mpebtncobrosrealizados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.action_nav_pedidos_to_nav_historialcobros);
             }
-        });
+        });*/
 
         return view;
     }

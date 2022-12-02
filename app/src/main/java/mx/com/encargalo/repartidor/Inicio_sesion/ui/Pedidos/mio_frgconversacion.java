@@ -139,7 +139,7 @@ public class mio_frgconversacion extends Fragment implements Response.ErrorListe
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(getContext(), "Chat en blanco", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

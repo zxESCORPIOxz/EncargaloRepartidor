@@ -30,6 +30,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Locale;
 
@@ -71,11 +72,14 @@ public class pe_frgcobrarorden extends Fragment {
             @Override
             public void onClick(View v) {
                 pe_cobbtnentregarorden.setEnabled(true);
+                pe_cobbtnentregarorden.setVisibility(View.VISIBLE);
                 pe_cobbtnregistrarcobro.setEnabled(false);
+                pe_cobbtnregistrarcobro.setVisibility(View.INVISIBLE);
             }
         });
         pe_cobbtnentregarorden = view.findViewById(R.id.pe_cobbtnentregarorden);
         pe_cobbtnentregarorden.setEnabled(false);
+        pe_cobbtnentregarorden.setVisibility(View.INVISIBLE);
         pe_cobbtnentregarorden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,10 +100,12 @@ public class pe_frgcobrarorden extends Fragment {
                     @SuppressLint("SetTextI18n")
                     @Override
                     public void onResponse(JSONObject response) {
-                        Double total = Double.parseDouble(response.optString("GananciaTienda"))
-                                + Double.parseDouble(response.optString("GananciaRepartidor"));
+
+                        float total = Float.parseFloat(response.optString("GananciaTienda"))
+                                + Float.parseFloat(response.optString("GananciaRepartidor"));
+                        DecimalFormat formato = new DecimalFormat("#.00");
                         pe_cobtxtidorden.setText("Cargar pago de la orden : " + idOrden);
-                        pe_cobtxttotal.setText("Monto a cobrar: : " + total);
+                        pe_cobtxttotal.setText("Monto a cobrar: : " + formato.format(total));
                         pe_cobtxtmediopago.setText("Medio de pago : Efectivo");
                         pe_cobtxtnombretienda.setText("Megocio de venta : " + response.optString("NombreTienda"));
                         pe_cobtxtgantienda.setText("Retorna a tienda : " + response.optString("GananciaTienda"));

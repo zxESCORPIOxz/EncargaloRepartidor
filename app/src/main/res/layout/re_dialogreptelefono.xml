@@ -44,7 +44,7 @@
             android:background="@drawable/redondeado_blanco"
             android:maxLength="15"
             android:hint="@string/re_varstringtelefonoedit"
-            android:inputType="text" />
+            android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

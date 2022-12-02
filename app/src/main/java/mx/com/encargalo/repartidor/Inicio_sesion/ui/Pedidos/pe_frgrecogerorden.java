@@ -1,9 +1,12 @@
 package mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -15,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +27,8 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -41,26 +47,31 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import mx.com.encargalo.repartidor.Adapters.pe_adplistaproductos;
+import mx.com.encargalo.repartidor.Entidades.pe_claseproducto_lista;
 import mx.com.encargalo.repartidor.UTIL.DATOS;
 import mx.com.repartidor.R;
 
 import static android.content.Context.MODE_PRIVATE;
 
 public class pe_frgrecogerorden extends Fragment {
-    Button pe_rgobtnrecoger,pe_rgobtnChat;
+    Button pe_rgobtnrecoger,pe_rgobtnChat,pe_rgobtnDetalle;
     TextView pe_rgotxtidorden_fecha_hora, pe_rgotxtnombretienda, pe_rgotxtdireccion;
 
     Marker ubicacionrt, destino;
-
+    Dialog dialog;
     GoogleMap mMap;
     LatLng coordenadasO = null;
-
+    SharedPreferences sharedPreferences;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
     StringRequest stringRequest;
@@ -105,13 +116,21 @@ public class pe_frgrecogerorden extends Fragment {
 
         request = Volley.newRequestQueue(getContext());
 
-        SharedPreferences sharedPreferences =
+        sharedPreferences =
                 getContext().getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
         me_modgetcoordenadas(sharedPreferences.getString(DATOS.VARGOB_ID_ORDEN,""));
 
         pe_rgotxtidorden_fecha_hora = view.findViewById(R.id.pe_rgotxtidorden_fecha_hora);
         pe_rgotxtnombretienda = view.findViewById(R.id.pe_rgotxtnombretienda);
         pe_rgotxtdireccion = view.findViewById(R.id.pe_rgotxtdireccion);
+
+        pe_rgobtnDetalle = view.findViewById(R.id.pe_rgobtnDetalle);
+        pe_rgobtnDetalle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showdetalle(sharedPreferences.getString(DATOS.VARGOB_ID_ORDEN,""));
+            }
+        });
 
         pe_rgobtnChat = view.findViewById(R.id.pe_rgobtnChat);
 
@@ -207,5 +226,89 @@ public class pe_frgrecogerorden extends Fragment {
             }
         });
         request.add(stringRequest);
+    }
+
+    public void showdetalle(String idorden){
+        String APIREST_URL = DATOS.IP_SERVER+ "c_datos_orden_productos.php?"+
+                "idOrden=" + idorden;
+        APIREST_URL = APIREST_URL.replace(" ", "%20");
+        JsonObjectRequest jsonObjectRequestdia = new JsonObjectRequest(Request.Method.GET, APIREST_URL, null,
+                new Response.Listener<JSONObject>() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        dialog = new Dialog(getContext());
+                        dialog.setContentView(R.layout.pe_dialogdetalleorden);
+                        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                        dialog.setCancelable(false);
+                        TextView pe_ddttxtidorden = dialog.findViewById(R.id.pe_ddttxtidorden);
+                        TextView pe_ddttxtfechahora = dialog.findViewById(R.id.pe_ddttxtfechahora);
+                        TextView pe_ddttxtclientenombre = dialog.findViewById(R.id.pe_ddttxtclientenombre);
+                        TextView pe_ddttxtnombredireccion = dialog.findViewById(R.id.pe_ddttxtnombredireccion);
+                        TextView pe_ddttxtmonto = dialog.findViewById(R.id.pe_ddttxtmonto);
+                        TextView pe_ddttxttipodepago = dialog.findViewById(R.id.pe_ddttxttipodepago);
+                        TextView pe_ddttxthorayfechadeentrega = dialog.findViewById(R.id.pe_ddttxthorayfechadeentrega);
+                        TextView pe_ddttxttiempo = dialog.findViewById(R.id.pe_ddttxttiempo);
+                        RecyclerView pe_ddtrclvlistaproductos = dialog.findViewById(R.id.pe_ddtrclvlistaproductos);
+                        pe_ddttxtidorden.setText("ID ORDEN : "+response.optString("idOrden"));
+                        pe_ddttxtfechahora.setText(response.optString("HoraFechaInicial"));
+                        pe_ddttxtclientenombre.setText("Cliente   : "+response.optString("Nombre"));
+                        Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+                        List<Address> list = null;
+                        try {
+                            list = geocoder.getFromLocation(
+                                    Double.parseDouble(response.optString("Latitud")),
+                                    Double.parseDouble(response.optString("Longitud")),
+                                    1);
+                            if (!list.isEmpty()) {
+                                Address DirCalle = list.get(0);
+                                pe_ddttxtnombredireccion.setText("Dirección : "+DirCalle.getAddressLine(0));
+                            }
+                        } catch (IOException e) {
+                            Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                        pe_ddttxtmonto.setText("Monto a cobrar : "+response.optInt("mCobrar"));
+                        pe_ddttxttipodepago.setText("Tipo de pago : "+response.optString("TipoPago"));
+                        pe_ddttxthorayfechadeentrega.setText("Hora y fecha pactada : "+response.optString("HoraFechaEntrega"));
+                        pe_ddttxttiempo.setText(response.optString("TiempoEntrega")+" min");
+                        JSONArray myjson = null;
+                        try {
+                            myjson = response.getJSONArray("Producto");
+                            pe_claseproducto_lista producto = null;
+                            ArrayList<pe_claseproducto_lista> lista_productos = new ArrayList<>();
+                            for (int i = 0; i < myjson.length(); i++) {
+                                JSONObject myjsonObject = myjson.getJSONObject(i);
+                                producto = new pe_claseproducto_lista(
+                                        myjsonObject.getString("Descripcion"),
+                                        myjsonObject.getString("Cantidad"),
+                                        myjsonObject.getString("SubTotal")
+                                );
+                                lista_productos.add(producto);
+                            }
+                            pe_ddtrclvlistaproductos.setLayoutManager(new LinearLayoutManager(getContext()));
+                            pe_adplistaproductos adapter = new pe_adplistaproductos(getContext(),lista_productos);
+                            pe_ddtrclvlistaproductos.setAdapter(adapter);
+                        } catch (JSONException e) {
+                            Toast.makeText(getContext(), DATOS.NO_ENCONTRADO, Toast.LENGTH_SHORT).show();
+                        }
+                        ImageView re_rebtnclose = dialog.findViewById(R.id.re_rebtnclosedetalle);
+                        re_rebtnclose.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+                        dialog.show();
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), DATOS.NO_ENCONTRADO, Toast.LENGTH_SHORT).show();
+                    }
+                });
+        request.add(jsonObjectRequestdia);
     }
 }

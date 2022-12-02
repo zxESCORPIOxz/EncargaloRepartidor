@@ -26,14 +26,14 @@
         android:text="@string/pe_varstringhistorial_de_ordenes"
         />
 
-    <Button
-        android:id="@+id/pe_mpebtncobrosrealizados"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawablePadding="10dp"
-        android:background="@drawable/outlinebtn_green"
-        style="@style/pe_mpebtncobrosrealizados"
-        android:text="@string/pe_varstringcobros_realizados"
-        />
+<!--    <Button-->
+<!--        android:id="@+id/pe_mpebtncobrosrealizados"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:drawablePadding="10dp"-->
+<!--        android:background="@drawable/outlinebtn_green"-->
+<!--        style="@style/pe_mpebtncobrosrealizados"-->
+<!--        android:text="@string/pe_varstringcobros_realizados"-->
+<!--        />-->
 
 </LinearLayout>

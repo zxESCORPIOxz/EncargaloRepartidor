@@ -149,7 +149,6 @@ public class pe_frghistorialordenes extends Fragment {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(DATOS.VARGOB_ID_ORDEN, listaordenes.get(pe_htorclvlistaordenes.getChildAdapterPosition(v)).getIdorden());
                 editor.apply();
-                Toast.makeText(getContext(), listaordenes.get(pe_htorclvlistaordenes.getChildAdapterPosition(v)).getIdorden(), Toast.LENGTH_SHORT).show();
                 Navigation.findNavController(v).navigate(R.id.action_nav_historialordenes_to_nav_detallehistorial);
             }
         });

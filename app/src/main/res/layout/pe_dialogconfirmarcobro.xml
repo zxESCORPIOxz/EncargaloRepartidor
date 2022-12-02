@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@drawable/redondeado_blanco"
+    android:background="@drawable/redondeado_azul_400"
     android:layout_margin="@dimen/activity_margin"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:src="@drawable/is_imglogo"
+        android:layout_gravity="center_horizontal"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,8 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No"
-            android:textColor="@color/blackPrimary"
-            android:background="@drawable/redondeado_naranja"
+            android:textColor="@color/whitePrimary"
+            android:background="@drawable/containedbtn_blue"
             android:textSize="@dimen/txt_size_title"
             android:layout_marginHorizontal="30dp"
             />
@@ -35,8 +40,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Si"
-            android:textColor="@color/blackPrimary"
-            android:background="@drawable/redondeado_rojo"
+            android:textColor="@color/whitePrimary"
+            android:background="@drawable/containedbtn_green"
             android:textSize="@dimen/txt_size_title"
             android:layout_marginHorizontal="30dp"
             />

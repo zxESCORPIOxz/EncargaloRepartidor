@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,7 +62,7 @@ public class pe_adhtolistaorden extends RecyclerView.Adapter<pe_adhtolistaorden.
             modelaux.addAll(model);
             model.clear();
             for (int i = 0 ; i < modelaux.size();i++){
-                if(modelaux.get(i).getIdorden().equals(filtro)){
+                if(modelaux.get(i).getIdorden().contains(filtro)){
                     model.add(modelaux.get(i));
                 }
             }

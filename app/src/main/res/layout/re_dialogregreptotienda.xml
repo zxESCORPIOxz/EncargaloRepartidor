@@ -39,7 +39,7 @@
             android:background="@drawable/redondeado_blanco"
             android:maxLength="11"
             android:layout_margin="@dimen/activity_margin"
-            android:inputType="text"
+            android:inputType="number"
             android:gravity="center"
             android:hint="@string/re_varstringcodigo_de_tienda"/>
     </com.google.android.material.textfield.TextInputLayout>

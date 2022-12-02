@@ -7,6 +7,7 @@ import android.location.Geocoder;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,6 +45,8 @@ public class pe_frgdetallehistorial extends Fragment {
     TextView pe_dettxtidorden, pe_dettxtfechahora, pe_dettxtclientenombre, pe_dettxtnombredireccion,
             pe_dettxtmonto, pe_dettxttipodepago, pe_dettxthorayfechadeentrega, pe_dettxttiempo;
 
+    Button pe_dthbtnChat;
+
     RecyclerView pe_detrclvlistaproductos;
 
     RequestQueue request;
@@ -60,6 +63,7 @@ public class pe_frgdetallehistorial extends Fragment {
 
         request = Volley.newRequestQueue(getContext());
 
+        pe_dthbtnChat = view.findViewById(R.id.pe_dthbtnChat);
         pe_dettxtidorden = view.findViewById(R.id.pe_dettxtidorden);
         pe_dettxtfechahora = view.findViewById(R.id.pe_dettxtfechahora);
         pe_dettxtclientenombre = view.findViewById(R.id.pe_dettxtclientenombre);
@@ -70,7 +74,12 @@ public class pe_frgdetallehistorial extends Fragment {
         pe_dettxttiempo = view.findViewById(R.id.pe_dettxttiempo);
 
         pe_detrclvlistaproductos = view.findViewById(R.id.pe_detrclvlistaproductos);
-
+        pe_dthbtnChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_misordenesconversacion);
+            }
+        });
         sharedPreferences =
                 getContext().getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
 
