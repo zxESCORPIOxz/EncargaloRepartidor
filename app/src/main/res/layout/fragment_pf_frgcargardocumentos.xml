@@ -9,13 +9,13 @@
 
     <ImageView
         android:id="@+id/pf_prfimgvwfoto"
-        android:src="@drawable/pf_iconupload"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="70dp"
         android:background="@drawable/redondeado_transparente"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:src="@drawable/pf_iconupload" />
 
     <TextView
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         android:text="@string/pf_varstringsuba_la_imagen_dpf_varstringel_documento_requerido" />
 
     <Button
-        android:id="@+id/pf_rubtnRegistrar"
+        android:id="@+id/pf_rubtnRegistrarVehiculo"
         style="@style/textcolor2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

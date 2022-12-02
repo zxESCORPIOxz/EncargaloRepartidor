@@ -7,8 +7,11 @@
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/activity_main.xml" value="0.2814814814814815" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/app_bar_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/fragment_pf_frgcargardocumentos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/fragment_pf_frgdocagregados.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/fragment_pf_frgperfil.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/nav_header_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/pf_dialog_camara_galeria.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/pf_dialog_camara_galeria1.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/re_dialogeditvehiculo.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/re_dialogregrepartidor.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/jeanp/AndroidStudioProjects/EncargaloRepartidor/app/src/main/res/layout/re_dialogregreptotienda.xml" value="0.36666666666666664" />
@@ -41,7 +44,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

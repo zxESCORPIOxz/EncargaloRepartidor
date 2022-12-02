@@ -44,7 +44,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/pf_rubtnRegistrar"
+        android:id="@+id/pf_rubtnVolver"
         style="@style/textcolor2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

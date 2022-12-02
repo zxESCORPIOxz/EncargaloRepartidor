@@ -28,7 +28,7 @@ public class pf_frgdocagregados extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.action_nav_docsubido_to_nav_menuinicio);
             }
         });
-        pf_rubtnRegistrar = view.findViewById(R.id.pf_rubtnRegistrar);
+        pf_rubtnRegistrar = view.findViewById(R.id.pf_rubtnVolver);
         pf_rubtnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

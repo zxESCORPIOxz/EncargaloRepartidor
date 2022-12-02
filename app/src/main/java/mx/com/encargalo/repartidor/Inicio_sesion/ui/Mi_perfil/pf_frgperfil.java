@@ -115,6 +115,8 @@ public class pf_frgperfil extends Fragment {
     boolean cimg=false;
     private Uri imageUri;
     Bitmap bitmapimgselecionada;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -146,6 +148,8 @@ public class pf_frgperfil extends Fragment {
         pf_prftxtnombre.setText(sharedPreferences.getString(DATOS.VARGOB_NAME_REPARIDOR,""));
         me_modgetPerfil(sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,"X"));
         me_modgetTienda(sharedPreferences.getString(DATOS.VARGOB_ID_REPARTIDOR,"X"));
+
+        //Boton Imagen
         pf_prfimgvwfoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,6 +162,9 @@ public class pf_frgperfil extends Fragment {
         pf_pfbtnmodimagen.setLayoutParams(params);
         pf_pfbtnmodimagen.setVisibility(View.INVISIBLE);
         pf_pfbtnmodimagen.setEnabled(false);
+
+
+        //Cargar Imagen
         pf_pfbtnmodimagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -189,10 +196,18 @@ public class pf_frgperfil extends Fragment {
                 request.add(stringRequest);
             }
         });
+
+
+
         pf_pfbtnmodregistrodevehiculo = view.findViewById(R.id.pf_pfbtnmodregistrodevehiculo);
+
         pf_pfbtnmodregistrodevehiculo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("tipodocumento","registrovehiculo");
+                editor.apply();
+
                 Navigation.findNavController(v).navigate(R.id.action_nav_miperfil_to_nav_cargardocumento);
             }
         });
@@ -200,6 +215,9 @@ public class pf_frgperfil extends Fragment {
         pf_pfbtnmodregistrodelicencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("tipodocumento","registrodelicencia");
+                editor.apply();
                 Navigation.findNavController(v).navigate(R.id.action_nav_miperfil_to_nav_cargardocumento);
             }
         });
@@ -207,6 +225,9 @@ public class pf_frgperfil extends Fragment {
         pf_pfbtnmodregistrodeantecedentes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("tipodocumento","registrodeantecedentes");
+                editor.apply();
                 Navigation.findNavController(v).navigate(R.id.action_nav_miperfil_to_nav_cargardocumento);
             }
         });
@@ -214,9 +235,14 @@ public class pf_frgperfil extends Fragment {
         pf_pfbtnmodtargetadepropiedad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("tipodocumento","rgetadepropiedad");
+                editor.apply();
                 Navigation.findNavController(v).navigate(R.id.action_nav_miperfil_to_nav_cargardocumento);
             }
         });
+
+
         pf_pfbtntienda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -388,6 +414,8 @@ public class pf_frgperfil extends Fragment {
         return view;
     }
 
+    //Cargar camara o galeria
+
     public void elegirAccion(){
         dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.pf_dialog_camara_galeria);
@@ -433,6 +461,7 @@ public class pf_frgperfil extends Fragment {
         });
         dialog.show();
     }
+
     public void tomarFoto() {
         ContentValues values = new ContentValues();
         values.put(MediaStore.Images.Media.TITLE, "Titulo de la Imagen");
@@ -447,6 +476,10 @@ public class pf_frgperfil extends Fragment {
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent, SELEC_IMAGEN);
     }
+
+
+
+
     public void me_modsetTienda(final String idrepartidor, String idtienda){
         String APIREST_URL = DATOS.IP_SERVER+ "a_contrata_rep.php?"+
                 "idrep=" + idrepartidor+
