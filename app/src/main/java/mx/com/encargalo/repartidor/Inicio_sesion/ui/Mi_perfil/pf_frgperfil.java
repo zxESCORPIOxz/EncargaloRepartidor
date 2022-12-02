@@ -643,6 +643,12 @@ public class pf_frgperfil extends Fragment {
             public void onResponse(JSONObject response) {
                 pf_pfedttienda.setText(response.optString("Nombre"));
                 pf_pfedttienda.setEnabled(false);
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) pf_pfbtntienda.getLayoutParams();
+                params.height = 0;
+                params.width = 0;
+                pf_pfbtntienda.setLayoutParams(params);
+                pf_pfbtntienda.setVisibility(View.INVISIBLE);
+                pf_pfbtntienda.setEnabled(false);
             }
         }, new Response.ErrorListener() {
             @Override

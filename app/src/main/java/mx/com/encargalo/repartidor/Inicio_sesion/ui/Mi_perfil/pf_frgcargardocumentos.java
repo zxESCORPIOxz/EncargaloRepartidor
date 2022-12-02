@@ -35,6 +35,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -59,11 +60,16 @@ import mx.com.repartidor.R;
 public class pf_frgcargardocumentos extends Fragment {
     Button pf_rubtnRegistrar;
 
+    TextView pf_rutxtdocumento;
+
     String tipodocumento;
+    String in_doc;
 
     Dialog  dialog;
 
     ImageView pf_prfimgvwfoto;
+
+    View auxview;
 
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
@@ -85,6 +91,10 @@ public class pf_frgcargardocumentos extends Fragment {
         getContext().getSharedPreferences(DATOS.SHAREDPREFERENCES, Context.MODE_PRIVATE);
         tipodocumento = sharedPreferences.getString("tipodocumento","");
 
+        pf_rutxtdocumento = view.findViewById(R.id.pf_rutxtdocumento);
+
+        pf_rutxtdocumento.append("\n"+tipodocumento);
+
         pf_prfimgvwfoto = view.findViewById(R.id.pf_prfimgvwfoto);
 
         //Boton Imagen
@@ -96,25 +106,42 @@ public class pf_frgcargardocumentos extends Fragment {
         });
         pf_rubtnRegistrar = view.findViewById(R.id.pf_rubtnRegistrarVehiculo);
 
-//        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) pf_rubtnRegistrar.getLayoutParams();
-//        params.height = 0;
-//        pf_rubtnRegistrar.setLayoutParams(params);
-//        pf_rubtnRegistrar.setVisibility(View.INVISIBLE);
-//        pf_rubtnRegistrar.setEnabled(false);
+        ViewGroup.LayoutParams params = pf_rubtnRegistrar.getLayoutParams();
+        params.height = 0;
+        pf_rubtnRegistrar.setLayoutParams(params);
+        pf_rubtnRegistrar.setVisibility(View.INVISIBLE);
+        pf_rubtnRegistrar.setEnabled(false);
 
         //Cargar DocumentoVehiculo
         pf_rubtnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String myURL = DATOS.IP_SERVER+ "m_documentovehiculo_repartidor.php";
+                auxview = v;
+                String myURL = DATOS.IP_SERVER;
+                switch (tipodocumento){
+                    case "registrovehiculo":
+                        myURL = myURL + "m_documentovehiculo_repartidor.php";
+                        in_doc = "rep_DocumentoVehiculo";
+                        break;
+                    case "registrodelicencia":
+                        myURL = myURL + "m_licencia_repartidor.php";
+                        in_doc = "rep_Licencia";
+                        break;
+                    case "registrodeantecedentes":
+                        myURL = myURL + "m_antecedente_repartidor.php";
+                        in_doc = "rep_Antecedentes";
+                        break;
+                    case "rgetadepropiedad":
+                        myURL = myURL + "m_tarjetapropiedad_repartidor.php";
+                        in_doc = "rep_TarjetaPropiedad";
+                        break;
+                }
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, myURL,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                Toast.makeText(getContext(), "Documento Vehiculo Registrado", Toast.LENGTH_LONG).show();
-                                Intent i = new Intent(getContext(), MainActivity.class);
-                                startActivity(i);
+                                Toast.makeText(getContext(), response, Toast.LENGTH_SHORT).show();
+                                Navigation.findNavController(auxview).navigate(R.id.action_nav_cargardocumento_to_nav_miperfil);
                             }
                         }, new Response.ErrorListener() {
                     @Override
@@ -127,14 +154,13 @@ public class pf_frgcargardocumentos extends Fragment {
                         SharedPreferences sharedPreferences =
                                 getContext().getSharedPreferences(DATOS.SHAREDPREFERENCES, MODE_PRIVATE);
                         Map<String, String> params = new Hashtable<String, String>();
-                        params.put("rep_DocumentoVehiculo", getStringImagen(bitmapimgselecionada) );
+                        params.put(in_doc, getStringImagen(bitmapimgselecionada) );
                         params.put("id_DocumentoPersona", sharedPreferences.getString(DATOS.VARGOB_ID_PERSONA,""));
                         return params;
                     }
                 };
                 request.add(stringRequest);
 
-                Navigation.findNavController(v).navigate(R.id.action_nav_cargardocumento_to_nav_docsubido);
             }
         });
 
@@ -215,13 +241,14 @@ public class pf_frgcargardocumentos extends Fragment {
                 if(requestCode == SELEC_IMAGEN){
                     CropImage.activity(data.getData())
                             .setGuidelines(CropImageView.Guidelines.ON)
-                            .setAspectRatio(1, 1)
+                            .setAspectRatio(1, 2)
                             .setBorderCornerColor(Color.BLACK)
                             .start(getContext(), this);
                 }
                 else if(requestCode == TOMAR_FOTO){
                     CropImage.activity(imageUri)
-                            .setAspectRatio(1, 1)
+                            .setGuidelines(CropImageView.Guidelines.ON)
+                            .setAspectRatio(1, 2)
                             .setBorderCornerColor(Color.BLACK)
                             .start(getContext(), this);
                 }
@@ -235,7 +262,7 @@ public class pf_frgcargardocumentos extends Fragment {
                         Bitmap bm = ((BitmapDrawable)pf_prfimgvwfoto.getDrawable()).getBitmap();
                         bitmapimgselecionada=Bitmap.createScaledBitmap(bm, 100, 100, true);
                         cimg=true;
-                        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) pf_rubtnRegistrar.getLayoutParams();
+                        ViewGroup.LayoutParams params = pf_rubtnRegistrar.getLayoutParams();
                         params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
                         pf_rubtnRegistrar.setLayoutParams(params);
                         pf_rubtnRegistrar.setVisibility(View.VISIBLE);

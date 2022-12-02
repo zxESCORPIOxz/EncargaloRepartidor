@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_nav_cargardocumento_to_nav_docsubido"
             app:destination="@id/nav_docsubido" />
+        <action
+            android:id="@+id/action_nav_cargardocumento_to_nav_miperfil"
+            app:destination="@id/nav_miperfil" />
     </fragment>
     <fragment
         android:id="@+id/nav_docsubido"
