@@ -1,3 +1,4 @@
+//Creado por Briceño Malpartida Douglas Igancio - Universidad Continental - 2022
 package mx.com.encargalo.repartidor.Adapters;
 
 
