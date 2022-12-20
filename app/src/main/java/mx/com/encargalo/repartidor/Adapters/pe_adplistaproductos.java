@@ -1,3 +1,4 @@
+//Creado por Duran Llamacuri Kevin - Universidad Continental - 2022
 package mx.com.encargalo.repartidor.Adapters;
 
 import android.content.Context;

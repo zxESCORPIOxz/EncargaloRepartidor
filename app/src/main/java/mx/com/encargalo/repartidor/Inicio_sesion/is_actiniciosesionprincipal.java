@@ -1,3 +1,4 @@
+//Creado por Duran Llamacuri Kevin - Universidad Continental - 2022
 package mx.com.encargalo.repartidor.Inicio_sesion;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -83,7 +84,7 @@ public class is_actiniciosesionprincipal extends AppCompatActivity {
     }
 
     public void is_fctgetDocumentoUsuario(){
-        varstringdocumento = "20202020";
+        varstringdocumento = "74369837";
         //varstringdocumento = "11111115";
     }
 }

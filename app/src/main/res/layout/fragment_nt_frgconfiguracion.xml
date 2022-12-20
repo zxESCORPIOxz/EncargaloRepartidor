@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/grey_400"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Notificaciones.nt_frgconfiguracion"
-    tools:ignore="UseSwitchCompatOrMaterialXml">
+    tools:ignore="UseSwitchCompatOrMaterialXml"><!--Creado por Duran Llamacuri Kevin - Universidad Continental - 2022-->
 
     <ImageView
         android:layout_width="100dp"

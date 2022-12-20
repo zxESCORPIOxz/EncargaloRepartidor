@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/grey_400"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frghistorialcobros">
-
+    <!--Creado por Duran Llamacuri Kevin - Universidad Continental - 2022-->
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"

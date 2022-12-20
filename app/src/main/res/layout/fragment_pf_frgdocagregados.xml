@@ -5,7 +5,7 @@
     android:background="@color/grey"
     android:padding="@dimen/activity_margin"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Mi_perfil.pf_frgdocagregados">
-
+    <!--Creado por Duran Llamacuri Kevin - Universidad Continental - 2022-->
     <ImageButton
         android:id="@+id/pf_donebtnclose"
         android:layout_width="50dp"

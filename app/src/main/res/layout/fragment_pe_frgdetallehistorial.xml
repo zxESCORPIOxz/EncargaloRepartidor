@@ -5,7 +5,7 @@
     android:background="@color/grey_400"
     android:orientation="vertical"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgdetallehistorial">
-
+    <!--Creado por Duran Llamacuri Kevin - Universidad Continental - 2022-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"

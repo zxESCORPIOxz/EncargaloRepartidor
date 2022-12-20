@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/grey_400"
     android:padding="@dimen/activity_margin"
-    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgcobrarorden">
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgcobrarorden"><!--Creado por Duran Llamacuri Kevin - Universidad Continental - 2022-->
 
     <TextView
         android:id="@+id/pe_cobtxtidorden"

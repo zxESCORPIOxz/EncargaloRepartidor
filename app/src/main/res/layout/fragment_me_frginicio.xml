@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.me_frginicio">
+    tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.me_frginicio"><!--Creado por Duran Llamacuri Kevin - Universidad Continental - 2022-->
 
     <TextView
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:background="@color/grey_400"
     android:orientation="vertical"
     tools:context="mx.com.encargalo.repartidor.Inicio_sesion.ui.Pedidos.pe_frgmenupedidos" >
-
+    <!--Creado por Duran Llamacuri Kevin - Universidad Continental - 2022-->
     <Button
         android:id="@+id/pe_mpebtnordenencurso"
         android:layout_width="match_parent"
